@@ -11,6 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        //Llamamos a otro fichero de semillas
+        $this->call(InstrumentsTableSeeder::class);
+        //Mostramos información por consola
+        $this->command->info('Instrument table seeded!');
+        //Llamamos a otro fichero de semillas
+        $this->call(CategoriesTableSeeder::class);
+        //Mostramos información por consola
+        $this->command->info('Category table seeded!');
     }
 }
