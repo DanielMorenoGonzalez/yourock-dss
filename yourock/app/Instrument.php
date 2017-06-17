@@ -12,4 +12,5 @@ class Instrument extends Model
         //Instrument tiene la clave ajena category_id
         return $this->belongsTo('App\Category');
     }
+
 }
