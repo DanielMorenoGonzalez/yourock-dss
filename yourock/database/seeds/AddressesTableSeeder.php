@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Address;
+use App\User;
 
 class AddressesTableSeeder extends Seeder
 {
@@ -20,7 +21,7 @@ class AddressesTableSeeder extends Seeder
             'street' => 'Calle San Isidro',
             'number' => '35',
             'city' => 'San Vicente del Raspeig - Alicante',
-            'zipCode' => '03690'
+            'zipCode' => '03690',
         ]);
         $address1->save();
 
