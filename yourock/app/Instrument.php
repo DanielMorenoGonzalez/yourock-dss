@@ -13,4 +13,8 @@ class Instrument extends Model
         return $this->belongsTo('App\Category');
     }
 
+    public function orderlines() {
+        return $this->hasMany('App\Orderline');
+    }
+
 }

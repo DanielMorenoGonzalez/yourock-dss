@@ -30,5 +30,10 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         //Mostramos información por consola
         $this->command->info('User table seeded!');
+
+        //Llamamos a otro fichero de semillas
+        $this->call(OrderlinesTableSeeder::class);
+        //Mostramos información por consola
+        $this->command->info('Orderline table seeded!');
     }
 }

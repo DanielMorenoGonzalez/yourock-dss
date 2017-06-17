@@ -16,6 +16,8 @@ class CreateOrderlinesTable extends Migration
         Schema::create('orderlines', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('quantity');
+            $table->integer('instrument_id')->unsigned();
+            $table->foreign('instrument_id')->references('id')->on('instruments');
             $table->timestamps();
         });
     }
