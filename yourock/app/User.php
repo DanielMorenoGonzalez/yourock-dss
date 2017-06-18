@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Address;
+use App\Order;
 
 class User extends Authenticatable
 {
@@ -31,5 +32,9 @@ class User extends Authenticatable
     public function address() {
         //User tiene la clave ajena address_id
         return $this->belongsTo('App\Address');
+    }
+
+    public function orders() {
+        return $this->hasMany('App\Order');
     }
 }
