@@ -18,6 +18,8 @@ class CreateOrderlinesTable extends Migration
             $table->integer('quantity');
             $table->integer('instrument_id')->unsigned();
             $table->foreign('instrument_id')->references('id')->on('instruments');
+            $table->integer('order_id')->unsigned();
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->timestamps();
         });
     }
