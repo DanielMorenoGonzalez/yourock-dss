@@ -12,8 +12,7 @@
 */
 
 Route::get('/', function () {
-    return 'Página principal';
-    //return view('welcome');
+    return view('welcome', array('name' => 'Dany', 'age' => '22'));
 });
 
 //Prueba para mostrar las categorías
