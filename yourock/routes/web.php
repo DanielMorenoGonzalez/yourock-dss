@@ -12,5 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'Página principal';
+    //return view('welcome');
+});
+
+//Prueba para mostrar las categorías
+Route::get('categories', function() {
+    return 'Página de categorías';
+});
+
+//Prueba para mostrar el id de un usuario
+Route::get('user/{id}', function($id) {
+    return 'User ' . $id;
+});
+
+//Prueba para mostrar el nombre de un usuario
+Route::get('user/{name?}', function($name = null) {
+    return 'User ' . $name;
 });
