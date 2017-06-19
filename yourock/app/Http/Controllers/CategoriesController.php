@@ -8,9 +8,15 @@ use App\Instrument;
 
 class CategoriesController extends Controller
 {
-    public function showCategoryById($id) {
+    //Con este método tenemos los instrumentos que pertenecen a una determinada categoría
+    public function getProductsByCategory($id) {
         $category = Category::findOrFail($id);
         $instruments = $category->instruments;
         return view('home', array('category' => $category->name, 'instruments' => $instruments));
+    }
+
+    public function getCategories() {
+        $categories = Category::all();
+        return view('categories', ['categories' => $categories]);
     }
 }

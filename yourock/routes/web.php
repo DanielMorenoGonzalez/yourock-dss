@@ -18,10 +18,10 @@ Route::get('/', function () {
 */
 
 //Prueba para mostrar todas las categorías
-Route::get('categories', 'CategoriesController@showAll');
+Route::get('categories', 'CategoriesController@getCategories');
 
 //Prueba para mostrar el nombre de una categoría
-Route::get('categories/{id}', 'CategoriesController@showCategoryById');
+Route::get('categories/{id}', 'CategoriesController@getProductsByCategory');
 
 //Prueba para mostrar el id de un usuario
 Route::get('user/{id}', function($id) {

@@ -9,7 +9,9 @@
     </head>
     <body>
         
-        <h2>Categoría <?php echo $category; ?></h2>
+        @foreach ($categories as $category)
+            <p>Categoría: {{ $category->name }}</p>
+        @endforeach
         
     </body>
 </html>
