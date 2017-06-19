@@ -20,6 +20,7 @@ class CreateInstrumentsTable extends Migration
             $table->float('price');
             $table->integer('stock');
             $table->string('urlPhoto');
+            $table->string('manufacturer');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
