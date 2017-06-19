@@ -94,34 +94,34 @@ class InstrumentsTableSeeder extends Seeder
         $category2 = Category::find(2);
 
         //Creamos y guardamos distintos objetos relacionados con las baterías acústicas
-        $instrument6 = new Instrument([
+        $instrument8 = new Instrument([
             'name' => 'DW PDP CM5 Standard Red / Black',
             'description' => 'Esta batería, la cual está fabricada en madera de arce 100% con 7 capas en toms/bombo y 10 capas en la caja, está compuesta por un tom de 10" x 08", un tom de 12" x 09", un tom de suelo de 16" x 14", una caja de 14" x 5,5" y un bombo de 22" x 18". Además, contiene un set de herrajes de la serie Concept: soporte para Hi-Hat, soporte para caja, pedal individual para bombo, soporte recto para platillo y soporte jirafa para platillo. Disponible en Red Black Sparkle Fade, con acabado lacado Premium.',
             'price' => '1400',
             'stock' => '29',
             'urlPhoto' => 'urldelabateriaacustica1'
         ]);
-        $instrument6->category()->associate($category2);
-        $instrument6->save();
+        $instrument8->category()->associate($category2);
+        $instrument8->save();
 
-        $instrument7 = new Instrument([
+        $instrument9 = new Instrument([
             'name' => 'Sonor Essential Force Green Stage 3',
             'description' => 'Esta batería, la cual está fabricada en madera de abedul 100% de 6 capas (7,2mm), está compuesta por un tom de 10" x 08", un tom de 12" x 09", un tom de suelo de 16" x 16", una caja de 14" x 5,5" y un bombo de 22" x 18". Además, contiene un set de herrajes: soporte para Hi-Hat, soporte para caja, 2 soportes jirafa para platillos y un pedal individual para bombo. Disponible en Green Fade, con terminación Stage 3.',
             'price' => '1108',
             'stock' => '17',
             'urlPhoto' => 'urldelabateriaacustica2'
         ]);
-        $instrument7->category()->associate($category2);
-        $instrument7->save();
+        $instrument9->category()->associate($category2);
+        $instrument9->save();
 
-        $instrument8 = new Instrument([
+        $instrument10 = new Instrument([
             'name' => 'Tama Silverstar Standard - VBG',
             'description' => 'Esta batería, la cual está fabricada en madera de abedul 100% con un tono y resonancia ricos y potentes, está compuesta por un tom de 10" x 07", un tom de 12" x 08", un tom de suelo de 16" x 14", una caja de 14" x 05" y un bombo de 22" x 18". Además, contiene un set de herrajes: soporte para Hi-Hat, soporte para caja, 2 soportes con brazo para platillos y un pedal sencillo para bombo. Disponible en Vintage Burgundy Sparkle.',
             'price' => '1108',
             'stock' => '995',
             'urlPhoto' => 'urldelabateriaacustica3'
         ]);
-        $instrument8->category()->associate($category2);
-        $instrument8->save();
+        $instrument10->category()->associate($category2);
+        $instrument10->save();
     }
 }

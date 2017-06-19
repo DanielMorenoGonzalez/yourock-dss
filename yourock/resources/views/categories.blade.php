@@ -34,6 +34,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span>Regístrate</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Iniciar sesión</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Carrito</a></li>
             </ul>
         </div>
         </nav>
