@@ -15,6 +15,7 @@ class CategoriesController extends Controller
         return view('home', array('category' => $category->name, 'instruments' => $instruments));
     }
 
+    //Con este método tenemos todas las categorías
     public function getCategories() {
         $categories = Category::all();
         return view('categories', ['categories' => $categories]);

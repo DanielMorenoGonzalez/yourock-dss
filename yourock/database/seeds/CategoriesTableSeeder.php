@@ -18,13 +18,15 @@ class CategoriesTableSeeder extends Seeder
         //Creamos y guardamos distintos objetos relacionados
         $category1 = new Category([
             'name' => 'Guitarras eléctricas',
-            'description' => 'En esta sección se encuentran todas las guitarras eléctricas disponibles.'
+            'description' => 'En esta sección se encuentran todas las guitarras eléctricas disponibles.',
+            'urlName' => 'guitarraselectricas'
         ]);
         $category1->save();
 
         $category2 = new Category([
             'name' => 'Baterías acústicas',
-            'description' => 'En esta sección se encuentran todas las baterías acústicas disponibles.'
+            'description' => 'En esta sección se encuentran todas las baterías acústicas disponibles.',
+            'urlName' => 'bateriasacusticas'
         ]);
         $category2->save();
 

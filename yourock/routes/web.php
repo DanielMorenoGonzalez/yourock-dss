@@ -22,13 +22,3 @@ Route::get('categories', 'CategoriesController@getCategories');
 
 //Prueba para mostrar el nombre de una categoría
 Route::get('categories/{id}', 'CategoriesController@getProductsByCategory');
-
-//Prueba para mostrar el id de un usuario
-Route::get('user/{id}', function($id) {
-    return 'User ' . $id;
-});
-
-//Prueba para mostrar el nombre de un usuario
-Route::get('user/{name?}', function($name = null) {
-    return 'User ' . $name;
-});

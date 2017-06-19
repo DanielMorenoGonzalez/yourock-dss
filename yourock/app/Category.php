@@ -12,4 +12,5 @@ class Category extends Model
     public function instruments() {
         return $this->hasMany('App\Instrument');
     }
+
 }
