@@ -141,13 +141,9 @@ class InstrumentsTableSeeder extends Seeder
         $instrument11->category()->associate($category1);
         $instrument11->save();
 
-        
-
-
-
 
         //Recuperamos la categoría de las baterías acústicas
-        $category2 = Category::find(2);
+        $category2 = Category::find(3);
 
         //Creamos y guardamos distintos objetos relacionados con las baterías acústicas
         $instrument12 = new Instrument([

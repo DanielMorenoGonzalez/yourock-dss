@@ -13,33 +13,43 @@
         <title>YOU ROCK! - Home</title>
     </head>
     <body>
+    <header>
         <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">YOU ROCK!</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ url('categories') }}">Home</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-            <form class="navbar-form navbar-left">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                    </div>
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">YOU ROCK!</a>
                 </div>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Regístrate</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Iniciar sesión</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Carrito</a></li>
-            </ul>
-        </div>
-        </nav> 
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{ url('categories') }}">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @foreach ($categories as $categorydropdown)
+                                <li><a href="#">{{ $categorydropdown->name }}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                        </div>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>Regístrate</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Iniciar sesión</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Carrito</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header> 
 
         <h2>Categoría <?php echo $category; ?></h2>
         @foreach ($instruments as $instrument)
