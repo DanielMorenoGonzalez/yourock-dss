@@ -13,8 +13,8 @@ class CategoriesController extends Controller
     public function getProductsByCategory($id) {
         $category = Category::findOrFail($id);
         $instruments = $category->instruments;
-        //Usamos paginación de 10 instrumentos por cada página
-        $instruments = Instrument::where('category_id', $id)->paginate(10);
+        //Usamos paginación de 5 instrumentos por cada página
+        $instruments = Instrument::where('category_id', $id)->paginate(5);
         return view('home', array('category' => $category->name, 'instruments' => $instruments));
     }
 
