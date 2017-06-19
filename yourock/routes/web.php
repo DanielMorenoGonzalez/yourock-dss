@@ -11,14 +11,17 @@
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome', array('name' => 'Dany', 'age' => '22'));
 });
+*/
 
-//Prueba para mostrar las categorías
-Route::get('categories', function() {
-    return 'Página de categorías';
-});
+//Prueba para mostrar todas las categorías
+Route::get('categories', 'CategoriesController@showAll');
+
+//Prueba para mostrar el nombre de una categoría
+Route::get('categories/{id}', 'CategoriesController@showCategoryById');
 
 //Prueba para mostrar el id de un usuario
 Route::get('user/{id}', function($id) {
