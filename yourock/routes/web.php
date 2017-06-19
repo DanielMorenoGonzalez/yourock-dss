@@ -22,3 +22,4 @@ Route::get('categories', 'CategoriesController@getCategories');
 
 //Prueba para mostrar el nombre de una categoría
 Route::get('categories/{id}', 'CategoriesController@getProductsByCategory');
+

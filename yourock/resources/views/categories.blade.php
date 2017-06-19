@@ -8,10 +8,9 @@
         <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
         <link href="{{asset('favicon.ico')}}" rel="shortcut icon" type="image/x-icon">
         <link href="{{asset('css/estilopaginaprincipal.css')}}" rel="stylesheet">
-        <title>YOU ROCK!</title>
+        <title>YOU ROCK! - Categorías</title>
     </head>
     <body>
-
         <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -22,6 +21,16 @@
                 <li><a href="#">Productos</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                    </div>
+                </div>
+            </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span>Regístrate</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Iniciar sesión</a></li>
@@ -33,8 +42,6 @@
             <p>Categoría: {{ $category->name }}</p>
         @endforeach
 
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script
-
+        <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
     </body>
 </html>
