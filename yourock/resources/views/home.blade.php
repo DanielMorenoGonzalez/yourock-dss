@@ -43,6 +43,8 @@
             <p>Instrumento: {{ $instrument->name }}</p>
         @endforeach
 
+        {{ $instruments->links() }}
+
         <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
     </body>
 </html>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Instrument;
+use DB;
 
 class CategoriesController extends Controller
 {
@@ -12,6 +13,8 @@ class CategoriesController extends Controller
     public function getProductsByCategory($id) {
         $category = Category::findOrFail($id);
         $instruments = $category->instruments;
+        //Usamos paginación de 10 instrumentos por cada página
+        $instruments = Instrument::where('category_id', $id)->paginate(10);
         return view('home', array('category' => $category->name, 'instruments' => $instruments));
     }
 
