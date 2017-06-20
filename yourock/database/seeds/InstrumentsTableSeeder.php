@@ -245,12 +245,67 @@ class InstrumentsTableSeeder extends Seeder
         $instrument20->category()->associate($category2);
         $instrument20->save();
 
+        $instrument21 = new Instrument([
+            'name' => 'Sadowsky Metro Vintage MV5 NAT',
+            'description' => 'Este bajo eléctrico de 5 cuerdas, con cuerpo de fresno de pantano y fabricado en Japón, dispone de un mástil de arce y un diapasón de palisandro. Además, cuenta con 21 trastes, incluye 2 pastillas Sadowsky con cancelación de hum, 1 preamplificador Sadowsky con VTC2, herrajes cromados y 1 golpeador negro. Disponible en color Natural.',
+            'price' => '2680',
+            'stock' => '9',
+            'urlPhoto' => 'urldelbajoelectrico8',
+            'manufacturer' => 'Sadowsky'
+        ]);
+        $instrument21->category()->associate($category2);
+        $instrument21->save();
+
+        $instrument22 = new Instrument([
+            'name' => 'Fender Roger Waters Precision Bass BK',
+            'description' => 'Este bajo eléctrico de 4 cuerdas, con cuerpo de aliso, dispone de un mástil de arce y un diapasón de arce. Además, cuenta con 20 trastes, incluye 1 pastilla Seymour Duncan Basslines SPB-3, hardware cromado negro, cejuela Machined Brass, 1 golpeador negro de una capa, mecánicas Vintage 70´s Fender y puente Black Standard 4-saddle. Disponible en color Black (Negro).',
+            'price' => '840',
+            'stock' => '0',
+            'urlPhoto' => 'urldelbajoelectrico9',
+            'manufacturer' => 'Fender'
+        ]);
+        $instrument22->category()->associate($category2);
+        $instrument22->save();
+
+        $instrument23 = new Instrument([
+            'name' => 'Fender Squier Affinity P-Bass PJ Red',
+            'description' => 'Este bajo eléctrico de 4 cuerdas, con cuerpo de aliso, dispone de un mástil de arce con forma en C y un diapasón de palisandro. Además, cuenta con 20 trastes, incluye 1 pastilla Jazz, 1 pastilla Standard Split Precision, 2 controles de volumen, 1 control de tono, clavijas de afinación abiertas estándar, 1 golpeador negro de 3 capas y herrajes de cromo. Disponible en color Race Red (Rojo).',
+            'price' => '220',
+            'stock' => '69',
+            'urlPhoto' => 'urldelbajoelectrico10',
+            'manufacturer' => 'Fender'
+        ]);
+        $instrument23->category()->associate($category2);
+        $instrument23->save();
+
+        $instrument24 = new Instrument([
+            'name' => 'Harley Benton PB-20 BK Standard Series',
+            'description' => 'Este bajo eléctrico de 4 cuerdas, con cuerpo de álamo, dispone de un mástil de arce con forma en C y un diapasón de palisandro. Además, cuenta con 20 trastes, incluye 1 pastilla PB-style, 1 regulador de volumen, 1 regulador de tono, mecánicas classic PB-Style y hardware cromado. Disponible en color Black (Negro) brillante.',
+            'price' => '90',
+            'stock' => '114',
+            'urlPhoto' => 'urldelbajoelectrico11',
+            'manufacturer' => 'Harley Benton'
+        ]);
+        $instrument24->category()->associate($category2);
+        $instrument24->save();
+
+        $instrument25 = new Instrument([
+            'name' => 'ESP LTD AP-204 BGB',
+            'description' => 'Este bajo eléctrico de 4 cuerdas, con cuerpo de caoba, dispone de un mástil de caoba y un diapasón de palisandro. Además, cuenta con 21 trastes, incluye pastillas LDP y LDJ diseñadas por ESP, ecualizador de 2 bandas (potenciómetro apilado), volumen, balance, herrajes de cromo y clavijas de afinación LTD1 Disponible en color Burgundy Mist (Borgoña).',
+            'price' => '478',
+            'stock' => '43',
+            'urlPhoto' => 'urldelbajoelectrico12',
+            'manufacturer' => 'ESP'
+        ]);
+        $instrument25->category()->associate($category2);
+        $instrument25->save();
+
 
         //Recuperamos la categoría de las baterías acústicas
         $category3 = Category::find(3);
 
         //Creamos y guardamos distintos objetos relacionados con las baterías acústicas
-        $instrument21 = new Instrument([
+        $instrument26 = new Instrument([
             'name' => 'DW PDP CM5 Standard Red / Black',
             'description' => 'Esta batería, la cual está fabricada en madera de arce 100% con 7 capas en toms/bombo y 10 capas en la caja, está compuesta por un tom de 10" x 08", un tom de 12" x 09", un tom de suelo de 16" x 14", una caja de 14" x 5,5" y un bombo de 22" x 18". Además, contiene un set de herrajes de la serie Concept: soporte para Hi-Hat, soporte para caja, pedal individual para bombo, soporte recto para platillo y soporte jirafa para platillo. Disponible en Red Black Sparkle Fade, con acabado lacado Premium.',
             'price' => '1400',
@@ -258,10 +313,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelabateriaacustica1',
             'manufacturer' => 'DW'
         ]);
-        $instrument21->category()->associate($category3);
-        $instrument21->save();
+        $instrument26->category()->associate($category3);
+        $instrument26->save();
 
-        $instrument22 = new Instrument([
+        $instrument27 = new Instrument([
             'name' => 'Sonor Essential Force Green Stage 3',
             'description' => 'Esta batería, la cual está fabricada en madera de abedul 100% de 6 capas (7,2mm), está compuesta por un tom de 10" x 08", un tom de 12" x 09", un tom de suelo de 16" x 16", una caja de 14" x 5,5" y un bombo de 22" x 18". Además, contiene un set de herrajes: soporte para Hi-Hat, soporte para caja, 2 soportes jirafa para platillos y un pedal individual para bombo. Disponible en Green Fade, con terminación Stage 3.',
             'price' => '1108',
@@ -269,10 +324,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelabateriaacustica2',
             'manufacturer' => 'Sonor'
         ]);
-        $instrument22->category()->associate($category3);
-        $instrument22->save();
+        $instrument27->category()->associate($category3);
+        $instrument27->save();
 
-        $instrument23 = new Instrument([
+        $instrument28 = new Instrument([
             'name' => 'Tama Silverstar Standard - VBG',
             'description' => 'Esta batería, la cual está fabricada en madera de abedul 100% con un tono y resonancia ricos y potentes, está compuesta por un tom de 10" x 07", un tom de 12" x 08", un tom de suelo de 16" x 14", una caja de 14" x 05" y un bombo de 22" x 18". Además, contiene un set de herrajes: soporte para Hi-Hat, soporte para caja, 2 soportes con brazo para platillos y un pedal sencillo para bombo. Disponible en Vintage Burgundy Sparkle.',
             'price' => '1108',
@@ -280,7 +335,7 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelabateriaacustica3',
             'manufacturer' => 'Tama'
         ]);
-        $instrument23->category()->associate($category3);
-        $instrument23->save();
+        $instrument28->category()->associate($category3);
+        $instrument28->save();
     }
 }
