@@ -44,6 +44,15 @@
     </header> 
         
         <h1>Instrumento {{ $instrument->name }}</h1>
+        <p>Fabricante: {{ $instrument->manufacturer }}</p>
+        <p>Descripción: {{ $instrument->description }}</p>
+        <p>Precio: {{ $instrument->price }}€</p>
+
+        @if($instrument->stock != 0)
+            <p>Actualmente disponible con {{ $instrument->stock }} unidades</p>
+        @else
+            <p>Agotado. Llegarán nuevas unidades pronto</p>
+        @endif
 
         <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
