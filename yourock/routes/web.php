@@ -22,3 +22,6 @@ Route::get('categories/{category}', 'CategoriesController@show');
 
 //Ruta para mostrar un instrument específico
 Route::get('instruments/{instrument}', 'InstrumentsController@show');
+
+//Ruta para mostrar la página de contacto
+Route::get('contact', 'ContactController@index');
