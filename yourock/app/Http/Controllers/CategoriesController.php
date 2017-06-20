@@ -20,6 +20,6 @@ class CategoriesController extends Controller
         $category = Category::findOrFail($id);
         $instrumentsCount = $category->getInstrumentsByCategory($id)->count();
         $instruments = $category->getInstrumentsByCategory($id)->paginate(5);
-        return view('home', array('category' => $category->name, 'instrumentsCount' => $instrumentsCount, 'instruments' => $instruments));
+        return view('instruments', array('category' => $category->name, 'instrumentsCount' => $instrumentsCount, 'instruments' => $instruments));
     }
 }

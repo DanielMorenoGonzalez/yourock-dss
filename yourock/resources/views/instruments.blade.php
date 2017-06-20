@@ -43,7 +43,13 @@
         </nav>
     </header> 
 
-        <h1>Página home</h1>
+        <h2>Categoría <?php echo $category; ?></h2>
+        <p>Se han encontrado <?php echo $instrumentsCount; ?> resultados</p>
+        @foreach ($instruments as $instrument)
+            <p>Instrumento: {{ $instrument->name }}</p>
+        @endforeach
+
+        {{ $instruments->links() }}
 
         <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
