@@ -519,12 +519,67 @@ class InstrumentsTableSeeder extends Seeder
         $instrument44->category()->associate($category4);
         $instrument44->save();
 
+        $instrument45 = new Instrument([
+            'name' => 'Roland TD-4KP - V-Drum Portable Set',
+            'description' => 'Esta batería electrónica cuenta con 1 módulo TD-4, 125 instrumentos y 25 kits, modo entrenador para calentamiento, tempo y función de grabado. Además, dispone de la siguiente configuración: 1 pad para caja, 3 pads para tom, 1 pad para Hi-Hat, 1 pad para Crash, 1 pad para Ride, 1 pie para bombo y 1 pie para Hi-Hat.',
+            'price' => '730',
+            'stock' => '40',
+            'urlPhoto' => 'urldelabateriaelectronica6',
+            'manufacturer' => 'Roland'
+        ]);
+        $instrument45->category()->associate($category4);
+        $instrument45->save();
+
+        $instrument46 = new Instrument([
+            'name' => 'Millenium MPS-500 USB E-Drum Set',
+            'description' => 'Esta batería electrónica cuenta con 1 módulo MPS-500 con 418 sonidos, 80 sets (de ellos 30 para programación libre), 52 canciones demo integradas, 10 canciones de usuario, procesador de efectos DSP con Reverb integrado, metrónomo, salida de auriculares estéreo Jack de 3,6mm y puerto USB para comunicación MIDI. Además, dispone de la siguiente configuración: 1 pad de 10" para caja, 3 pads de 08" para tom, 1 pad de 08" para bombo, 1 pad de 08" para Hi-Hat, 1 pad de 12" para Crash, 1 pad de 12" para Ride, 1 pie para bombo y 1 pie para Hi-Hat.',
+            'price' => '389',
+            'stock' => '93',
+            'urlPhoto' => 'urldelabateriaelectronica7',
+            'manufacturer' => 'Millenium'
+        ]);
+        $instrument46->category()->associate($category4);
+        $instrument46->save();
+
+        $instrument47 = new Instrument([
+            'name' => 'Behringer XD8USB E-Drum Set',
+            'description' => 'Esta batería electrónica cuenta con 1 módulo con 110 sonidos, 15 sets de batería, interfaz de audio, 10 presets de fábrica, 5 sets de batería programables por el usuario y secuenciador incorporado. Además, dispone de la siguiente configuración: 1 pad de 08" para caja, 3 pads de 08" para tom, 1 pad para bombo, 1 pad de 12" para Hi-Hat, 1 pad de 12" para Crash, 1 pad de 12" para Ride, 1 pie simple para bombo y 1 pie para Hi-Hat.',
+            'price' => '324',
+            'stock' => '67',
+            'urlPhoto' => 'urldelabateriaelectronica8',
+            'manufacturer' => 'Behringer'
+        ]);
+        $instrument47->category()->associate($category4);
+        $instrument47->save();
+
+        $instrument48 = new Instrument([
+            'name' => 'Alesis Strike Pro Kit',
+            'description' => 'Esta batería electrónica cuenta con 1 módulo Strike Performance Drum con 1000 sonidos, 200 kits, muestras de archivos WAV, conector USB para conectar a un ordenador o cargar achivos WAV y pantalla LED de color de 4,3". Además, dispone de la siguiente configuración: 1 pad de malla de 14" para caja, 1 pad de malla de 08" para tom, 1 pad de malla de 10" para tom, 1 pad de malla de 12" para tom, 1 pad de malla de 14" para tom, 1 pad de malla de 14" para bombo, 1 pad de 12" para Hi-Hat, 3 pads de 14" para Crash y 1 pad de 16" para Ride. No incluye pedal para bombo ni pie para Hi-Hat.',
+            'price' => '2390',
+            'stock' => '0',
+            'urlPhoto' => 'urldelabateriaelectronica9',
+            'manufacturer' => 'Alesis'
+        ]);
+        $instrument48->category()->associate($category4);
+        $instrument48->save();
+
+        $instrument49 = new Instrument([
+            'name' => '2box Drumit Five MK2 E-DRUM System',
+            'description' => 'Esta batería electrónica cuenta con 1 sistema revolucionario con arquitectura de sonido abierto, 4- memorias GBFlash, sonidos sampleados 24-Bit-Multilayer con sobresaliente dinámica, 100 Kits editables, actualizaciones por USB e impertación de datos de audio y nuevos Multisamples. Además, dispone de la siguiente configuración: 1 pad de 12" para caja, 3 pads de malla de 10" para tom, 1 pad de 14" para bombo, 1 pad de 12" para Hi-Hat, 1 pad de 14" para Crash y 1 pad de 14" para Ride, 1 pedal sencillo para bombo y 1 pie para Hi-Hat.',
+            'price' => '2489',
+            'stock' => '3',
+            'urlPhoto' => 'urldelabateriaelectronica10',
+            'manufacturer' => '2box'
+        ]);
+        $instrument49->category()->associate($category4);
+        $instrument49->save();
+
 
         //Recuperamos la categoría de los pianos de cola
         $category5 = Category::find(5);
 
         //Creamos y guardamos distintos objetos relacionados con los pianos de cola
-        $instrument40 = new Instrument([
+        $instrument50 = new Instrument([
             'name' => 'Yamaha C3X PE Grand Piano',
             'description' => 'Este piano de cola, el cual está diseñado para poder resonar con el pianista, dispone de 88 teclas y 3 pedales (central: sostenuto). Además, tiene unas dimensiones de 186 x 149 x 101cm, y un peso de 320kg. Disponible en color Negro con alto brillo.',
             'price' => '27950',
@@ -532,10 +587,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelpianodecola1',
             'manufacturer' => 'Yamaha'
         ]);
-        $instrument40->category()->associate($category5);
-        $instrument40->save();
+        $instrument50->category()->associate($category5);
+        $instrument50->save();
 
-        $instrument41 = new Instrument([
+        $instrument51 = new Instrument([
             'name' => 'Kawai GL 10 E/P Grand Piano',
             'description' => 'Este piano de cola cuenta con una mécanica ultrasensible, martillos con fieltro en parte inferior y tapa del teclado de cierre suave. Además, tiene una longitud de 153cm y un peso de 282kg. Disponible en color Negro pulido.',
             'price' => '9600',
@@ -543,10 +598,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelpianodecola2',
             'manufacturer' => 'Kawai'
         ]);
-        $instrument41->category()->associate($category5);
-        $instrument41->save();
+        $instrument51->category()->associate($category5);
+        $instrument51->save();
 
-        $instrument42 = new Instrument([
+        $instrument52 = new Instrument([
             'name' => 'Steinway & Sons B-211',
             'description' => 'Este piano de cola, el cual está fabricado en 1982 y reconstruído por los especialistas de Steinway, cuenta con una rica escala e impresionante sonido y 1 banco Andexinger de alta calidad. Además, tiene una longitud de 211cm, una anchura de 148cm y un peso de 345kg. Disponible en color Negro.',
             'price' => '54699',
@@ -554,10 +609,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelpianodecola3',
             'manufacturer' => 'Steinway & Sons'
         ]);
-        $instrument42->category()->associate($category5);
-        $instrument42->save();
+        $instrument52->category()->associate($category5);
+        $instrument52->save();
 
-        $instrument43 = new Instrument([
+        $instrument53 = new Instrument([
             'name' => 'Yamaha GB1 K PWH',
             'description' => 'Este piano de cola, el cual cuenta toda la potencia, tonalidad y la gama expresiva de un piano de cola Yamaha clásico, dispone de 88 teclas y 3 pedales. Además, tiene unas dimensiones de 151 x 146 x 99cm, y un peso de 249kg. Disponible en color Blanco pulido.',
             'price' => '12489',
@@ -565,10 +620,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelpianodecola4',
             'manufacturer' => 'Yamaha'
         ]);
-        $instrument43->category()->associate($category5);
-        $instrument43->save();
+        $instrument53->category()->associate($category5);
+        $instrument53->save();
 
-        $instrument44 = new Instrument([
+        $instrument54 = new Instrument([
             'name' => 'Steinway & Sons A-188 Makassar',
             'description' => 'Este piano de cola incluye 1 banco de alta calidad con aspecto de coromandel y está reconstruído por los especialistas de Steinway. Además, tiene una longitud de 188cm, una anchura de 147cm y un peso de 315kg. Disponible en color Madera de coromandel pulida.',
             'price' => '41539',
@@ -576,10 +631,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelpianodecola5',
             'manufacturer' => 'Steinway & Sons'
         ]);
-        $instrument44->category()->associate($category5);
-        $instrument44->save();
+        $instrument54->category()->associate($category5);
+        $instrument54->save();
 
-        $instrument45 = new Instrument([
+        $instrument55 = new Instrument([
             'name' => 'Kawai GL 30 E/P Grand Piano',
             'description' => 'Este piano de cola cuenta con una mecánica ultrasensible, martillos con fieltro en parte inferior, escala dúplex y tapa del teclado de cierre suave. Además, tiene una longitud de 166cm y un peso de 312kg. Disponible en color Negro pulido.',
             'price' => '14459',
@@ -587,10 +642,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelpianodecola6',
             'manufacturer' => 'Kawai'
         ]);
-        $instrument45->category()->associate($category5);
-        $instrument45->save();
+        $instrument55->category()->associate($category5);
+        $instrument55->save();
 
-        $instrument46 = new Instrument([
+        $instrument56 = new Instrument([
             'name' => 'Yamaha C3X SH PE Silent Grand Piano',
             'description' => 'Este piano de cola cuenta con 88 teclas, 3 pedales, 19 sonidos diferentes, un sistema SH-Silent y función de grabación con puerto USB para almacenamiento de datos de canciones. Además, tiene unas dimensiones de 186 x 149 x 101cm, y un peso de 320kg. Disponible en color Negro pulido.',
             'price' => '32500',
@@ -598,15 +653,15 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelpianodecola7',
             'manufacturer' => 'Yamaha'
         ]);
-        $instrument46->category()->associate($category5);
-        $instrument46->save();
+        $instrument56->category()->associate($category5);
+        $instrument56->save();
 
 
         //Recuperamos la categoría de los teclados
         $category6 = Category::find(6);
 
         //Creamos y guardamos distintos objetos relacionados con los teclados
-        $instrument47 = new Instrument([
+        $instrument57 = new Instrument([
             'name' => 'Yamaha PSR-E353',
             'description' => 'Este teclado cuenta con 61 teclas sensibles al tacto, 535 sonidos + 18 kits de batería/SFX + 20 arpegios (incluye voces XGlite), 158 estilos, 154 canciones internas, 32 notas de polifonía, secuenciador de 2 pistas / 5 canciones de usuario, 1 ajuste de 1 toque, efectos Reverb y Chorus, memoria de registro, metrónomo, entrada auxiliar (mini estéreo), USB a Host, auriculares, pedal de sustain y sistema de altavoces (2x 2,5W). Además, tiene unas dimensiones de 945 x 369 x 122mm (ancho x profundo x alto) y un peso de 4,4kg. Disponible en color Acero.',
             'price' => '150',
@@ -614,10 +669,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado1',
             'manufacturer' => 'Yamaha'
         ]);
-        $instrument47->category()->associate($category6);
-        $instrument47->save();
+        $instrument57->category()->associate($category6);
+        $instrument57->save();
 
-        $instrument48 = new Instrument([
+        $instrument58 = new Instrument([
             'name' => 'Thomann SP-5600',
             'description' => 'Este teclado cuenta con 88 teclas de acción martillo, 600 sonidos, 230 estilos (10 estilos de usuario), 120 canciones, 128 notas de polifonía, control de acompañamiento (Start/Stop, Sync Start, Intro/Ending, Fill A y Fill B), efectos Reverb y Chorus, secuenciador, metrónomo, ecualizador master, 2 altavoces de 10W, entrada y salida MIDI por USB, funciones (Duo, Split, Layer y Sustain) e incluye pedal de sustain, atril y fuente de alimentación. Además, tiene unas dimensiones de 1365 x 366 x 137mm (ancho x profundo x alto) y un peso de 13,8kg. Disponible en color Negro matizado.',
             'price' => '389',
@@ -625,10 +680,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado2',
             'manufacturer' => 'Thomann'
         ]);
-        $instrument48->category()->associate($category6);
-        $instrument48->save();
+        $instrument58->category()->associate($category6);
+        $instrument58->save();
 
-        $instrument49 = new Instrument([
+        $instrument59 = new Instrument([
             'name' => 'Casio CTK-2400',
             'description' => 'Este teclado cuenta con 61 teclas, polifonía de 48 voces, 400 sonidos, 150 estilos, 110 piezas de práctica, sistema de aprendizaje de 4 niveles, 5 Voicepads con función Sampling, transposición, entrada de audio estéreo minijack, USB to Host, conexión de pedal Sustain, sistema de altavoces 2x2 W y sistema de autodesconexión (ahorro energético). Además, dispone de unas dimensiones de 946 x 307 x 92mm (ancho x profundo x alto) y un peso de 3,4kg. Disponible en color Negro matizado.',
             'price' => '108',
@@ -636,10 +691,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado3',
             'manufacturer' => 'Casio'
         ]);
-        $instrument49->category()->associate($category6);
-        $instrument49->save();
+        $instrument59->category()->associate($category6);
+        $instrument59->save();
 
-        $instrument50 = new Instrument([
+        $instrument60 = new Instrument([
             'name' => 'Startone MK-200',
             'description' => 'Este teclado cuenta con 61 teclas con respuesta al tacto, 32 voces de polifonía, 320 voces, 110 estilos, 100 canciones, 100 canciones de demostración, funciones (Dual, Sustain, Lower), memoria con 4 registros, metrónomo, reproducción y grabación, conexiones (auriculares, sustain y USB a Host) y sistema de altavoces (2 x 3W). Además, dispone de unas dimensiones de 940 x 360 x 136mm (ancho x profundo x alto) y un peso de 4,5kg. Disponible en color Negro.',
             'price' => '79',
@@ -647,10 +702,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado4',
             'manufacturer' => 'Startone'
         ]);
-        $instrument50->category()->associate($category6);
-        $instrument50->save();
+        $instrument60->category()->associate($category6);
+        $instrument60->save();
 
-        $instrument51 = new Instrument([
+        $instrument61 = new Instrument([
             'name' => 'Casio LK-280',
             'description' => 'Este teclado cuenta con 61 teclas iluminadas sensibles al tacto, 48 notas de polifonía, 600 sonidos, 180 estilos, 110 canciones internas, sistema de aprendizaje de 3 niveles, función de transposición, metrónomo, sampler interno con grabación de hasta 10 segundos, conexión USB (MIDI), grabador de 6 pistas interno, reproductor SMF, entrada para pedal de sustain y 2 altavoces de 2,5W. Además, dispone de unas dimensiones de 948 x 350 x 103mm (ancho x profundo x alto) y un peso de 4,5kg. Disponible en color Acero.',
             'price' => '210',
@@ -658,10 +713,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado5',
             'manufacturer' => 'Casio'
         ]);
-        $instrument51->category()->associate($category6);
-        $instrument51->save();
+        $instrument61->category()->associate($category6);
+        $instrument61->save();
 
-        $instrument52 = new Instrument([
+        $instrument62 = new Instrument([
             'name' => 'Casio MZ-X500',
             'description' => 'Este teclado cuenta con 61 teclas sensibles al tacto, 128 notas de polifonía, 1100 sonidos, 16 pads para muestras y frases, transposición, efectos (Reverb, Chorus, Delay y DSP), metrónomo, 6 canciones de demostración, grabador de audio y MIDI, conexión USB a Host y USB a dispositivo, entradas para Pedal1/Pedal2 y sistema de altavoces (2 x 20W). Además, dispone de unas dimensiones de 950 x 400 x 151mm (ancho x profundo x alto) y un peso de 7,6kg. Disponible en color Azul metalizado.',
             'price' => '800',
@@ -669,10 +724,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado6',
             'manufacturer' => 'Casio'
         ]);
-        $instrument52->category()->associate($category6);
-        $instrument52->save();
+        $instrument62->category()->associate($category6);
+        $instrument62->save();
 
-        $instrument53 = new Instrument([
+        $instrument63 = new Instrument([
             'name' => 'Korg Havian 30',
             'description' => 'Este teclado cuenta con 88 teclas de acción martillo contrapesadas, más de 950 sonidos, 256 sonidos de usuario, 420 estilos precargados, 128 kits de batería, 128 notas de polifonía, 4 bloques de efectos master estéreo, 125 tipos de efectos, ecualizador de 3 bandas para cada pista, secuenciador, metrónomo, conexiones (USB-MIDI, USB a dispositivo, salida de auriculares/audio y pedal de sustain), atril, fuente de alimentación, DVD accesorio, pedal Damper DS-2H y sistema de altavoces (2 x 25W). Además, dispone de unas dimensiones de 1312 × 389 × 146mm (ancho x profundo x alto) y un peso de 15,1kg. Disponible en color Negro con matices rojos.',
             'price' => '1489',
@@ -680,10 +735,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado7',
             'manufacturer' => 'Korg'
         ]);
-        $instrument53->category()->associate($category6);
-        $instrument53->save();
+        $instrument63->category()->associate($category6);
+        $instrument63->save();
 
-        $instrument54 = new Instrument([
+        $instrument64 = new Instrument([
             'name' => 'Casio SA 78',
             'description' => 'Este teclado cuenta con 44 teclas mini, 8 notas de polifonía, 100 sonidos, 50 estilos, 5 pads de batería, salida de auriculares y sistema de 2 altavoces de 0,8W. Además, dispone de unas dimensiones de 604 x 211 x 57mm (ancho x profundo x alto) y un peso de 1,4kg. Disponible en color Negro/Rosa.',
             'price' => '60',
@@ -691,10 +746,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado8',
             'manufacturer' => 'Casio'
         ]);
-        $instrument54->category()->associate($category6);
-        $instrument54->save();
+        $instrument64->category()->associate($category6);
+        $instrument64->save();
 
-        $instrument55 = new Instrument([
+        $instrument65 = new Instrument([
             'name' => 'Yamaha DGX-660 WH',
             'description' => 'Este teclado cuenta con 88 teclas con teclado GHS, motor de sonido Pure CF Sound Engine, control acústico inteligente (IAC), 192 notas de polifonía, 554 sonidos, 205 estilos, 41 tipos de reverberación, 44 tipos de chorus, 237 tipos de DSP, ecualizador master por presets (5 tipos), 100 canciones preset, grabador de audio (grabación y reproducción WAV), métronomo, transposición, conexiones (USB a Host, USB a dispositivo, salida de auriculares, entrada auxiliar, micrófono y pedal sustain), soporte de teclado y sistema de altavoces (2 x 6W). Además, dispone de unas dimensiones de 1399 x 445 x 761mm (ancho x profundo x alto) y un peso de 28kg. Disponible en color Blanco.',
             'price' => '705',
@@ -702,10 +757,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado9',
             'manufacturer' => 'Yamaha'
         ]);
-        $instrument55->category()->associate($category6);
-        $instrument55->save();
+        $instrument65->category()->associate($category6);
+        $instrument65->save();
 
-        $instrument56 = new Instrument([
+        $instrument66 = new Instrument([
             'name' => 'Korg PA-600',
             'description' => 'Este teclado cuenta con 61 teclas con dinámica sensible, polifonía de 128 voces, ecualizador de 3 bandas para cada pista, 950 sonidos, 360 estilos, 600 espacios de memoria de estilos de usuario, soporta MP3 y MP3+G, 2 modos de guitarra, secuenciador de 16 pistas, USB to Host, conexión de pedal sordina, conexión de pedal asignable, manual, soporte de partituras, DVD, alimentador y altavoces 2 x 15 W. Además, dispone de unas dimensiones de 1030 x 378 x 127 mm (ancho x profundo x alto) y un peso de 11kg. Disponible en color Acero.',
             'price' => '938',
@@ -713,10 +768,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado10',
             'manufacturer' => 'Korg'
         ]);
-        $instrument56->category()->associate($category6);
-        $instrument56->save();
+        $instrument66->category()->associate($category6);
+        $instrument66->save();
 
-        $instrument57 = new Instrument([
+        $instrument67 = new Instrument([
             'name' => 'Casio SA 47',
             'description' => 'Este teclado cuenta con 32 teclas mini, polifonía de 8 voces, 100 sonidos, 50 estilos, 10 temas para practicar, 5 pads de batería, salida de auriculares y sistema de altavoces (2 x 0,5 W). Además, dispone de unas dimensiones de 448 x 208 x 51mm (ancho x profundo x alto) y un peso de 1kg. Disponible en color Negro/Gris.',
             'price' => '45',
@@ -724,10 +779,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado11',
             'manufacturer' => 'Casio'
         ]);
-        $instrument57->category()->associate($category6);
-        $instrument57->save();
+        $instrument67->category()->associate($category6);
+        $instrument67->save();
 
-        $instrument58 = new Instrument([
+        $instrument68 = new Instrument([
             'name' => 'Yamaha YPT-340',
             'description' => 'Este teclado cuenta con 61 teclas sensibles al tacto, 550 sonidos, 136 estilos, 102 canciones internas, polifonía de 32 notas, Secuenciador de 2 pistas / 5 canciones de usuario, ajuste de 1 toque, efectos (Reverb, Chorus, Ecualizador Master y Armonía), metrónomo, memoria de registro, transposición, conexiones (Entrada auxiliar, USB a Host, Auriculares y Pedal de sustain), fuente de alimentación, atril y sistema de 2 altavoces de 2,5W. Además, dispone de unas dimensiones de 945 x 368 x 121mm (ancho x profundo x alto) y un peso de 4,4kg. Disponible en color Plateado.',
             'price' => '138',
@@ -735,10 +790,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado12',
             'manufacturer' => 'Yamaha'
         ]);
-        $instrument58->category()->associate($category6);
-        $instrument58->save();
+        $instrument68->category()->associate($category6);
+        $instrument68->save();
 
-        $instrument59 = new Instrument([
+        $instrument69 = new Instrument([
             'name' => 'Casio LK-247',
             'description' => 'Este teclado cuenta con 61 teclas luminosas tipo piano y con sensibilidad, polifonía de 48 voces, 400 sonidos, 150 estilos, 110 canciones, función de aprendizaje para ambas manos, función Sampling con 5 Voice-Pads, toma de auriculares estéreo minijack, transposición, entrada de audio estéreo minijack, micrófono, conexión de pedal, USB (MIDI) y sistema de altavoces de 2x2 W. Además, dispone de unas dimensiones de 946 x 307 x 92mm (ancho x profundo x alto) y un peso de 3,6kg. Disponible en color Plateado.',
             'price' => '207',
@@ -746,10 +801,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado13',
             'manufacturer' => 'Casio'
         ]);
-        $instrument59->category()->associate($category6);
-        $instrument59->save();
+        $instrument69->category()->associate($category6);
+        $instrument69->save();
 
-        $instrument60 = new Instrument([
+        $instrument70 = new Instrument([
             'name' => 'Roland BK-5',
             'description' => 'Este teclado cuenta con 61 teclas sensibles, 1.172 sonidos, 60 patrones de batería, polifonía de 128 voces, 305 estilos, transposición, 954 asistencias musicales (interno), grabador performance con max. 999 entradas por lista, grabador USB (para datos Wave, Video, Real-Time-Player SMF en formato 0/1, KAR, MP3 y WAV), conexión de auriculares, USB Host (almacenamiento de datos) y sistema de altavoces (2 x 12 W). Además, dispone de unas dimensiones de 1044 x 317 x 129mm (ancho x profundo x alto) y un peso de 7,5kg. Disponible en color Negro.',
             'price' => '718',
@@ -757,9 +812,8 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelteclado14',
             'manufacturer' => 'Roland BK-5'
         ]);
-        $instrument60->category()->associate($category6);
-        $instrument60->save();
+        $instrument70->category()->associate($category6);
+        $instrument70->save();
 
-        
     }
 }
