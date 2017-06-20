@@ -595,5 +595,116 @@ class InstrumentsTableSeeder extends Seeder
         $instrument50->category()->associate($category6);
         $instrument50->save();
 
+        $instrument51 = new Instrument([
+            'name' => 'Casio LK-280',
+            'description' => 'Este teclado cuenta con 61 teclas iluminadas sensibles al tacto, 48 notas de polifonía, 600 sonidos, 180 estilos, 110 canciones internas, sistema de aprendizaje de 3 niveles, función de transposición, metrónomo, sampler interno con grabación de hasta 10 segundos, conexión USB (MIDI), grabador de 6 pistas interno, reproductor SMF, entrada para pedal de sustain y 2 altavoces de 2,5W. Además, dispone de unas dimensiones de 948 x 350 x 103mm (ancho x profundo x alto) y un peso de 4,5kg. Disponible en color Acero.',
+            'price' => '210',
+            'stock' => '54',
+            'urlPhoto' => 'urldelteclado5',
+            'manufacturer' => 'Casio'
+        ]);
+        $instrument51->category()->associate($category6);
+        $instrument51->save();
+
+        $instrument52 = new Instrument([
+            'name' => 'Casio MZ-X500',
+            'description' => 'Este teclado cuenta con 61 teclas sensibles al tacto, 128 notas de polifonía, 1100 sonidos, 16 pads para muestras y frases, transposición, efectos (Reverb, Chorus, Delay y DSP), metrónomo, 6 canciones de demostración, grabador de audio y MIDI, conexión USB a Host y USB a dispositivo, entradas para Pedal1/Pedal2 y sistema de altavoces (2 x 20W). Además, dispone de unas dimensiones de 950 x 400 x 151mm (ancho x profundo x alto) y un peso de 7,6kg. Disponible en color Azul metalizado.',
+            'price' => '800',
+            'stock' => '44',
+            'urlPhoto' => 'urldelteclado6',
+            'manufacturer' => 'Casio'
+        ]);
+        $instrument52->category()->associate($category6);
+        $instrument52->save();
+
+        $instrument53 = new Instrument([
+            'name' => 'Korg Havian 30',
+            'description' => 'Este teclado cuenta con 88 teclas de acción martillo contrapesadas, más de 950 sonidos, 256 sonidos de usuario, 420 estilos precargados, 128 kits de batería, 128 notas de polifonía, 4 bloques de efectos master estéreo, 125 tipos de efectos, ecualizador de 3 bandas para cada pista, secuenciador, metrónomo, conexiones (USB-MIDI, USB a dispositivo, salida de auriculares/audio y pedal de sustain), atril, fuente de alimentación, DVD accesorio, pedal Damper DS-2H y sistema de altavoces (2 x 25W). Además, dispone de unas dimensiones de 1312 × 389 × 146mm (ancho x profundo x alto) y un peso de 15,1kg. Disponible en color Negro con matices rojos.',
+            'price' => '1489',
+            'stock' => '20',
+            'urlPhoto' => 'urldelteclado7',
+            'manufacturer' => 'Korg'
+        ]);
+        $instrument53->category()->associate($category6);
+        $instrument53->save();
+
+        $instrument54 = new Instrument([
+            'name' => 'Casio SA 78',
+            'description' => 'Este teclado cuenta con 44 teclas mini, 8 notas de polifonía, 100 sonidos, 50 estilos, 5 pads de batería, salida de auriculares y sistema de 2 altavoces de 0,8W. Además, dispone de unas dimensiones de 604 x 211 x 57mm (ancho x profundo x alto) y un peso de 1,4kg. Disponible en color Negro/Rosa.',
+            'price' => '60',
+            'stock' => '79',
+            'urlPhoto' => 'urldelteclado8',
+            'manufacturer' => 'Casio'
+        ]);
+        $instrument54->category()->associate($category6);
+        $instrument54->save();
+
+        $instrument55 = new Instrument([
+            'name' => 'Yamaha DGX-660 WH',
+            'description' => 'Este teclado cuenta con 88 teclas con teclado GHS, motor de sonido Pure CF Sound Engine, control acústico inteligente (IAC), 192 notas de polifonía, 554 sonidos, 205 estilos, 41 tipos de reverberación, 44 tipos de chorus, 237 tipos de DSP, ecualizador master por presets (5 tipos), 100 canciones preset, grabador de audio (grabación y reproducción WAV), métronomo, transposición, conexiones (USB a Host, USB a dispositivo, salida de auriculares, entrada auxiliar, micrófono y pedal sustain), soporte de teclado y sistema de altavoces (2 x 6W). Además, dispone de unas dimensiones de 1399 x 445 x 761mm (ancho x profundo x alto) y un peso de 28kg. Disponible en color Blanco.',
+            'price' => '705',
+            'stock' => '31',
+            'urlPhoto' => 'urldelteclado9',
+            'manufacturer' => 'Yamaha'
+        ]);
+        $instrument55->category()->associate($category6);
+        $instrument55->save();
+
+        $instrument56 = new Instrument([
+            'name' => 'Korg PA-600',
+            'description' => 'Este teclado cuenta con 61 teclas con dinámica sensible, polifonía de 128 voces, ecualizador de 3 bandas para cada pista, 950 sonidos, 360 estilos, 600 espacios de memoria de estilos de usuario, soporta MP3 y MP3+G, 2 modos de guitarra, secuenciador de 16 pistas, USB to Host, conexión de pedal sordina, conexión de pedal asignable, manual, soporte de partituras, DVD, alimentador y altavoces 2 x 15 W. Además, dispone de unas dimensiones de 1030 x 378 x 127 mm (ancho x profundo x alto) y un peso de 11kg. Disponible en color Acero.',
+            'price' => '938',
+            'stock' => '47',
+            'urlPhoto' => 'urldelteclado10',
+            'manufacturer' => 'Korg'
+        ]);
+        $instrument56->category()->associate($category6);
+        $instrument56->save();
+
+        $instrument57 = new Instrument([
+            'name' => 'Casio SA 47',
+            'description' => 'Este teclado cuenta con 32 teclas mini, polifonía de 8 voces, 100 sonidos, 50 estilos, 10 temas para practicar, 5 pads de batería, salida de auriculares y sistema de altavoces (2 x 0,5 W). Además, dispone de unas dimensiones de 448 x 208 x 51mm (ancho x profundo x alto) y un peso de 1kg. Disponible en color Negro/Gris.',
+            'price' => '45',
+            'stock' => '145',
+            'urlPhoto' => 'urldelteclado11',
+            'manufacturer' => 'Casio'
+        ]);
+        $instrument57->category()->associate($category6);
+        $instrument57->save();
+
+        $instrument58 = new Instrument([
+            'name' => 'Yamaha YPT-340',
+            'description' => 'Este teclado cuenta con 61 teclas sensibles al tacto, 550 sonidos, 136 estilos, 102 canciones internas, polifonía de 32 notas, Secuenciador de 2 pistas / 5 canciones de usuario, ajuste de 1 toque, efectos (Reverb, Chorus, Ecualizador Master y Armonía), metrónomo, memoria de registro, transposición, conexiones (Entrada auxiliar, USB a Host, Auriculares y Pedal de sustain), fuente de alimentación, atril y sistema de 2 altavoces de 2,5W. Además, dispone de unas dimensiones de 945 x 368 x 121mm (ancho x profundo x alto) y un peso de 4,4kg. Disponible en color Plateado.',
+            'price' => '138',
+            'stock' => '0',
+            'urlPhoto' => 'urldelteclado12',
+            'manufacturer' => 'Yamaha'
+        ]);
+        $instrument58->category()->associate($category6);
+        $instrument58->save();
+
+        $instrument59 = new Instrument([
+            'name' => 'Casio LK-247',
+            'description' => 'Este teclado cuenta con 61 teclas luminosas tipo piano y con sensibilidad, polifonía de 48 voces, 400 sonidos, 150 estilos, 110 canciones, función de aprendizaje para ambas manos, función Sampling con 5 Voice-Pads, toma de auriculares estéreo minijack, transposición, entrada de audio estéreo minijack, micrófono, conexión de pedal, USB (MIDI) y sistema de altavoces de 2x2 W. Además, dispone de unas dimensiones de 946 x 307 x 92mm (ancho x profundo x alto) y un peso de 3,6kg. Disponible en color Plateado.',
+            'price' => '207',
+            'stock' => '39',
+            'urlPhoto' => 'urldelteclado13',
+            'manufacturer' => 'Casio'
+        ]);
+        $instrument59->category()->associate($category6);
+        $instrument59->save();
+
+        $instrument60 = new Instrument([
+            'name' => 'Roland BK-5',
+            'description' => 'Este teclado cuenta con 61 teclas sensibles, 1.172 sonidos, 60 patrones de batería, polifonía de 128 voces, 305 estilos, transposición, 954 asistencias musicales (interno), grabador performance con max. 999 entradas por lista, grabador USB (para datos Wave, Video, Real-Time-Player SMF en formato 0/1, KAR, MP3 y WAV), conexión de auriculares, USB Host (almacenamiento de datos) y sistema de altavoces (2 x 12 W). Además, dispone de unas dimensiones de 1044 x 317 x 129mm (ancho x profundo x alto) y un peso de 7,5kg. Disponible en color Negro.',
+            'price' => '718',
+            'stock' => '21',
+            'urlPhoto' => 'urldelteclado14',
+            'manufacturer' => 'Roland BK-5'
+        ]);
+        $instrument60->category()->associate($category6);
+        $instrument60->save();
+
+        
     }
 }
