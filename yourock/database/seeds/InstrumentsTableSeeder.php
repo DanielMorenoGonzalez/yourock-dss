@@ -547,5 +547,53 @@ class InstrumentsTableSeeder extends Seeder
         $instrument46->category()->associate($category5);
         $instrument46->save();
 
+        //Recuperamos la categoría de los teclados
+        $category6 = Category::find(6);
+
+        //Creamos y guardamos distintos objetos relacionados con los teclados
+        $instrument47 = new Instrument([
+            'name' => 'Yamaha PSR-E353',
+            'description' => 'Este teclado cuenta con 61 teclas sensibles al tacto, 535 sonidos + 18 kits de batería/SFX + 20 arpegios (incluye voces XGlite), 158 estilos, 154 canciones internas, 32 notas de polifonía, secuenciador de 2 pistas / 5 canciones de usuario, 1 ajuste de 1 toque, efectos Reverb y Chorus, memoria de registro, metrónomo, entrada auxiliar (mini estéreo), USB a Host, auriculares, pedal de sustain y sistema de altavoces (2x 2,5W). Además, tiene unas dimensiones de 945 x 369 x 122mm (ancho x profundo x alto) y un peso de 4,4kg. Disponible en color Acero.',
+            'price' => '150',
+            'stock' => '78',
+            'urlPhoto' => 'urldelteclado1',
+            'manufacturer' => 'Yamaha'
+        ]);
+        $instrument47->category()->associate($category6);
+        $instrument47->save();
+
+        $instrument48 = new Instrument([
+            'name' => 'Thomann SP-5600',
+            'description' => 'Este teclado cuenta con 88 teclas de acción martillo, 600 sonidos, 230 estilos (10 estilos de usuario), 120 canciones, 128 notas de polifonía, control de acompañamiento (Start/Stop, Sync Start, Intro/Ending, Fill A y Fill B), efectos Reverb y Chorus, secuenciador, metrónomo, ecualizador master, 2 altavoces de 10W, entrada y salida MIDI por USB, funciones (Duo, Split, Layer y Sustain) e incluye pedal de sustain, atril y fuente de alimentación. Además, tiene unas dimensiones de 1365 x 366 x 137mm (ancho x profundo x alto) y un peso de 13,8kg. Disponible en color Negro matizado.',
+            'price' => '389',
+            'stock' => '0',
+            'urlPhoto' => 'urldelteclado2',
+            'manufacturer' => 'Thomann'
+        ]);
+        $instrument48->category()->associate($category6);
+        $instrument48->save();
+
+        $instrument49 = new Instrument([
+            'name' => 'Casio CTK-2400',
+            'description' => 'Este teclado cuenta con 61 teclas, polifonía de 48 voces, 400 sonidos, 150 estilos, 110 piezas de práctica, sistema de aprendizaje de 4 niveles, 5 Voicepads con función Sampling, transposición, entrada de audio estéreo minijack, USB to Host, conexión de pedal Sustain, sistema de altavoces 2x2 W y sistema de autodesconexión (ahorro energético). Además, dispone de unas dimensiones de 946 x 307 x 92mm (ancho x profundo x alto) y un peso de 3,4kg. Disponible en color Negro matizado.',
+            'price' => '108',
+            'stock' => '67',
+            'urlPhoto' => 'urldelteclado3',
+            'manufacturer' => 'Casio'
+        ]);
+        $instrument49->category()->associate($category6);
+        $instrument49->save();
+
+        $instrument50 = new Instrument([
+            'name' => 'Startone MK-200',
+            'description' => 'Este teclado cuenta con 61 teclas con respuesta al tacto, 32 voces de polifonía, 320 voces, 110 estilos, 100 canciones, 100 canciones de demostración, funciones (Dual, Sustain, Lower), memoria con 4 registros, metrónomo, reproducción y grabación, conexiones (auriculares, sustain y USB a Host) y sistema de altavoces (2 x 3W). Además, dispone de unas dimensiones de 940 x 360 x 136mm (ancho x profundo x alto) y un peso de 4,5kg. Disponible en color Negro.',
+            'price' => '79',
+            'stock' => '120',
+            'urlPhoto' => 'urldelteclado4',
+            'manufacturer' => 'Startone'
+        ]);
+        $instrument50->category()->associate($category6);
+        $instrument50->save();
+
     }
 }
