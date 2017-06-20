@@ -21,15 +21,6 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ url('categories') }}">Home</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos
-                        <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            @foreach ($categories as $categorydropdown)
-                                <li><a href="#">{{ $categorydropdown->name }}</a></li>
-                            @endforeach
-                        </ul>
-                    </li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
@@ -52,6 +43,7 @@
     </header> 
 
         <h2>Categoría <?php echo $category; ?></h2>
+        <p>Se han encontrado <?php echo $instrumentsCount; ?> resultados</p>
         @foreach ($instruments as $instrument)
             <p>Instrumento: {{ $instrument->name }}</p>
         @endforeach

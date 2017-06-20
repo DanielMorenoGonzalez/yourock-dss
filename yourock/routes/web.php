@@ -18,8 +18,13 @@ Route::get('/', function () {
 */
 
 //Prueba para mostrar todas las categorías
-Route::get('categories', 'CategoriesController@getCategories');
+Route::get('categories', 'CategoriesController@index');
 
+//Prueba para mostrar una categoría
+Route::get('categories/{id}', 'CategoriesController@show');
+
+/*
 //Prueba para mostrar el nombre de una categoría
 Route::get('categories/{id}', 'CategoriesController@getProductsByCategory');
+*/
 

@@ -9,19 +9,17 @@ use DB;
 
 class CategoriesController extends Controller
 {
-    //Con este método tenemos los instrumentos que pertenecen a una determinada categoría
-    public function getProductsByCategory($id) {
-        $category = Category::findOrFail($id);
-        $categories = Category::all();
-        $instruments = $category->instruments;
-        //Usamos paginación de 5 instrumentos por cada página
-        $instruments = Instrument::where('category_id', $id)->paginate(5);
-        return view('home', array('category' => $category->name, 'categories' => $categories, 'instruments' => $instruments));
-    }
-
     //Con este método tenemos todas las categorías
-    public function getCategories() {
+    public function index() {
         $categories = Category::all();
         return view('categories', ['categories' => $categories]);
+    }
+
+    //Con este método tenemos los productos de todas las categorías, el total y la paginación
+    public function show($id){
+        $category = Category::findOrFail($id);
+        $instrumentsCount = $category->getInstrumentsByCategory($id)->count();
+        $instruments = $category->getInstrumentsByCategory($id)->paginate(5);
+        return view('home', array('category' => $category->name, 'instrumentsCount' => $instrumentsCount, 'instruments' => $instruments));
     }
 }
