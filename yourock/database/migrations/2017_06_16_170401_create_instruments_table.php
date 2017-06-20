@@ -17,7 +17,7 @@ class CreateInstrumentsTable extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('description');
-            $table->float('price');
+            $table->integer('price');
             $table->integer('stock');
             $table->string('urlPhoto');
             $table->string('manufacturer');

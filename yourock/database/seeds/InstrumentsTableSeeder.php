@@ -371,5 +371,93 @@ class InstrumentsTableSeeder extends Seeder
         $instrument31->category()->associate($category3);
         $instrument31->save();
 
+        $instrument32 = new Instrument([
+            'name' => 'DW Design Series - Tobacco Bundle',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de arce norteamericano 100%, está compuesta por un tom de 10" x 08", un tom de 12" x 09", un tom de suelo de 16" x 14", una caja de 14" x 5,5" y un bombo de 22" x 18" (sin roseta). Además, contiene un juego de herrajes Millenium: 1 soporte para Hi-Hat, 1 soporte para caja, 1 soporte recto para platillo, 1 soporte jirafa para platillo y 1 pedal para bombo. Por último, también incluye un set de platos Zultan Rock Beat: 1 Hi-Hat de 14", 1 Crash de 16" y 1 Ride de 20". Disponible en color Tobacco Burst (Tabaco).',
+            'price' => '2350',
+            'stock' => '10',
+            'urlPhoto' => 'urldelabateriaacustica7',
+            'manufacturer' => 'DW'
+        ]);
+        $instrument32->category()->associate($category3);
+        $instrument32->save();
+
+        $instrument33 = new Instrument([
+            'name' => 'Pearl Decade Maple Studio BK Burst',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de arce 100%, está compuesta por un tom de 10" x 07", un tom de 12" x 08", un tom de suelo de 14" x 14", una caja de 14" x 5,5" y un bombo de 20" x 16". Además, contiene un set de herrajes: 1 soporte para Hi-Hat, 1 soporte para caja, 1 soporte de platillo con brazo, 1 soporte de platillo recto y 1 pedal individual para bombo. No incluye juego de platillos. Disponible en color Satin Black Burst (Sunburst Negro Satinado).',
+            'price' => '954',
+            'stock' => '24',
+            'urlPhoto' => 'urldelabateriaacustica8',
+            'manufacturer' => 'Pearl'
+        ]);
+        $instrument33->category()->associate($category3);
+        $instrument33->save();
+
+        $instrument34 = new Instrument([
+            'name' => 'Tama VI62RZ-CI Silverstar Mirage',
+            'description' => 'Esta batería acústica, la cual está fabricada en acrílico, está compuesta por un tom de 10" x 07", un tom de 12" x 08", un tom de suelo de 14" x 12", un tom de suelo de 16" x 14", una caja de 14" x 06" y un bombo de 22" x 16" (sin roseta). Además, contiene un set de herrajes Tama: 1 soporte para Hi-Hat, 1 soporte para caja, 2 soportes jirafa para platillos y 1 pedal individual para bombo. No incluye juego de platillos. Disponible en color White (Blanco).',
+            'price' => '1500',
+            'stock' => '9',
+            'urlPhoto' => 'urldelabateriaacustica9',
+            'manufacturer' => 'Tama'
+        ]);
+        $instrument34->category()->associate($category3);
+        $instrument34->save();
+
+        $instrument35 = new Instrument([
+            'name' => 'Sonor Select Maple Stage S',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de arce 100% con sonidos ricos y cálidos, está compuesta por un tom de 10" x 6,5", un tom de 12" x 07", un tom de suelo de 14" x 12", un tom de suelo de 16" x 14", una caja de 14" x 6,5" y un bombo de 22" x 20". Además, contiene un set de herrajes Millenium: 1 soporte para Hi-Hat, 1 soporte para caja, 2 soportes jirafa para platillos y 1 pedal sencillo para bombo. No incluye juego de platillos. Disponible en color Maple (Arce).',
+            'price' => '1850',
+            'stock' => '5',
+            'urlPhoto' => 'urldelabateriaacustica10',
+            'manufacturer' => 'Sonor'
+        ]);
+        $instrument35->category()->associate($category3);
+        $instrument35->save();
+
+        $instrument36 = new Instrument([
+            'name' => 'Tama Silverstar Jazz Light Blue',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de abedul 100% con un tono y resonancia ricos y potentes, está compuesta por un tom de 12" x 08", un tom de suelo de 14" x 14", una caja de 14" x 05" y un bombo de 18" x 14". Además, contiene un set de herrajes Tama: 1 soporte para Hi-Hat, 1 soporte para caja, 2 soportes con brazo para platillos y 1 pedal simple para bombo. No incluye set de platillos. Disponible en color Light Blue (Azul Claro).',
+            'price' => '995',
+            'stock' => '19',
+            'urlPhoto' => 'urldelabateriaacustica11',
+            'manufacturer' => 'Tama'
+        ]);
+        $instrument36->category()->associate($category3);
+        $instrument36->save();
+
+        $instrument37 = new Instrument([
+            'name' => 'Gretsch Energy Studio Black',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de álamo, está compuesta por un tom de 10" x 07", un tom de 12" x 08", un tom de suelo de 14" x 14", una caja de 14" x 5,5" y un bombo de 20" x 16". Además, contiene un pack de herrajes Tama: 1 soporte para Hi-Hat, 1 soporte para caja, 1 soporte con brazo jirafa para platillo, 1 soporte recto para platillo y 1 pedal simple para bombo. Por último, incluye juego de platillos Paiste 101: 1 Hi-Hat de 13", 1 Crash de 16" y 1 Ride de 20". Disponible en color Black (Negro).',
+            'price' => '659',
+            'stock' => '89',
+            'urlPhoto' => 'urldelabateriaacustica12',
+            'manufacturer' => 'Gretsch'
+        ]);
+        $instrument37->category()->associate($category3);
+        $instrument37->save();
+
+        $instrument38 = new Instrument([
+            'name' => 'Pearl EXX725BR/C Export Arctic Spar.',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de caoba asiática y chopo para sonido profundo y voluminoso, está compuesta por un tom de 12" x 08", un tom de 13" x 09", un tom de suelo de 16" x 16", una caja de 14" x 5,5" y un bombo de 22" x 18". Además, contiene un pack de herrajes Pearl: 1 soporte para Hi-Hat, 1 soporte para caja, 1 soporte de plato jirafa, 1 soporte de plato recto y 1 pedal simple para bombo. Por último, incluye juego de platillos Sabian SBR de latón: 1 Hi-Hat de 14", 1 Crash de 16" y 1 Ride de 20". Disponible en color Artic Sparkle (Ártico Brillante).',
+            'price' => '745',
+            'stock' => '60',
+            'urlPhoto' => 'urldelabateriaacustica13',
+            'manufacturer' => 'Pearl'
+        ]);
+        $instrument38->category()->associate($category3);
+        $instrument38->save();
+
+        $instrument39 = new Instrument([
+            'name' => 'Mapex Storm Fusion Set Deep Black',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de álamo, está compuesta por un tom de 10" x 07", un tom de 12" x 08", un tom de suelo de 14" x 12", una caja de 14" x 05" y un bombo de 22" x 18". Además, contiene un set de herrajes Mapex: 1 soporte para Hi-Hat, 1 soporte para caja, 1 soporte jirafa para platillo, 1 soporte recto para platillo y 1 pedal individual para bombo. No incluye ni sillín ni juego de platillos. Disponible en color Deep Black (Negro Profundo).',
+            'price' => '649',
+            'stock' => '58',
+            'urlPhoto' => 'urldelabateriaacustica14',
+            'manufacturer' => 'Mapex'
+        ]);
+        $instrument39->category()->associate($category3);
+        $instrument39->save();
+
     }
 }
