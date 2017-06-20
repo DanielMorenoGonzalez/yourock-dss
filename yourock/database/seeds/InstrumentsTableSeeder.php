@@ -307,7 +307,7 @@ class InstrumentsTableSeeder extends Seeder
         //Creamos y guardamos distintos objetos relacionados con las baterías acústicas
         $instrument26 = new Instrument([
             'name' => 'DW PDP CM5 Standard Red / Black',
-            'description' => 'Esta batería, la cual está fabricada en madera de arce 100% con 7 capas en toms/bombo y 10 capas en la caja, está compuesta por un tom de 10" x 08", un tom de 12" x 09", un tom de suelo de 16" x 14", una caja de 14" x 5,5" y un bombo de 22" x 18". Además, contiene un set de herrajes de la serie Concept: soporte para Hi-Hat, soporte para caja, pedal individual para bombo, soporte recto para platillo y soporte jirafa para platillo. Disponible en Red Black Sparkle Fade, con acabado lacado Premium.',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de arce 100% con 7 capas en toms/bombo y 10 capas en la caja, está compuesta por un tom de 10" x 08", un tom de 12" x 09", un tom de suelo de 16" x 14", una caja de 14" x 5,5" y un bombo de 22" x 18". Además, contiene un set de herrajes de la serie Concept: 1 soporte para Hi-Hat, 1 soporte para caja, 1 pedal individual para bombo, 1 soporte recto para platillo y 1 soporte jirafa para platillo. No incluye juego de platillos. Disponible en color Red Black Sparkle Fade, con acabado lacado Premium.',
             'price' => '1400',
             'stock' => '29',
             'urlPhoto' => 'urldelabateriaacustica1',
@@ -318,7 +318,7 @@ class InstrumentsTableSeeder extends Seeder
 
         $instrument27 = new Instrument([
             'name' => 'Sonor Essential Force Green Stage 3',
-            'description' => 'Esta batería, la cual está fabricada en madera de abedul 100% de 6 capas (7,2mm), está compuesta por un tom de 10" x 08", un tom de 12" x 09", un tom de suelo de 16" x 16", una caja de 14" x 5,5" y un bombo de 22" x 18". Además, contiene un set de herrajes: soporte para Hi-Hat, soporte para caja, 2 soportes jirafa para platillos y un pedal individual para bombo. Disponible en Green Fade, con terminación Stage 3.',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de abedul 100% de 6 capas (7,2mm), está compuesta por un tom de 10" x 08", un tom de 12" x 09", un tom de suelo de 16" x 16", una caja de 14" x 5,5" y un bombo de 22" x 18". Además, contiene un set de herrajes: 1 soporte para Hi-Hat, 1 soporte para caja, 2 soportes jirafa para platillos y 1 pedal individual para bombo. No incluye juego de platillos. Disponible en color Green Fade, con terminación Stage 3.',
             'price' => '1108',
             'stock' => '17',
             'urlPhoto' => 'urldelabateriaacustica2',
@@ -329,13 +329,47 @@ class InstrumentsTableSeeder extends Seeder
 
         $instrument28 = new Instrument([
             'name' => 'Tama Silverstar Standard - VBG',
-            'description' => 'Esta batería, la cual está fabricada en madera de abedul 100% con un tono y resonancia ricos y potentes, está compuesta por un tom de 10" x 07", un tom de 12" x 08", un tom de suelo de 16" x 14", una caja de 14" x 05" y un bombo de 22" x 18". Además, contiene un set de herrajes: soporte para Hi-Hat, soporte para caja, 2 soportes con brazo para platillos y un pedal sencillo para bombo. Disponible en Vintage Burgundy Sparkle.',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de abedul 100% con un tono y resonancia ricos y potentes, está compuesta por un tom de 10" x 07", un tom de 12" x 08", un tom de suelo de 16" x 14", una caja de 14" x 05" y un bombo de 22" x 18". Además, contiene un set de herrajes: 1 soporte para Hi-Hat, 1 soporte para caja, 2 soportes con brazo para platillos y 1 pedal sencillo para bombo. No incluye juego de platillos. Disponible en color Vintage Burgundy Sparkle.',
             'price' => '1108',
-            'stock' => '995',
+            'stock' => '87',
             'urlPhoto' => 'urldelabateriaacustica3',
             'manufacturer' => 'Tama'
         ]);
         $instrument28->category()->associate($category3);
         $instrument28->save();
+
+        $instrument29 = new Instrument([
+            'name' => 'Mapex Storm Studio Set Wood Grain',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de álamo, está compuesta por un tom de 10" x 07", un tom de 12" x 08", un tom de suelo de 14" x 12", una caja de 14" x 05" y un bombo de 20" x 16". Además, contiene un pack de herrajes: 1 soporte para Hi-Hat, 1 soporte para caja, 1 soporte jirafa para platillo, 1 soporte recto para platillo y 1 pedal individual para bombo. No incluye juego de platillos. Disponible en color Camphor Wood Grain (Veta de madera de alcanfor).',
+            'price' => '687',
+            'stock' => '0',
+            'urlPhoto' => 'urldelabateriaacustica4',
+            'manufacturer' => 'Mapex'
+        ]);
+        $instrument29->category()->associate($category3);
+        $instrument29->save();
+
+        $instrument30 = new Instrument([
+            'name' => 'Millenium MX222BX Standard Set BK',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de álamo, está compuesta por un tom de 12" x 09", un tom de 13" x 10", un tom de suelo de 16" x 14", una caja de 14" x 5,5" y un bombo de 22" x 16". Además, contiene un pack de herrajes: 1 soporte para Hi-Hat, 1 soporte para caja, 1 soporte recto para platillo y 1 pedal individual para bombo. Por último, también incluye un juego de platos de latón: 1 Charles de 14" y 1 Crash/Ride de 16". Disponible en color Black (Negro) brillante.',
+            'price' => '235',
+            'stock' => '120',
+            'urlPhoto' => 'urldelabateriaacustica5',
+            'manufacturer' => 'Millenium'
+        ]);
+        $instrument30->category()->associate($category3);
+        $instrument30->save();
+
+        $instrument31 = new Instrument([
+            'name' => 'Yamaha Rydeen Standard Fine Blue',
+            'description' => 'Esta batería acústica, la cual está fabricada en madera de álamo, está compuesta por un tom de 10" x 07", un tom de 12" x 08", un tom de suelo de 16" x 15", una caja de 14" x 5,5" y un bombo de 22" x 16" (perforado). Además, contiene un kit de herrajes: 1 soporte para Hi-Hat, 1 soporte para caja, 2 soportes con brazo para platillos y 1 pedal individual para bombo. Por último, también incluye un set de platos Paiste 101: 1 Hi-Hat de 14", 1 Crash de 16" y 1 Ride de 20". Disponible en color Fine Blue (Azul).',
+            'price' => '706',
+            'stock' => '76',
+            'urlPhoto' => 'urldelabateriaacustica6',
+            'manufacturer' => 'Yamaha'
+        ]);
+        $instrument31->category()->associate($category3);
+        $instrument31->save();
+
     }
 }
