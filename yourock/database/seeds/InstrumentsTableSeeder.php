@@ -459,5 +459,27 @@ class InstrumentsTableSeeder extends Seeder
         $instrument39->category()->associate($category3);
         $instrument39->save();
 
+
+        //Recuperamos la categoría de las baterías electrónicas
+        $category4 = Category::find(4);
+
+        //Creamos y guardamos distintos objetos relacionados con las baterías electrónicas
+        
+
+        //Recuperamos la categoría de los pianos de cola
+        $category5 = Category::find(5);
+
+        //Creamos y guardamos distintos objetos relacionados con los pianos de cola
+        $instrument40 = new Instrument([
+            'name' => 'Yamaha C 3 X PE Grand Piano',
+            'description' => 'Este piano de cola, el cual está diseñado para poder resonar con el pianista, dispone de 88 teclas y 3 pedales (central: sostenuto). Además, tiene unas dimensiones de 186 x 149 x 101cm, y un peso de 320 kg. Disponible en color Negro con alto brillo.',
+            'price' => '27950',
+            'stock' => '10',
+            'urlPhoto' => 'urldelpianodecola1',
+            'manufacturer' => 'Yamaha'
+        ]);
+        $instrument40->category()->associate($category5);
+        $instrument40->save();
+
     }
 }
