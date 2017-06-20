@@ -464,7 +464,61 @@ class InstrumentsTableSeeder extends Seeder
         $category4 = Category::find(4);
 
         //Creamos y guardamos distintos objetos relacionados con las baterías electrónicas
-        
+        $instrument40 = new Instrument([
+            'name' => 'Millenium MPS-750 E-Drum Mesh Set',
+            'description' => 'Esta batería electrónica cuenta con un módulo MPS-750 con 456 sonidos, 20 sets y 20 sets de usuario, 40 canciones demo integradas, ecualizador de 4 bandas, fader para control de volumen de los Pads, los efectos o el ecualizador, puerto USB y dos entradas Trigger adicionales. Además, dispone de la siguiente configuración: 1 pad de 10" para caja, 3 pads para tom de 10", 1 pad de 08" para bombo, 1 pad de 08" para Hi-Hat, 2 pads de 12" para Crash con función de atenuación, 1 pad de 14" para Ride con función de atenuación, 1 pie simple para bombo y 1 pie para Hi-Hat.',
+            'price' => '477',
+            'stock' => '100',
+            'urlPhoto' => 'urldelabateriaelectronica1',
+            'manufacturer' => 'Millenium'
+        ]);
+        $instrument40->category()->associate($category4);
+        $instrument40->save();
+
+        $instrument41 = new Instrument([
+            'name' => 'Roland TD-1KV V-Drum Set',
+            'description' => 'Esta batería electrónica cuenta con 1 módulo de batería TD-1 con 15 kits de batería y 15 canciones, 10 funciones de entrenamiento, metrónomo, USB, entrada de auriculares (minijack estéreo) y 1 entrada trigger. Además, dispone de la siguiente configuración: 1 pad de malla para caja, 3 pads para tom, 1 pad para Hi-Hat, 2 pads para Crash, 1 pad para Ride, 1 pie simple para bombo y 1 pie para Hi-Hat.',
+            'price' => '488',
+            'stock' => '93',
+            'urlPhoto' => 'urldelabateriaelectronica2',
+            'manufacturer' => 'Roland'
+        ]);
+        $instrument41->category()->associate($category4);
+        $instrument41->save();
+
+        $instrument42 = new Instrument([
+            'name' => 'Alesis DM Lite Kit',
+            'description' => 'Esta batería electrónica cuenta con 1 módulo Drum DM Lite con 200 sonidos, 10 Drum-kits y 30 canciones, función coach con ejercicios de acompañamiento, USB para conexiones MIDI, pads de batería y platos con iluminación LED como respuesta óptica para el modo de aprendizaje y 1 salida de auriculares minijack estéreo de 3,5mm. Además, dispone de la siguiente configuración: 4 pads de 7,5" para caja y tom, 1 pad para Hi-Hat, 1 pad para Crash, 1 pad para Ride, 1 pie simple para bombo y 1 pie para Hi-Hat.',
+            'price' => '275',
+            'stock' => '54',
+            'urlPhoto' => 'urldelabateriaelectronica3',
+            'manufacturer' => 'Alesis'
+        ]);
+        $instrument42->category()->associate($category4);
+        $instrument42->save();
+
+        $instrument43 = new Instrument([
+            'name' => 'Yamaha DTX450K Compact E-Drum Set',
+            'description' => 'Esta batería electrónica cuenta con 1 módulo DTX400 Drum Trigger Module con 169 sonidos de alta calidad, USB, salida de auriculares, diez Kits de Batería y diez funciones de ejercicios. Además, dispone de la siguiente configuración: 1 pad de 7,5" para caja, 3 pads de 7,5" para tom, 1 pad para bombo, 1 pad de 10" para Hi-Hat, 1 pad de 10" para Crash, 1 pad de 10" para Ride, 1 pie simple para bombo y 1 pie para Hi-Hat.',
+            'price' => '529',
+            'stock' => '0',
+            'urlPhoto' => 'urldelabateriaelectronica4',
+            'manufacturer' => 'Yamaha'
+        ]);
+        $instrument43->category()->associate($category4);
+        $instrument43->save();
+
+        $instrument44 = new Instrument([
+            'name' => 'Alesis Crimson Mesh Kit',
+            'description' => 'Esta batería electrónica cuenta con 1 módulo Alesis Advanced Drum con 600 sonidos, 50 kits preestablecidos y 20 kits de usuario, 60 canciones, grabación a tiempo real, entrada y salida MIDI, salida de auriculares jack estéreo de 1/8" e interfaz USB MIDI para conectar a un Mac o PC y cargar nuevas canciones desde una llave USB. Además, dispone de la siguiente configuración: 1 pad de malla de 12" para caja, 2 pads de malla de 8" para tom, 1 pad de malla de 10" para tom, 1 pad de malla de 8" para bombo, 1 pad de 12" para Hi-Hat, 1 pad de 12" para Crash, 1 pad de 14" para Ride y 1 pie para Hi-Hat. No incluye pie para bombo.',
+            'price' => '989',
+            'stock' => '30',
+            'urlPhoto' => 'urldelabateriaelectronica5',
+            'manufacturer' => 'Alesis'
+        ]);
+        $instrument44->category()->associate($category4);
+        $instrument44->save();
+
 
         //Recuperamos la categoría de los pianos de cola
         $category5 = Category::find(5);
@@ -546,6 +600,7 @@ class InstrumentsTableSeeder extends Seeder
         ]);
         $instrument46->category()->associate($category5);
         $instrument46->save();
+
 
         //Recuperamos la categoría de los teclados
         $category6 = Category::find(6);
