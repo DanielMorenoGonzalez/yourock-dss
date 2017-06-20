@@ -10,7 +10,7 @@
         <link href="{{asset('css/estilopaginaprincipal.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-        <title>YOU ROCK! - Instrumentos</title>
+        <title>YOU ROCK! - Descripción instrumento</title>
     </head>
     <body>
     <header>
@@ -42,14 +42,8 @@
             </div>
         </nav>
     </header> 
-
-        <h2>Categoría {{ $category }}</h2>
-        <p>Se han encontrado {{ $instrumentsCount }} resultados</p>
-        @foreach ($instruments as $instrument)
-            <p>Instrumento: {{ $instrument->name }}</p>
-        @endforeach
-
-        {{ $instruments->links() }}
+        
+        <h1>Instrumento {{ $instrument->name }}</h1>
 
         <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

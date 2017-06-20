@@ -17,7 +17,8 @@ Route::get('/', 'HomeController@index');
 //Ruta para mostrar todas las categorías
 Route::get('categories', 'CategoriesController@index');
 
-//Ruta para mostrar una categoría
-Route::get('categories/{id}', 'CategoriesController@show');
+//Ruta para mostrar una categoría con sus respectivos instrumentos
+Route::get('categories/{category}', 'CategoriesController@show');
 
-
+//Ruta para mostrar un instrument específico
+Route::get('instruments/{instrument}', 'InstrumentsController@show');
