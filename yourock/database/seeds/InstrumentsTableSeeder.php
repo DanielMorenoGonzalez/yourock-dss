@@ -132,7 +132,7 @@ class InstrumentsTableSeeder extends Seeder
 
         $instrument11 = new Instrument([
             'name' => 'Gibson Les Paul Classic HP 2017 GOB',
-            'description' => 'Esta guitarra eléctrica, con cuerpo de caoba y fabricada en Estados Unidos, dispone de un mástil de caoba cónico delgado y un diapasón de palisandro. Además, cuenta con 22 trastes, incluye 2 controles de volumen (push-pull), 2 controles de tono (push-pull) con knobs de cromo, Interruptor de palanca de 3 posiciones, herrajes de cromo y clavijas de afinación G-Force. Diponible en color Green Ocean Burst (Sunburst Océano Verde).',
+            'description' => 'Esta guitarra eléctrica, con cuerpo de caoba y fabricada en Estados Unidos, dispone de un mástil de caoba cónico delgado y un diapasón de palisandro. Además, cuenta con 22 trastes, incluye 2 controles de volumen (push-pull), 2 controles de tono (push-pull) con knobs de cromo, 1 interruptor de palanca de 3 posiciones, herrajes de cromo y clavijas de afinación G-Force. Diponible en color Green Ocean Burst (Sunburst Océano Verde).',
             'price' => '1985',
             'stock' => '6',
             'urlPhoto' => 'urldelaguitarraelectrica11',
@@ -141,12 +141,116 @@ class InstrumentsTableSeeder extends Seeder
         $instrument11->category()->associate($category1);
         $instrument11->save();
 
+        $instrument12 = new Instrument([
+            'name' => 'Schecter Loomis Cygnus JLX-1 FR STC',
+            'description' => 'Esta guitarra eléctrica, con cuerpo de fresno de pantano e inspirada en Jeff Loomis, dispone de un mástil de arce con forma ultradelgada en C y un diapasón de arce. Además, cuenta con 24 trastes, incluye 1 control de volumen, 1 interruptor de palanca de 3 posiciones, 2 pastillas humbucker activas Seymour Duncan Jeff Loomis Signature, herrajes negros, clavijas de afinación Grover y 1 trémolo Floyd Rose 1500 Series. Diponible en color See-Thru Cherry (Cerezo).',
+            'price' => '1157',
+            'stock' => '1',
+            'urlPhoto' => 'urldelaguitarraelectrica12',
+            'manufacturer' => 'Schecter'
+        ]);
+        $instrument12->category()->associate($category1);
+        $instrument12->save();
+
+        $instrument13 = new Instrument([
+            'name' => 'Charvel Pro Mod So Cal Style1 2H FR SW',
+            'description' => 'Esta guitarra eléctrica, con cuerpo de aliso, dispone de un mástil de 2 piezas de arce Speed con refuerzo de grafito y un diapasón de arce. Además, cuenta con 22 trastes, incluye 1 control de volumen con división de bobina push/pull, 1 control de tono sin carga, 1 trémolo Floyd Rose con doble bloqueo y cuerdas originales Fender. Diponible en color Snow White (Blanco Nieve).',
+            'price' => '720',
+            'stock' => '29',
+            'urlPhoto' => 'urldelaguitarraelectrica13',
+            'manufacturer' => 'Charvel'
+        ]);
+        $instrument13->category()->associate($category1);
+        $instrument13->save();
+
+
+        //Recuperamos la categoría de los bajos eléctricos
+        $category2 = Category::find(2);
+
+        //Creamos y guardamos distintos objetos relacionados con los bajos eléctricos
+        $instrument14 = new Instrument([
+            'name' => 'Marcus Miller V7 Alder-4 AWH',
+            'description' => 'Este bajo eléctrico de 4 cuerdas, con cuerpo de aliso y fabricado por Sire, dispone de un mástil de arce de 1 pieza con perfil en C y un diapasón de arce. Además, cuenta con 20 trastes, incluye control de volumen/tono (potenciómetro dual), control de mezcla de pastilla, control de agudos, control de medios/frecuencia media (potenciómetro dual), cejilla de hueso, 2 pastillas Marcus Super Jazz y herrajes de cromo. Disponible en color Antique White (Blanco Antigüo).',
+            'price' => '413',
+            'stock' => '52',
+            'urlPhoto' => 'urldelbajoelectrico1',
+            'manufacturer' => 'Marcus Miller'
+        ]);
+        $instrument14->category()->associate($category2);
+        $instrument14->save();
+
+        $instrument15 = new Instrument([
+            'name' => 'Fender SQ Vint. Mod. Jazz Bass 77 3TS',
+            'description' => 'Este bajo eléctrico de 4 cuerdas, con cuerpo de agathis, dispone de un mástil de arce en forma de C y un diapasón de arce. Además, cuenta con 20 trastes, incluye 2 pastillas de bobina simple diseñadas por Fender y 1 golpeador negro. Disponible en color Sunburst de 3 tonos con acabado Vintage brillante.',
+            'price' => '355',
+            'stock' => '0',
+            'urlPhoto' => 'urldelbajoelectrico2',
+            'manufacturer' => 'Fender'
+        ]);
+        $instrument15->category()->associate($category2);
+        $instrument15->save();
+
+        $instrument16 = new Instrument([
+            'name' => 'Harley Benton JB-75MN SB Vintage Series',
+            'description' => 'Este bajo eléctrico de 4 cuerdas, con cuerpo de fresno americano, dispone de un mástil de arce canadiense atornillado con perfil en C y un diapasón de arce con tira mofeta de roseacer. Además, cuenta con 20 trastes, incluye 2 controles de volumen, 1 control de tono, clavijas de afinación PB-style clásicas, herrajes de cromo deluxe y pastillas de bobina simple Roswell JBA. Disponible en color Sunburst de 3 tonos con alto brillo.',
+            'price' => '144',
+            'stock' => '21',
+            'urlPhoto' => 'urldelbajoelectrico3',
+            'manufacturer' => 'Harley Benton'
+        ]);
+        $instrument16->category()->associate($category2);
+        $instrument16->save();
+
+        $instrument17 = new Instrument([
+            'name' => 'Sandberg California II TM4 BLB',
+            'description' => 'Este bajo eléctrico de 4 cuerdas, con cuerpo de fresno, dispone de un mástil de arce y un diapasón de palisandro con inlays de bloques. Además, cuenta con 20 trastes, incluye 1 pastilla Delano de estilo J, 1 pastilla Powerhumbucker, 1 ecualizador Sandberg de 2 bandas, herrajes de cromo y 1 golpeador negro. Disponible en color Blueburst (Azul) satinado.',
+            'price' => '1678',
+            'stock' => '2',
+            'urlPhoto' => 'urldelbajoelectrico4',
+            'manufacturer' => 'Sandberg'
+        ]);
+        $instrument17->category()->associate($category2);
+        $instrument17->save();
+
+        $instrument18 = new Instrument([
+            'name' => 'Fender Deluxe Active Jazz Bass OWT',
+            'description' => 'Este bajo eléctrico de 4 cuerdas, con cuerpo de aliso, dispone de un mástil de arce con forma en C y un diapasón de palisandro. Además, cuenta con 20 trastes, incluye 1 pastilla cerámica Jazz Bass de doble bobina de bajo ruido (puente), 1 pastilla cerámica Jazz Bass de doble bobina de thomann bajo ruido (intermedia), herrajes de níquel/cromo, control de panorama y volumen master. Disponible en color Olympic White (Blanco Olímpico).',
+            'price' => '950',
+            'stock' => '10',
+            'urlPhoto' => 'urldelbajoelectrico5',
+            'manufacturer' => 'Fender'
+        ]);
+        $instrument18->category()->associate($category2);
+        $instrument18->save();
+
+        $instrument19 = new Instrument([
+            'name' => 'Marcus Miller V7 Vintage Alder BMR',
+            'description' => 'Este bajo eléctrico de 4 cuerdas, con cuerpo de aliso norteamericano y fabricado por Sire, dispone de un mástil de 1 pieza de arce con perfil en C y un diapasón de arce. Además, cuenta con 20 trastes, incluye 2 pastillas Marcus Vintage Jazz, cejilla de hueso, electrónica Marcus Heritage-3 con control de frecuencia, 1 minipalanca para graves (activo/pasivo) y herrajes de cromo. Disponible en color Metallic Red (Rojo metalizado) brillante.',
+            'price' => '413',
+            'stock' => '57',
+            'urlPhoto' => 'urldelbajoelectrico6',
+            'manufacturer' => 'Marcus Miller'
+        ]);
+        $instrument19->category()->associate($category2);
+        $instrument19->save();
+
+        $instrument20 = new Instrument([
+            'name' => 'Fender Deluxe Active Jazz Bass V SFP',
+            'description' => 'Este bajo eléctrico de 5 cuerdas, con cuerpo de aliso, dispone de un mástil de arce con forma en C y un diapasón de palisandro. Además, cuenta con 20 trastes, incluye 2 pastillas Jazz Bass cerámicas de doble bobina de bajo ruido, ecualizador activo de 3 bandas con realce/corte de agudos, realce/corte de graves y realce/corte de medios, herrajes de níquel/cromo, control de panorama y volumen master. Disponible en color Surf Pearl.',
+            'price' => '1065',
+            'stock' => '5',
+            'urlPhoto' => 'urldelbajoelectrico7',
+            'manufacturer' => 'Fender'
+        ]);
+        $instrument20->category()->associate($category2);
+        $instrument20->save();
+
 
         //Recuperamos la categoría de las baterías acústicas
-        $category2 = Category::find(3);
+        $category3 = Category::find(3);
 
         //Creamos y guardamos distintos objetos relacionados con las baterías acústicas
-        $instrument12 = new Instrument([
+        $instrument21 = new Instrument([
             'name' => 'DW PDP CM5 Standard Red / Black',
             'description' => 'Esta batería, la cual está fabricada en madera de arce 100% con 7 capas en toms/bombo y 10 capas en la caja, está compuesta por un tom de 10" x 08", un tom de 12" x 09", un tom de suelo de 16" x 14", una caja de 14" x 5,5" y un bombo de 22" x 18". Además, contiene un set de herrajes de la serie Concept: soporte para Hi-Hat, soporte para caja, pedal individual para bombo, soporte recto para platillo y soporte jirafa para platillo. Disponible en Red Black Sparkle Fade, con acabado lacado Premium.',
             'price' => '1400',
@@ -154,10 +258,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelabateriaacustica1',
             'manufacturer' => 'DW'
         ]);
-        $instrument12->category()->associate($category2);
-        $instrument12->save();
+        $instrument21->category()->associate($category3);
+        $instrument21->save();
 
-        $instrument13 = new Instrument([
+        $instrument22 = new Instrument([
             'name' => 'Sonor Essential Force Green Stage 3',
             'description' => 'Esta batería, la cual está fabricada en madera de abedul 100% de 6 capas (7,2mm), está compuesta por un tom de 10" x 08", un tom de 12" x 09", un tom de suelo de 16" x 16", una caja de 14" x 5,5" y un bombo de 22" x 18". Además, contiene un set de herrajes: soporte para Hi-Hat, soporte para caja, 2 soportes jirafa para platillos y un pedal individual para bombo. Disponible en Green Fade, con terminación Stage 3.',
             'price' => '1108',
@@ -165,10 +269,10 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelabateriaacustica2',
             'manufacturer' => 'Sonor'
         ]);
-        $instrument13->category()->associate($category2);
-        $instrument13->save();
+        $instrument22->category()->associate($category3);
+        $instrument22->save();
 
-        $instrument10 = new Instrument([
+        $instrument23 = new Instrument([
             'name' => 'Tama Silverstar Standard - VBG',
             'description' => 'Esta batería, la cual está fabricada en madera de abedul 100% con un tono y resonancia ricos y potentes, está compuesta por un tom de 10" x 07", un tom de 12" x 08", un tom de suelo de 16" x 14", una caja de 14" x 05" y un bombo de 22" x 18". Además, contiene un set de herrajes: soporte para Hi-Hat, soporte para caja, 2 soportes con brazo para platillos y un pedal sencillo para bombo. Disponible en Vintage Burgundy Sparkle.',
             'price' => '1108',
@@ -176,7 +280,7 @@ class InstrumentsTableSeeder extends Seeder
             'urlPhoto' => 'urldelabateriaacustica3',
             'manufacturer' => 'Tama'
         ]);
-        $instrument10->category()->associate($category2);
-        $instrument10->save();
+        $instrument23->category()->associate($category3);
+        $instrument23->save();
     }
 }
