@@ -471,8 +471,8 @@ class InstrumentsTableSeeder extends Seeder
 
         //Creamos y guardamos distintos objetos relacionados con los pianos de cola
         $instrument40 = new Instrument([
-            'name' => 'Yamaha C 3 X PE Grand Piano',
-            'description' => 'Este piano de cola, el cual está diseñado para poder resonar con el pianista, dispone de 88 teclas y 3 pedales (central: sostenuto). Además, tiene unas dimensiones de 186 x 149 x 101cm, y un peso de 320 kg. Disponible en color Negro con alto brillo.',
+            'name' => 'Yamaha C3X PE Grand Piano',
+            'description' => 'Este piano de cola, el cual está diseñado para poder resonar con el pianista, dispone de 88 teclas y 3 pedales (central: sostenuto). Además, tiene unas dimensiones de 186 x 149 x 101cm, y un peso de 320kg. Disponible en color Negro con alto brillo.',
             'price' => '27950',
             'stock' => '10',
             'urlPhoto' => 'urldelpianodecola1',
@@ -480,6 +480,72 @@ class InstrumentsTableSeeder extends Seeder
         ]);
         $instrument40->category()->associate($category5);
         $instrument40->save();
+
+        $instrument41 = new Instrument([
+            'name' => 'Kawai GL 10 E/P Grand Piano',
+            'description' => 'Este piano de cola cuenta con una mécanica ultrasensible, martillos con fieltro en parte inferior y tapa del teclado de cierre suave. Además, tiene una longitud de 153cm y un peso de 282kg. Disponible en color Negro pulido.',
+            'price' => '9600',
+            'stock' => '6',
+            'urlPhoto' => 'urldelpianodecola2',
+            'manufacturer' => 'Kawai'
+        ]);
+        $instrument41->category()->associate($category5);
+        $instrument41->save();
+
+        $instrument42 = new Instrument([
+            'name' => 'Steinway & Sons B-211',
+            'description' => 'Este piano de cola, el cual está fabricado en 1982 y reconstruído por los especialistas de Steinway, cuenta con una rica escala e impresionante sonido y 1 banco Andexinger de alta calidad. Además, tiene una longitud de 211cm, una anchura de 148cm y un peso de 345kg. Disponible en color Negro.',
+            'price' => '54699',
+            'stock' => '20',
+            'urlPhoto' => 'urldelpianodecola3',
+            'manufacturer' => 'Steinway & Sons'
+        ]);
+        $instrument42->category()->associate($category5);
+        $instrument42->save();
+
+        $instrument43 = new Instrument([
+            'name' => 'Yamaha GB1 K PWH',
+            'description' => 'Este piano de cola, el cual cuenta toda la potencia, tonalidad y la gama expresiva de un piano de cola Yamaha clásico, dispone de 88 teclas y 3 pedales. Además, tiene unas dimensiones de 151 x 146 x 99cm, y un peso de 249kg. Disponible en color Blanco pulido.',
+            'price' => '12489',
+            'stock' => '18',
+            'urlPhoto' => 'urldelpianodecola4',
+            'manufacturer' => 'Yamaha'
+        ]);
+        $instrument43->category()->associate($category5);
+        $instrument43->save();
+
+        $instrument44 = new Instrument([
+            'name' => 'Steinway & Sons A-188 Makassar',
+            'description' => 'Este piano de cola incluye 1 banco de alta calidad con aspecto de coromandel y está reconstruído por los especialistas de Steinway. Además, tiene una longitud de 188cm, una anchura de 147cm y un peso de 315kg. Disponible en color Madera de coromandel pulida.',
+            'price' => '41539',
+            'stock' => '0',
+            'urlPhoto' => 'urldelpianodecola5',
+            'manufacturer' => 'Steinway & Sons'
+        ]);
+        $instrument44->category()->associate($category5);
+        $instrument44->save();
+
+        $instrument45 = new Instrument([
+            'name' => 'Kawai GL 30 E/P Grand Piano',
+            'description' => 'Este piano de cola cuenta con una mecánica ultrasensible, martillos con fieltro en parte inferior, escala dúplex y tapa del teclado de cierre suave. Además, tiene una longitud de 166cm y un peso de 312kg. Disponible en color Negro pulido.',
+            'price' => '14459',
+            'stock' => '23',
+            'urlPhoto' => 'urldelpianodecola6',
+            'manufacturer' => 'Kawai'
+        ]);
+        $instrument45->category()->associate($category5);
+        $instrument45->save();
+
+        $instrument46 = new Instrument([
+            'name' => 'Yamaha C3X SH PE Silent Grand Piano',
+            'description' => 'Este piano de cola cuenta con 88 teclas, 3 pedales, 19 sonidos diferentes, un sistema SH-Silent y función de grabación con puerto USB para almacenamiento de datos de canciones. Además, tiene unas dimensiones de 186 x 149 x 101cm, y un peso de 320kg. Disponible en color Negro pulido.',
+            'price' => '32500',
+            'stock' => '34',
+            'urlPhoto' => 'urldelpianodecola7',
+            'manufacturer' => 'Yamaha'
+        ]);
+        $instrument46->category()->associate($category5);
+        $instrument46->save();
 
     }
 }
