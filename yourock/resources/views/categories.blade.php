@@ -19,9 +19,9 @@
                 <a class="navbar-brand" href="#">YOU ROCK!</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ url('categories') }}">Home</a></li>
+                <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">Productos</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="{{ url('/contact') }}">Contacto</a></li>
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="input-group">

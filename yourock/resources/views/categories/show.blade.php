@@ -20,9 +20,9 @@
                     <a class="navbar-brand" href="#">YOU ROCK!</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ url('categories') }}">Home</a></li>
+                    <li class="active"><a href="#">Home</a></li>
                     <li><a href="#">Productos</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="{{ url('/contact') }}">Contacto</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                     <div class="input-group">
@@ -43,7 +43,21 @@
         </nav>
     </header> 
 
-        <h2>Categoría {{ $category }}</h2>
+        <h2>Categoría {{ $category->name }}</h2>
+        <h4>{{ $category->description }}</h4>
+        <br/>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Ordenar...
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Precio - Ascendente</a></li>
+                <li><a href="#">Precio - Descendente</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Alfabético (A-Z)</a></li>
+                <li><a href="#">Alfabético (Z-A)</a></li>
+            </ul>
+        </div> 
+        <br/>
         <p>Se han encontrado {{ $instrumentsCount }} resultados</p>
         @foreach ($instruments as $instrument)
             <p>Instrumento: {{ $instrument->name }}</p>
