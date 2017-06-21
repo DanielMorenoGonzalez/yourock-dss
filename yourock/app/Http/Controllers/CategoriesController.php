@@ -18,9 +18,7 @@ class CategoriesController extends Controller
     //Con este método tenemos los productos de todas las categorías, el total y la paginación
     public function show($id){
         $category = Category::findOrFail($id);
-        //Contamos el total de instrumentos de la categoría actual
-        $instrumentsCount = $category->getInstrumentsByCategory($id)->count();
         $instruments = $category->getInstrumentsByCategory($id)->paginate(5);
-        return view('categories.show', array('category' => $category, 'instrumentsCount' => $instrumentsCount, 'instruments' => $instruments));
+        return view('categories.show', array('category' => $category, 'instruments' => $instruments));
     }
 }
