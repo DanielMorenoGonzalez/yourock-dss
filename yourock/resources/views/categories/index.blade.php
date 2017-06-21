@@ -42,7 +42,7 @@
         </nav>
         
         @foreach ($categories as $category)
-            <p>Categoría: {{ $category->name }}</p>
+            <p><a href="{{ action('CategoriesController@show', [$category->id]) }}">Categoría: {{ $category->name }}</a></p>
         @endforeach
 
         <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
