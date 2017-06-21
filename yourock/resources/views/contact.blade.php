@@ -10,7 +10,7 @@
         <link href="{{asset('css/estilopaginaprincipal.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-        <title>YOU ROCK! - Descripción instrumento</title>
+        <title>YOU ROCK! - Contacto</title>
     </head>
     <body>
     <header>
@@ -22,7 +22,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="#">Productos</a></li>
-                    <li><a href="{{ url('/contact') }}">Contacto</a></li>
+                    <li><a href="{{ action('ContactController@index') }}">Contacto</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                     <div class="input-group">

@@ -22,7 +22,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="#">Productos</a></li>
-                    <li><a href="{{ url('/contact') }}">Contacto</a></li>
+                    <li><a href="{{ action('ContactController@index') }}">Contacto</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
                     <div class="input-group">
@@ -60,7 +60,7 @@
         <br/>
         <p>Se han encontrado {{ $instrumentsCount }} resultados</p>
         @foreach ($instruments as $instrument)
-            <p>Instrumento: {{ $instrument->name }}</p>
+            <p><a href="{{ action('InstrumentsController@show', [$category->id]) }}">Instrumento: {{ $instrument->name }}</a></p>
         @endforeach
 
         {{ $instruments->links() }}
