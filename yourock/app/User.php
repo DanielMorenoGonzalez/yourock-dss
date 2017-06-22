@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Address;
 use App\Order;
 
 class User extends Authenticatable
@@ -17,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nif', 'name', 'surname', 'phoneNumber', 'email', 'password', 'type',
+        'name', 'email', 'password',
     ];
 
     /**
@@ -28,11 +27,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    
-    public function address() {
-        //User tiene la clave ajena address_id
-        return $this->belongsTo('App\Address');
-    }
 
     public function orders() {
         return $this->hasMany('App\Order');

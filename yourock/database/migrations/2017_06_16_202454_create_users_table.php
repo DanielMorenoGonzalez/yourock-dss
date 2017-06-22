@@ -18,12 +18,14 @@ class CreateUsersTable extends Migration
             $table->string('nif')->unique();
             $table->string('name');
             $table->string('surname');
+            $table->string('address');
+            $table->string('city');
+            $table->string('province');
+            $table->integer('zipCode');
             $table->integer('phoneNumber');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('type');
-            $table->integer('address_id')->unsigned();
-            $table->foreign('address_id')->references('id')->on('addresses');
+            $table->string('type');;
             $table->rememberToken();
             $table->timestamps();
         });

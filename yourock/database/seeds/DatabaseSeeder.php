@@ -22,11 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Instrument table seeded!');
 
         //Llamamos a otro fichero de semillas
-        $this->call(AddressesTableSeeder::class);
-        //Mostramos información por consola
-        $this->command->info('Address table seeded!');
-
-        //Llamamos a otro fichero de semillas
         $this->call(UsersTableSeeder::class);
         //Mostramos información por consola
         $this->command->info('User table seeded!');
