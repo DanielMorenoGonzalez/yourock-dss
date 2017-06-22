@@ -1,103 +1,160 @@
-<!doctype html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Daniel Moreno González">
-        <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-        <link href="{{asset('logo.ico')}}" rel="shortcut icon" type="image/x-icon">
-        <link href="{{asset('css/estilopaginaprincipal.css')}}" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-        <title>YOU ROCK! - Home</title>
-    </head>
-    <body>
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ action('HomeController@index') }}">YOU ROCK!</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="{{ action('ContactController@index') }}">Contacto</a></li>
-                </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Register</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                        {{ csrf_field() }}
+
+                        <div class="form-group{{ $errors->has('nif') ? ' has-error' : '' }}">
+                            <label for="nif" class="col-md-4 control-label">NIF:</label>
+
+                            <div class="col-md-6">
+                                <input id="nif" type="text" class="form-control" name="nif" value="{{ old('nif') }}" required>
+
+                                @if ($errors->has('nif'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('nif') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
-                    </div>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>Regístrate</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Iniciar sesión</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Carrito</a></li>
-                </ul>
+
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Nombre:</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('street') ? ' has-error' : '' }}">
+                            <label for="street" class="col-md-4 control-label">Calle:</label>
+
+                            <div class="col-md-6">
+                                <input id="street" type="text" class="form-control" name="street" value="{{ old('street') }}" required>
+
+                                @if ($errors->has('street'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('street') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
+                            <label for="number" class="col-md-4 control-label">Número de la vivienda:</label>
+
+                            <div class="col-md-6">
+                                <input id="number" type="number" class="form-control" name="number" value="{{ old('number') }}" required>
+
+                                @if ($errors->has('number'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('number') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                            <label for="city" class="col-md-4 control-label">Ciudad:</label>
+
+                            <div class="col-md-6">
+                                <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}" required>
+
+                                @if ($errors->has('city'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('city') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('zipCode') ? ' has-error' : '' }}">
+                            <label for="zipCode" class="col-md-4 control-label">Ciudad:</label>
+
+                            <div class="col-md-6">
+                                <input id="zipCode" type="number" class="form-control" name="zipCode" value="{{ old('zipCode') }}" required>
+
+                                @if ($errors->has('zipCode'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('zipCode') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('phoneNumber') ? ' has-error' : '' }}">
+                            <label for="phoneNumber" class="col-md-4 control-label">Teléfono:</label>
+
+                            <div class="col-md-6">
+                                <input id="phoneNumber" type="number" class="form-control" name="phoneNumber" value="{{ old('phoneNumber') }}" required>
+
+                                @if ($errors->has('phoneNumber'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('phoneNumber') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">Email:</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="password" class="col-md-4 control-label">Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </nav>
-    </header> 
-
-        <h1>Página registro</h1>
-        <div class="container">
-            <h2>Horizontal form</h2>
-            <form class="form-horizontal" action="/action_page.php">
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="nif">NIF:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nif" placeholder="Introduce tu nif" name="nif">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="name">Nombre:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="name" placeholder="Introduce tu nombre" name="name">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="surname">Apellidos:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="surname" placeholder="Introduce tus apellidos" name="surname">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="phoneNumber">Teléfono:</label>
-                    <div class="col-sm-10">
-                        <input type="tel" class="form-control" id="phoneNumber" placeholder="Introduce tu teléfono" name="phoneNumber">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="nif">Email:</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="email" placeholder="Introduce tu email" name="email">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd">Contraseña:</label>
-                    <div class="col-sm-10">          
-                        <input type="password" class="form-control" id="pwd" placeholder="Introduce tu contraseña" name="pwd">
-                    </div>
-                </div>
-
-                <div class="form-group">        
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </div>
-                </div>
-            </form>
         </div>
-
-        <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    </body>
-</html>
+    </div>
+</div>
+@endsection
