@@ -27,6 +27,7 @@ Route::get('instruments/{instrument}', 'InstrumentsController@show');
 Route::get('contact', 'ContactController@index');
 
 Route::post('auth/register', 'UsersController@show');
+//Route::get('login', 'LoginController@login');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

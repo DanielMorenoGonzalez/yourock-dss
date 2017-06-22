@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'accepted'             => 'The :attribute must be accepted.',
-    'active_url'           => 'The :attribute is not a valid URL.',
+    'accepted'             => ':attribute debe aceptarse.',
+    'active_url'           => ':attribute no es una URL válida.',
     'after'                => 'The :attribute must be a date after :date.',
     'after_or_equal'       => 'The :attribute must be a date after or equal to :date.',
     'alpha'                => 'The :attribute may only contain letters.',
@@ -64,11 +64,11 @@ return [
         'string'  => 'The :attribute must be at least :min characters.',
         'array'   => 'The :attribute must have at least :min items.',
     ],
-    'not_in'               => 'The selected :attribute is invalid.',
-    'numeric'              => 'The :attribute must be a number.',
+    'not_in'               => 'El :attribute seleccionado es inválido.',
+    'numeric'              => ':attribute debe ser un número.',
     'present'              => 'The :attribute field must be present.',
     'regex'                => 'The :attribute format is invalid.',
-    'required'             => 'The :attribute field is required.',
+    'required'             => 'El campo :attribute es obligatorio.',
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => 'The :attribute field is required when :values is present.',
@@ -82,11 +82,11 @@ return [
         'string'  => 'The :attribute must be :size characters.',
         'array'   => 'The :attribute must contain :size items.',
     ],
-    'string'               => 'The :attribute must be a string.',
-    'timezone'             => 'The :attribute must be a valid zone.',
-    'unique'               => 'The :attribute has already been taken.',
-    'uploaded'             => 'The :attribute failed to upload.',
-    'url'                  => 'The :attribute format is invalid.',
+    'string'               => ':attribute debe ser una cadena de texto.',
+    'timezone'             => ':attribute debe ser una zona válida.',
+    'unique'               => ':attribute ya está cogido.',
+    'uploaded'             => ':attribute falló al subirse.',
+    'url'                  => 'El formato de :attribute no es válido.',
 
     /*
     |--------------------------------------------------------------------------
