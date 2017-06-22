@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('home') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('nif') ? ' has-error' : '' }}">
@@ -38,29 +38,15 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('street') ? ' has-error' : '' }}">
-                            <label for="street" class="col-md-4 control-label">Calle:</label>
+                        <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                            <label for="address" class="col-md-4 control-label">Dirección:</label>
 
                             <div class="col-md-6">
-                                <input id="street" type="text" class="form-control" name="street" value="{{ old('street') }}" required>
+                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required>
 
-                                @if ($errors->has('street'))
+                                @if ($errors->has('address'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('street') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('number') ? ' has-error' : '' }}">
-                            <label for="number" class="col-md-4 control-label">Número de la vivienda:</label>
-
-                            <div class="col-md-6">
-                                <input id="number" type="number" class="form-control" name="number" value="{{ old('number') }}" required>
-
-                                @if ($errors->has('number'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('number') }}</strong>
+                                        <strong>{{ $errors->first('address') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -80,8 +66,22 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('province') ? ' has-error' : '' }}">
+                            <label for="province" class="col-md-4 control-label">Provincia:</label>
+
+                            <div class="col-md-6">
+                                <input id="province" type="text" class="form-control" name="province" value="{{ old('province') }}" required>
+
+                                @if ($errors->has('province'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('province') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('zipCode') ? ' has-error' : '' }}">
-                            <label for="zipCode" class="col-md-4 control-label">Ciudad:</label>
+                            <label for="zipCode" class="col-md-4 control-label">Código postal:</label>
 
                             <div class="col-md-6">
                                 <input id="zipCode" type="number" class="form-control" name="zipCode" value="{{ old('zipCode') }}" required>
@@ -123,7 +123,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            <label for="password" class="col-md-4 control-label">Contraseña:</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
@@ -137,17 +137,31 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <label for="password-confirm" class="col-md-4 control-label">Confirmar contraseña:</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
+                            <label for="type" class="col-md-4 control-label">Tipo:</label>
+
+                            <div class="col-md-6">
+                                <input id="type" type="text" class="form-control" name="type" value="{{ old('type') }}" required>
+
+                                @if ($errors->has('type'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('type') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Register
+                                    Registrarse
                                 </button>
                             </div>
                         </div>
