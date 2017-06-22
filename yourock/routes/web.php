@@ -25,3 +25,5 @@ Route::get('instruments/{instrument}', 'InstrumentsController@show');
 
 //Ruta para mostrar la página de contacto
 Route::get('contact', 'ContactController@index');
+
+Route::get('auth/register', 'UsersController@show');
