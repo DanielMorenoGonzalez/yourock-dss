@@ -26,8 +26,11 @@ Route::get('instruments/{instrument}', 'InstrumentsController@show');
 //Ruta para mostrar la página de contacto
 Route::get('contact', 'ContactController@index');
 
-Route::post('auth/register', 'UsersController@show');
+Route::get('user/profile', 'UsersController@show');
+Route::post('register', 'UsersController@store');
+Route::post('auth/login', 'Auth\LoginController@login');
+Route::get('auth/logout', 'Auth\LoginController@logout');
 //Route::get('login', 'LoginController@login');
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');

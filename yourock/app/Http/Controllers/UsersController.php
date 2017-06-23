@@ -3,15 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use DB;
 
 class UsersController extends Controller
 {
-    public function show(){
-        return view('auth.register');
-    }
-
     public function store(Request $request) {
         $user = new User;
         $user->nif = $request->input('nif');
@@ -26,5 +23,14 @@ class UsersController extends Controller
         $user->password = bcrypt($request->input('password'));
         $user->type = $request->input('type');
         $user->save();
+
+        return redirect()->action('UsersController@show');
+    }
+
+    public function show(){
+        $user = new User();
+        if(Auth::guest()){
+            return view('auth.login');
+        }
     }
 }
