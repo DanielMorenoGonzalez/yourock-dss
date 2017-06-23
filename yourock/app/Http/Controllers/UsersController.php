@@ -36,4 +36,27 @@ class UsersController extends Controller
             return view('clients.show', (['user' => $user]));
         }
     }
+
+    public function edit(){
+		$user = Auth::user();
+		return view('clients.edit', (['user' => $user]));
+	}
+
+    public function update(Request $request){
+        $user = Auth::user();
+        $user->nif = $request->input('nif');
+        $user->name = $request->input('name');
+        $user->surname = $request->input('surname');
+        $user->address = $request->input('address');
+        $user->city = $request->input('city');
+        $user->province = $request->input('province');
+        $user->zipCode = $request->input('zipCode');
+        $user->phoneNumber = $request->input('phoneNumber');
+        $user->email = $request->input('email');
+        $user->password = bcrypt($request->input('password'));
+        $user->type = $request->input('type');
+        $user->save();
+
+        return redirect()->action('UsersController@show');
+    }
 }

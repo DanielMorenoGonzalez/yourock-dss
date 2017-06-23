@@ -27,6 +27,8 @@ Route::get('instruments/{instrument}', 'InstrumentsController@show');
 Route::get('contact', 'ContactController@index');
 
 Route::get('user/profile', 'UsersController@show');
+Route::get('user/edit', 'UsersController@edit');
+Route::post('user/edit', 'UsersController@update');
 Route::post('auth/register', 'UsersController@store');
 Route::post('auth/login', 'Auth\LoginController@login');
 Route::get('auth/logout', 'Auth\LoginController@logout');

@@ -10,4 +10,5 @@
 <p>{{ $user->zipCode }}</p>
 <p>{{ $user->phoneNumber }}</p>
 <p>{{ $user->email }}</p>
+<li><a href="{{ action('UsersController@edit') }}">Editar perfil</a></li>
 @endsection
