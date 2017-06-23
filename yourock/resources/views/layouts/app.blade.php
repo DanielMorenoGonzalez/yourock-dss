@@ -45,6 +45,11 @@
                         <li><a href="{{ route('register') }}"><span class="glyphicon glyphicon-user"></span>Regístrate</a></li>
                         <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span>Iniciar sesión</a></li>
                     @else
+
+                    
+                        <li><a href="{{ action('UsersController@show') }}">Mi perfil</a></li>
+
+                        
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
@@ -82,9 +87,9 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{asset('js/bootstrap.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

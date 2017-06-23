@@ -28,9 +28,12 @@ class UsersController extends Controller
     }
 
     public function show(){
-        $user = new User();
+        $user = Auth::user();
         if(Auth::guest()){
             return view('auth.login');
+        }
+        if($user->type == 'cliente'){
+            return view('clients.show', (['user' => $user]));
         }
     }
 }
