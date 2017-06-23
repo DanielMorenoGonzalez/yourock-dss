@@ -30,6 +30,17 @@ class OrderlinesTableSeeder extends Seeder
         $orderline1->instrument()->associate($instrument1);
         $orderline1->order()->associate($order1);
         $orderline1->save();
+
+        //Recuperamos el segundo pedido
+        $order2 = Order::find(2);
+
+        //Creamos y guardamos distintos objetos relacionados
+        $orderline2 = new Orderline([
+            'quantity' => '2'
+        ]);
+        $orderline2->instrument()->associate($instrument1);
+        $orderline2->order()->associate($order2);
+        $orderline2->save();
         
     }
 }

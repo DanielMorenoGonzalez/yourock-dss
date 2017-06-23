@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@section('title', 'YOU ROCK! - Perfil de usuario')
+@section('title', 'YOU ROCK! - Carrito de la compra')
 @section('content')
-<h1>Perfil de usuario</h1>
+<h1>Carrito de la compra</h1>
 <p>{{ $user->name }}</p>
 <p>{{ $user->surname }}</p>
 <p>{{ $user->address }}</p>

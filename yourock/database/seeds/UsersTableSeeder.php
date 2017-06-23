@@ -23,11 +23,11 @@ class UsersTableSeeder extends Seeder
             'address' => 'Calle San Isidro',
             'city' => 'San Vicente del Raspeig',
             'province' => 'Alicante',
-            'zipCode' => '03690',
+            'zipCode' => '13690',
             'phoneNumber' => '678992432',
             'email' => 'isabellaRE93@gmail.com',
-            'password' => 'gp1bike',
-            'type' => 'administrator'
+            'password' => bcrypt('gp1bike'),
+            'type' => 'cliente'
         ]);
         $user1->save();
 

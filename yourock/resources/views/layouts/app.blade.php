@@ -57,6 +57,7 @@
 
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menuusuario">
                                 <li><a href="{{ action('UsersController@show') }}">Mi perfil</a></li>
+                                <li><a href="{{ action('OrdersController@index') }}">Mis pedidos</a></li>
                                 
                                 <li>
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

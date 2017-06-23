@@ -10,6 +10,9 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    //Atributo que no se asignará masivamente
+    protected $guarded = ['type'];
+
     /**
      * The attributes that are mass assignable.
      *

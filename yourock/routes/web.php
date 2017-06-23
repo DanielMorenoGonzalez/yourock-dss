@@ -26,6 +26,9 @@ Route::get('instruments/{instrument}', 'InstrumentsController@show');
 //Ruta para mostrar la página de contacto
 Route::get('contact', 'ContactController@index');
 
+//Ruta para ver los pedidos de un usuario
+Route::get('user/orders', 'OrdersController@index');
+
 //Ruta mostrar el perfil de usuario
 Route::get('user/profile', 'UsersController@show');
 
@@ -34,6 +37,9 @@ Route::get('user/edit', 'UsersController@edit');
 
 //Ruta para editar un usuario
 Route::post('user/edit', 'UsersController@update');
+
+//Ruta para borrar un usuario
+Route::get('user/delete/{id}', 'UsersController@destroy');
 
 Route::post('auth/register', 'UsersController@store');
 Route::post('auth/login', 'Auth\LoginController@login');

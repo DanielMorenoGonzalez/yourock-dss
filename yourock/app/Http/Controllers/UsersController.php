@@ -22,7 +22,7 @@ class UsersController extends Controller
         $user->phoneNumber = $request->input('phoneNumber');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        $user->type = 'Cliente';
+        $user->type = 'cliente';
         //$user->type = $request->input('type');
         $user->save();
 
@@ -63,5 +63,14 @@ class UsersController extends Controller
         $user->save();
 
         return redirect()->action('UsersController@show');
+    }
+
+    public function destroy($id){
+        $userType = Auth::user()->type;
+        $user = User::find($id);
+        $user->delete();
+        if($userType == 'cliente'){
+            return redirect()->action('HomeController@index');
+        }
     }
 }

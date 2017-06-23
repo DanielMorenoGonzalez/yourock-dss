@@ -26,5 +26,13 @@ class OrdersTableSeeder extends Seeder
         ]);
         $order1->user()->associate($user1);
         $order1->save();
+
+        //Creamos y guardamos distintos objetos relacionados
+        $order2 = new Order([
+            'payment' => 'Efectivo',
+            'state' => 'En curso'
+        ]);
+        $order2->user()->associate($user1);
+        $order2->save();
     }
 }
