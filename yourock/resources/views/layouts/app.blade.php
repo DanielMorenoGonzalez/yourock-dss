@@ -46,15 +46,6 @@
                         <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span>Iniciar sesión</a></li>
                     @else
 
-                        <li><a href="{{ action('UsersController@show') }}">Mi perfil</a></li>
-
-                        
-                        <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
-                                    Logout
-                        </a>
-
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                         </form>
@@ -65,9 +56,11 @@
                                 </a>
 
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menuusuario">
+                                <li><a href="{{ action('UsersController@show') }}">Mi perfil</a></li>
+                                
                                 <li>
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        Logout
+                                        Cerrar sesión
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
