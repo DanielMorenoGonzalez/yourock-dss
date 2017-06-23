@@ -49,8 +49,12 @@ class UsersController extends Controller
     //Método para actualizar la información de un usuario
     public function update(Request $request){
         $user = Auth::user();
-        $user->nif = $request->input('nif');
-        $user->name = $request->input('name');
+        if($request->input('name') != ''){
+            $this->validate($request, [
+			    'name' => 'required'
+		    ]);
+            $user->nif = $request->input('nif');
+        }
         $user->surname = $request->input('surname');
         $user->address = $request->input('address');
         $user->city = $request->input('city');
@@ -58,8 +62,6 @@ class UsersController extends Controller
         $user->zipCode = $request->input('zipCode');
         $user->phoneNumber = $request->input('phoneNumber');
         $user->email = $request->input('email');
-        $user->password = bcrypt($request->input('password'));
-        $user->type = $request->input('type');
         $user->save();
 
         return redirect()->action('UsersController@show');
