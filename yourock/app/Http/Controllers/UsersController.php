@@ -9,6 +9,7 @@ use DB;
 
 class UsersController extends Controller
 {
+    //Método para guardar un usuario
     public function store(Request $request) {
         $user = new User;
         $user->nif = $request->input('nif');
@@ -27,6 +28,7 @@ class UsersController extends Controller
         return redirect()->action('UsersController@show');
     }
 
+    //Método para mostrar la vista al usuario según los permisos que tenga
     public function show(){
         $user = Auth::user();
         if(Auth::guest()){
@@ -37,11 +39,13 @@ class UsersController extends Controller
         }
     }
 
+    //Método para recuperar el usuario autenticado y mostrarle la vista de editar perfil
     public function edit(){
 		$user = Auth::user();
 		return view('clients.edit', (['user' => $user]));
 	}
 
+    //Método para actualizar la información de un usuario
     public function update(Request $request){
         $user = Auth::user();
         $user->nif = $request->input('nif');

@@ -14,6 +14,6 @@ return [
     */
 
     'failed' => 'Las credenciales son incorrectas.',
-    'throttle' => 'Demasiados intentos de login. Por favor, inténtelo en :seconds segundos.',
+    'throttle' => 'Demasiados intentos de login. Por favor, inténtalo en :seconds segundos.',
 
 ];

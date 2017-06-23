@@ -15,7 +15,7 @@
                             <label for="nif" class="col-md-4 control-label">NIF:</label>
 
                             <div class="col-md-6">
-                                <input id="nif" type="text" class="form-control" name="nif" value="{{ old('nif') }}" required>
+                                <input id="nif" type="text" class="form-control" name="nif" value="{{ old('nif') }}">
 
                                 @if ($errors->has('nif'))
                                     <span class="help-block">
@@ -29,7 +29,7 @@
                             <label for="name" class="col-md-4 control-label">Nombre:</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">

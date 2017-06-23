@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'accepted'             => ':attribute debe aceptarse.',
-    'active_url'           => ':attribute no es una URL válida.',
+    'accepted'             => 'El campo :attribute debe aceptarse.',
+    'active_url'           => 'El campo :attribute no es una URL válida.',
     'after'                => 'The :attribute must be a date after :date.',
     'after_or_equal'       => 'The :attribute must be a date after or equal to :date.',
     'alpha'                => 'The :attribute may only contain letters.',
@@ -51,8 +51,8 @@ return [
     'ipv6'                 => 'The :attribute must be a valid IPv6 address.',
     'json'                 => 'The :attribute must be a valid JSON string.',
     'max'                  => [
-        'numeric' => 'The :attribute may not be greater than :max.',
-        'file'    => 'The :attribute may not be greater than :max kilobytes.',
+        'numeric' => ':attribute no debe ser mayor que :max.',
+        'file'    => ':attribute may not be greater than :max kilobytes.',
         'string'  => 'The :attribute may not be greater than :max characters.',
         'array'   => 'The :attribute may not have more than :max items.',
     ],
@@ -64,9 +64,9 @@ return [
         'string'  => 'The :attribute must be at least :min characters.',
         'array'   => 'The :attribute must have at least :min items.',
     ],
-    'not_in'               => 'El :attribute seleccionado es inválido.',
-    'numeric'              => ':attribute debe ser un número.',
-    'present'              => 'The :attribute field must be present.',
+    'not_in'               => 'El campo :attribute seleccionado es inválido.',
+    'numeric'              => 'El campo :attribute debe ser un número.',
+    'present'              => 'EL campo :attribute debe estar presente.',
     'regex'                => 'The :attribute format is invalid.',
     'required'             => 'El campo :attribute es obligatorio.',
     'required_if'          => 'The :attribute field is required when :other is :value.',
@@ -82,11 +82,11 @@ return [
         'string'  => 'The :attribute must be :size characters.',
         'array'   => 'The :attribute must contain :size items.',
     ],
-    'string'               => ':attribute debe ser una cadena de texto.',
-    'timezone'             => ':attribute debe ser una zona válida.',
-    'unique'               => ':attribute ya está cogido.',
-    'uploaded'             => ':attribute falló al subirse.',
-    'url'                  => 'El formato de :attribute no es válido.',
+    'string'               => 'El campo :attribute debe ser una cadena de texto.',
+    'timezone'             => 'El campo :attribute debe ser una zona válida.',
+    'unique'               => 'El campo :attribute ya está cogido.',
+    'uploaded'             => 'El campo :attribute falló al subirse.',
+    'url'                  => 'El formato del campo :attribute no es válido.',
 
     /*
     |--------------------------------------------------------------------------

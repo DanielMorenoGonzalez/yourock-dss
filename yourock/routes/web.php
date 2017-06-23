@@ -26,13 +26,19 @@ Route::get('instruments/{instrument}', 'InstrumentsController@show');
 //Ruta para mostrar la página de contacto
 Route::get('contact', 'ContactController@index');
 
+//Ruta mostrar el perfil de usuario
 Route::get('user/profile', 'UsersController@show');
+
+//Ruta para mostrar la página de editar usuario
 Route::get('user/edit', 'UsersController@edit');
+
+//Ruta para editar un usuario
 Route::post('user/edit', 'UsersController@update');
+
 Route::post('auth/register', 'UsersController@store');
 Route::post('auth/login', 'Auth\LoginController@login');
 Route::get('auth/logout', 'Auth\LoginController@logout');
-//Route::get('login', 'LoginController@login');
 
 Auth::routes();
+//Ruta para mostrar la página home
 Route::get('/home', 'HomeController@index');
