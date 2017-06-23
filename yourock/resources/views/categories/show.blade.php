@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'YOU ROCK! - Instrumentos de la categoría')
 @section('content')
 <h2>Categoría {{ $category->name }}</h2>
 <h4>{{ $category->description }}</h4>

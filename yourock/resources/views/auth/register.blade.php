@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'YOU ROCK! - Registro')
 @section('content')
 <div class="container">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ action('UsersController@store') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('nif') ? ' has-error' : '' }}">
