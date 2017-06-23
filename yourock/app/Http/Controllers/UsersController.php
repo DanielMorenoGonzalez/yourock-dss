@@ -22,7 +22,8 @@ class UsersController extends Controller
         $user->phoneNumber = $request->input('phoneNumber');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        $user->type = $request->input('type');
+        $user->type = 'Cliente';
+        //$user->type = $request->input('type');
         $user->save();
 
         return redirect()->action('UsersController@show');

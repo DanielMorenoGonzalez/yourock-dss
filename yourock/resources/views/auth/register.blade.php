@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ action('UsersController@store') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('nif') ? ' has-error' : '' }}">
@@ -155,20 +155,6 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
-                            <label for="type" class="col-md-4 control-label">Tipo:</label>
-
-                            <div class="col-md-6">
-                                <input id="type" type="text" class="form-control" name="type" value="{{ old('type') }}" required>
-
-                                @if ($errors->has('type'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('type') }}</strong>
-                                    </span>
-                                @endif
                             </div>
                         </div>
 

@@ -5,9 +5,9 @@
 <h4>{{ $category->description }}</h4>
 <br/>
 <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Ordenar...
+    <button id="orderby" class="btn btn-default dropdown-toggle" data-target="#" type="button" data-toggle="dropdown" aria-expanded="false">Ordenar...
     <span class="caret"></span></button>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" aria-labelledby="orderby">
         <li><a href="#">Precio - Ascendente</a></li>
         <li><a href="#">Precio - Descendente</a></li>
         <li class="divider"></li>
