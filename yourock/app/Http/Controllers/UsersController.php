@@ -23,11 +23,11 @@ class UsersController extends Controller
         $user->phoneNumber = $request->input('phoneNumber');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        $user->type = 'cliente';
-        //$user->type = $request->input('type');
+        //$user->type = 'cliente';
+        $user->type = $request->input('type');
         $user->save();
 
-        return redirect()->action('UsersController@show');
+        return redirect('home');
     }
 
     //Método para mostrar la vista al usuario según los permisos que tenga

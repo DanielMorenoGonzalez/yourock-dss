@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ action('UsersController@store') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('nif') ? ' has-error' : '' }}">
@@ -98,7 +98,7 @@
                             <label for="zipCode" class="col-md-4 control-label">Código postal:</label>
 
                             <div class="col-md-6">
-                                <input id="zipCode" type="number" class="form-control" name="zipCode" value="{{ old('zipCode') }}" required>
+                                <input id="zipCode" type="text" class="form-control" name="zipCode" value="{{ old('zipCode') }}" required>
 
                                 @if ($errors->has('zipCode'))
                                     <span class="help-block">
@@ -155,6 +155,20 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
+                            <label for="type" class="col-md-4 control-label">Tipo:</label>
+
+                            <div class="col-md-6">
+                                <input id="type" type="text" class="form-control" name="type" value="{{ old('type') }}" required>
+
+                                @if ($errors->has('type'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('type') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
