@@ -4,6 +4,7 @@
 <h2>Categoría {{ $category->name }}</h2>
 <h4>{{ $category->description }}</h4>
 <br/>
+
 <div class="dropdown">
     <button id="orderby" class="btn btn-default dropdown-toggle" data-target="#" type="button" data-toggle="dropdown" aria-expanded="false">Ordenar...
     <span class="caret"></span></button>

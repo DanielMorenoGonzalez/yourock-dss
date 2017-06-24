@@ -48,7 +48,7 @@ class InstrumentsTableSeeder extends Seeder
             'price' => '128',
             'stock' => '36',
             'urlPhoto' => 'urldelaguitarraelectrica3',
-            'manufacturer' => 'Harley'
+            'manufacturer' => 'Harley Benton'
         ]);
         $instrument3->category()->associate($category1);
         $instrument3->save();
