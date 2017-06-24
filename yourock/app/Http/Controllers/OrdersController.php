@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Order;
+use App\Instrument;
 use DB;
 
 class OrdersController extends Controller
@@ -17,8 +18,10 @@ class OrdersController extends Controller
     }
 
     public function show($id) {
-        $order = Order::find($id);
-        $orderlines = $order->orderlines()->get();
+        $order = Order::findOrFail($id);
+        $orderlines = $order->orderlines;
+
+        //$instrument = $order->orderlines->instrument();
         return view('orders.show', array('order' => $order, 'orderlines' => $orderlines));
     }
 

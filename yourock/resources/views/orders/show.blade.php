@@ -6,9 +6,9 @@
 <p>Estado: {{ $order->state }}</p>
 @foreach ($orderlines as $orderline)
         <div>
-            <p>Línea de pedido que contiene {{ $orderline->quantity }}</p>
+            <p>Línea de pedido que contiene {{ $orderline->quantity }} unidades del instrumento con id {{ $orderline->instrument_id }}</p>
         </div>
         <br/>
-    @endforeach
+@endforeach
 </script>
 @endsection

@@ -19,4 +19,5 @@ class Orderline extends Model
         //Orderline tiene la clave ajena order_id
         return $this->belongsTo('App\Order');
     }
+
 }

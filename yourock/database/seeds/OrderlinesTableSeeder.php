@@ -36,7 +36,7 @@ class OrderlinesTableSeeder extends Seeder
 
         //Creamos y guardamos distintos objetos relacionados
         $orderline2 = new Orderline([
-            'quantity' => '2'
+            'quantity' => '1'
         ]);
         $orderline2->instrument()->associate($instrument1);
         $orderline2->order()->associate($order2);
