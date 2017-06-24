@@ -20,8 +20,6 @@ class OrdersController extends Controller
     public function show($id) {
         $order = Order::findOrFail($id);
         $orderlines = $order->orderlines;
-
-        //$instrument = $order->orderlines->instrument();
         return view('orders.show', array('order' => $order, 'orderlines' => $orderlines));
     }
 
