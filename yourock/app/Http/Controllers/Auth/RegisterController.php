@@ -52,13 +52,13 @@ class RegisterController extends Controller
             'name' => 'required|max:20',
             'surname' => 'required|max:30',
             'address' => 'required|max:100',
-            'city' => 'required|max:20',
+            'city' => 'required|max:30',
             'province' => 'required|max:20',
             'zipCode' => 'required|max:5',
-            'phoneNumber' => 'required|max:9',
+            'phoneNumber' => 'required|digits:9',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'type' => 'required|max:20',
+            'type' => 'required|max:10|alpha',
         ]);
     }
 
