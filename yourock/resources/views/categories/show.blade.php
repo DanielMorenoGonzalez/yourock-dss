@@ -5,6 +5,13 @@
 <h4>{{ $category->description }}</h4>
 <br/>
 
+<li>Filtrar {{ $category->name }} por fabricante:</li>
+@foreach ($instruments as $instrument)
+    <div class="checkbox">
+    <label><input type="checkbox" value="{{ $instrument->manufacturer }}">{{ $instrument->manufacturer }}</label>
+    </div>
+@endforeach
+
 <div class="dropdown">
     <button id="orderby" class="btn btn-default dropdown-toggle" data-target="#" type="button" data-toggle="dropdown" aria-expanded="false">Ordenar...
     <span class="caret"></span></button>

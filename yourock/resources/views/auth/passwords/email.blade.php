@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Enlace para reestablecer la contraseña
+                                    Mandar enlace a email
                                 </button>
                             </div>
                         </div>
