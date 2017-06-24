@@ -8,7 +8,7 @@
     @foreach ($orders as $order)
         <div>
             <p>Pedido :{{ $order->id }}</p>
-            <li><a href="#">Mostrar detalles de pedido</a></li>
+            <li><a href="{{ action('OrdersController@show', [$order->id]) }}">Mostrar detalles de pedido</a></li>
         </div>
         <br/>
     @endforeach

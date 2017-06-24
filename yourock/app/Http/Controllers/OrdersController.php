@@ -16,6 +16,12 @@ class OrdersController extends Controller
         return view('orders.index', array('user' => $user, 'orders' => $orders));
     }
 
+    public function show($id) {
+        $order = Order::find($id);
+        $orderlines = $order->orderlines()->get();
+        return view('orders.show', array('order' => $order, 'orderlines' => $orderlines));
+    }
+
     //Sólo tendran acceso los usuarios autenticados
     public function __construct(){
         $this->middleware('auth');

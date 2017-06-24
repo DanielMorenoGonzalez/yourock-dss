@@ -109,6 +109,7 @@ class UsersController extends Controller
         return redirect()->action('UsersController@show');
     }
 
+    //Método para borrar a un usuario
     public function destroy($id){
         $userType = Auth::user()->type;
         $user = User::find($id);
@@ -117,4 +118,5 @@ class UsersController extends Controller
             return redirect()->action('HomeController@index');
         }
     }
+
 }

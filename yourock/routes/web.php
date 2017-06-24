@@ -29,6 +29,9 @@ Route::get('contact', 'ContactController@index');
 //Ruta para ver los pedidos de un usuario
 Route::get('user/orders', 'OrdersController@index');
 
+//Ruta para ver un pedido concreto de un usuario
+Route::get('user/orders/{order}', 'OrdersController@show');
+
 //Ruta mostrar el perfil de usuario
 Route::get('user/profile', 'UsersController@show');
 
