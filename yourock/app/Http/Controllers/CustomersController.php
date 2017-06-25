@@ -24,8 +24,6 @@ class CustomersController extends Controller
         $user->phoneNumber = $request->input('phoneNumber');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        //$user->type = 'cliente';
-        //$user->type = $request->input('type');
         $user->save();
 
         return redirect('home');
@@ -37,7 +35,7 @@ class CustomersController extends Controller
             return view('auth.login');
         }
         else {
-            return view('clients.show', (['user' => $user]));
+            return view('users.customers.show', (['user' => $user]));
         }
     }
 
@@ -45,7 +43,7 @@ class CustomersController extends Controller
     //y mostrarle la vista de editar perfil
     public function edit(){
 		$user = Auth::user();
-        return view('clients.edit', (['user' => $user]));
+        return view('users.customers.edit', (['user' => $user]));
 	}
 
     //Método para actualizar la información de un usuario (de tipo customer)
