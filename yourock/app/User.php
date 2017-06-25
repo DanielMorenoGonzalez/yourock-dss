@@ -4,14 +4,18 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Nanigans\SingleTableInheritance\SingleTableInheritanceTrait;
 use App\Order;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use SingleTableInheritanceTrait;
 
-    //Atributo que no se asignará masivamente
-    protected $guarded = ['type'];
+    protected $table = "users";
+
+    protected static $singleTableTypeField = 'type';
+    protected static $singleTableSubclasses = [Customer::class];
 
     /**
      * The attributes that are mass assignable.
@@ -19,7 +23,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nif', 'name', 'surname', 'address', 'city', 'province', 'zipCode', 'phoneNumber', 'email', 'password', 'type',
+        'nif', 'name', 'surname', 'address', 'city', 'province', 'zipCode', 'phoneNumber', 'email', 'password',
     ];
 
     /**

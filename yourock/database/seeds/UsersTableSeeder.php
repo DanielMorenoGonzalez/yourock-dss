@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\Customer;
 
 class UsersTableSeeder extends Seeder
 {
@@ -16,6 +17,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->delete();
 
         //Creamos y guardamos distintos objetos relacionados
+        /*
         $user1 = new User([
             'nif' => '42985567K',
             'name' => 'Isabel',
@@ -27,11 +29,26 @@ class UsersTableSeeder extends Seeder
             'phoneNumber' => '678992432',
             'email' => 'isabellaRE93@gmail.com',
             'password' => bcrypt('gp1bike'),
-            'type' => 'cliente'
+            'type' => 'customer'
         ]);
         $user1->save();
+        */
 
-        $user2 = new User([
+        $customer1 = new Customer([
+            'nif' => '42985567K',
+            'name' => 'Isabel',
+            'surname' => 'Morales',
+            'address' => 'Calle San Isidro',
+            'city' => 'San Vicente del Raspeig',
+            'province' => 'Alicante',
+            'zipCode' => '03690',
+            'phoneNumber' => '678992432',
+            'email' => 'isabellaRE93@gmail.com',
+            'password' => bcrypt('gp1bike')
+        ]);
+        $customer1->save();
+
+        $customer2 = new Customer([
             'nif' => '72548977S',
             'name' => 'Pedro',
             'surname' => 'García',
@@ -41,12 +58,11 @@ class UsersTableSeeder extends Seeder
             'zipCode' => '23440',
             'phoneNumber' => '613235643',
             'email' => 'pgarcia21@gmail.com',
-            'password' => 'm0t0rbikes',
-            'type' => 'user'
+            'password' => 'm0t0rbikes'
         ]); 
-        $user2->save();
+        $customer2->save();
 
-        $user3 = new User([
+        $customer3 = new Customer([
             'nif' => '47228234P',
             'name' => 'Daniel',
             'surname' => 'Sánchez',
@@ -56,10 +72,9 @@ class UsersTableSeeder extends Seeder
             'zipCode' => '33205',
             'phoneNumber' => '692134321',
             'email' => 'danisanchezMUSIC@gmail.com',
-            'password' => 'mlove94',
-            'type' => 'user'
+            'password' => 'mlove94'
         ]);
-        $user3->save();
+        $customer3->save();
 
     }
 }
