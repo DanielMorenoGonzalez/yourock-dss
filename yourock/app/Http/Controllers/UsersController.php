@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
-use App\Customer;
 use DB;
 
 class UsersController extends Controller
 {
+    /*
     //Método para guardar un usuario
     public function store(Request $request) {
         $user = new User;
@@ -30,24 +30,30 @@ class UsersController extends Controller
 
         return redirect('home');
     }
+    */
 
+    /*
     //Método para mostrar la vista al usuario según los permisos que tenga
     public function show(){
-        if(Auth::user()->isCustomer()){
-            $user = Auth::user();
+        $user = Auth::user();
+        if($user->isCustomer()){
             return view('clients.show', (['user' => $user]));
         }
         else {
             return view('auth.login');
         }
     }
-
+    */
+    /*
     //Método para recuperar el usuario autenticado y mostrarle la vista de editar perfil
     public function edit(){
 		$user = Auth::user();
-		return view('clients.edit', (['user' => $user]));
+        if($user->isCustomer()){
+            return view('clients.edit', (['user' => $user]));
+        }
 	}
-
+    */
+    /*
     //Método para actualizar la información de un usuario
     public function update(Request $request){
         $user = Auth::user();
@@ -109,7 +115,8 @@ class UsersController extends Controller
 
         return redirect()->action('UsersController@show');
     }
-
+    */
+    /*
     //Método para borrar a un usuario
     public function destroy($id){
         $userType = Auth::user()->type;
@@ -119,5 +126,6 @@ class UsersController extends Controller
             return redirect()->action('HomeController@index');
         }
     }
+    */
 
 }

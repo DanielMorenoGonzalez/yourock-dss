@@ -56,7 +56,7 @@
                                 </a>
 
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menuusuario">
-                                <li><a href="{{ action('UsersController@show') }}">Mi perfil</a></li>
+                                <li><a href="{{ action('CustomersController@show') }}">Mi perfil</a></li>
                                 <li><a href="{{ action('OrdersController@index') }}">Mis pedidos</a></li>
                                 
                                 <li>

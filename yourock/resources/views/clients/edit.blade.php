@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Editar perfil</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ action('UsersController@update') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ action('CustomersController@update') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('nif') ? ' has-error' : '' }}">

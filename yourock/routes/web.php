@@ -30,24 +30,24 @@ Route::get('categories/{category}', 'CategoriesController@show');
 Route::get('instruments/{instrument}', 'InstrumentsController@show');
 
 //Ruta para ver los pedidos de un usuario
-Route::get('user/orders', 'OrdersController@index');
+Route::get('customer/orders', 'OrdersController@index');
 
 //Ruta para ver un pedido concreto de un usuario
-Route::get('user/orders/{order}', 'OrdersController@show');
+Route::get('customer/orders/{order}', 'OrdersController@show');
 
 //Ruta mostrar el perfil de usuario
-Route::get('user/profile', 'UsersController@show');
+Route::get('customer/profile', 'CustomersController@show');
 
 //Ruta para mostrar la página de editar usuario
-Route::get('user/edit', 'UsersController@edit');
+Route::get('customer/edit', 'CustomersController@edit');
 
 //Ruta para editar (acción) un usuario
-Route::post('user/edit', 'UsersController@update');
+Route::post('customer/edit', 'CustomersController@update');
 
 //Ruta para borrar un usuario
-Route::get('user/delete/{id}', 'UsersController@destroy');
+Route::get('customer/delete/{id}', 'CustomersController@destroy');
 
-Route::post('auth/register', 'UsersController@store');
+Route::post('auth/register', 'CustomersController@store');
 Route::post('auth/login', 'Auth\LoginController@login');
 Route::get('auth/logout', 'Auth\LoginController@logout');
 

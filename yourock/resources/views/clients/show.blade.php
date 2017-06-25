@@ -10,7 +10,7 @@
 <p>{{ $user->zipCode }}</p>
 <p>{{ $user->phoneNumber }}</p>
 <p>{{ $user->email }}</p>
-<li><a href="{{ action('UsersController@edit') }}">Editar perfil</a></li>
-<li><a href="{{ action('UsersController@destroy', [$user->id]) }}">Darse de baja</a></li>
+<li><a href="{{ action('CustomersController@edit') }}">Editar perfil</a></li>
+<li><a href="{{ action('CustomersController@destroy', [$user->id]) }}">Darse de baja</a></li>
 </script>
 @endsection
