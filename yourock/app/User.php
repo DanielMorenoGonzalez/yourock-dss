@@ -16,6 +16,7 @@ class User extends Authenticatable
 
     protected static $singleTableTypeField = 'type';
     protected static $singleTableSubclasses = [Customer::class];
+    protected static $persisted = ['nif', 'name', 'surname', 'phoneNumber', 'email', 'password'];
 
     /**
      * The attributes that are mass assignable.
@@ -37,5 +38,9 @@ class User extends Authenticatable
 
     public function orders() {
         return $this->hasMany('App\Order');
+    }
+
+    public function isCustomer() {
+        return $this->type == 'customer';
     }
 }

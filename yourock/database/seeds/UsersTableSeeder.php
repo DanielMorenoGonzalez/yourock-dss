@@ -17,23 +17,6 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->delete();
 
         //Creamos y guardamos distintos objetos relacionados
-        /*
-        $user1 = new User([
-            'nif' => '42985567K',
-            'name' => 'Isabel',
-            'surname' => 'Morales',
-            'address' => 'Calle San Isidro',
-            'city' => 'San Vicente del Raspeig',
-            'province' => 'Alicante',
-            'zipCode' => '13690',
-            'phoneNumber' => '678992432',
-            'email' => 'isabellaRE93@gmail.com',
-            'password' => bcrypt('gp1bike'),
-            'type' => 'customer'
-        ]);
-        $user1->save();
-        */
-
         $customer1 = new Customer([
             'nif' => '42985567K',
             'name' => 'Isabel',

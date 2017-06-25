@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Customer;
 use DB;
 
 class UsersController extends Controller
@@ -24,7 +25,7 @@ class UsersController extends Controller
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
         //$user->type = 'cliente';
-        $user->type = $request->input('type');
+        //$user->type = $request->input('type');
         $user->save();
 
         return redirect('home');
@@ -32,12 +33,12 @@ class UsersController extends Controller
 
     //Método para mostrar la vista al usuario según los permisos que tenga
     public function show(){
-        $user = Auth::user();
-        if(Auth::guest()){
-            return view('auth.login');
-        }
-        if($user->type == 'cliente'){
+        if(Auth::user()->isCustomer()){
+            $user = Auth::user();
             return view('clients.show', (['user' => $user]));
+        }
+        else {
+            return view('auth.login');
         }
     }
 
