@@ -171,4 +171,5 @@
         </div>
     </div>
 </div>
+</script>
 @endsection

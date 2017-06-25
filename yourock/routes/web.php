@@ -10,9 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 //Ruta para mostrar la página home
-Route::get('/', 'HomeController@index');
+Route::get('/', function() {
+    return view('home');
+});
 
 //Ruta para mostrar la página de contacto
 Route::get('contact', 'ContactController@index');
