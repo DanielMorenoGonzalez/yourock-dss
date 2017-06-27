@@ -24,7 +24,6 @@ class UsersController extends Controller
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
         $user->type = 'cliente';
-        //$user->type = $request->input('type');
         $user->save();
 
         return redirect('home');
