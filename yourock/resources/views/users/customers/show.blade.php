@@ -10,7 +10,24 @@
 <p>{{ $user->zipCode }}</p>
 <p>{{ $user->phoneNumber }}</p>
 <p>{{ $user->email }}</p>
-<li><a href="{{ action('CustomersController@edit') }}">Editar perfil</a></li>
-<li><a href="{{ action('CustomersController@destroy', [$user->id]) }}">Darse de baja</a></li>
-</script>
+<li><a href="{{ action('UsersController@edit') }}" class="btn btn-default" role="button">Editar perfil</a></li>
+
+<!--Botón con el que aparece un modal para confirmar que se quiere eliminar la cuenta-->
+<button class="btn btn-default" data-toggle="modal" data-target="#confirm-delete">Borrar cuenta</button>
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Borrar cuenta</h4>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro que quieres darte de baja de nuestra página web? Esta acción es irreversible, por lo que si así lo deseas, ya no podrás realizar pedidos de tus instrumentos favoritos con tu cuenta.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <a href="{{ action('UsersController@destroy', [$user->id]) }}" class="btn btn-danger btn-ok">Borrar</a>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

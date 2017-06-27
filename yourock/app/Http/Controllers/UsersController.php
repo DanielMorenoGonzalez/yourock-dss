@@ -9,7 +9,6 @@ use DB;
 
 class UsersController extends Controller
 {
-    /*
     //Método para guardar un usuario
     public function store(Request $request) {
         $user = new User;
@@ -24,36 +23,32 @@ class UsersController extends Controller
         $user->phoneNumber = $request->input('phoneNumber');
         $user->email = $request->input('email');
         $user->password = bcrypt($request->input('password'));
-        //$user->type = 'cliente';
+        $user->type = 'cliente';
         //$user->type = $request->input('type');
         $user->save();
 
         return redirect('home');
     }
-    */
 
-    /*
     //Método para mostrar la vista al usuario según los permisos que tenga
     public function show(){
         $user = Auth::user();
-        if($user->isCustomer()){
-            return view('clients.show', (['user' => $user]));
+        if($user->type == 'cliente'){
+            return view('users.customers.show', (['user' => $user]));
         }
         else {
             return view('auth.login');
         }
     }
-    */
-    /*
+    
     //Método para recuperar el usuario autenticado y mostrarle la vista de editar perfil
     public function edit(){
 		$user = Auth::user();
-        if($user->isCustomer()){
-            return view('clients.edit', (['user' => $user]));
+        if($user->type == 'cliente'){
+            return view('users.customers.edit', (['user' => $user]));
         }
 	}
-    */
-    /*
+    
     //Método para actualizar la información de un usuario
     public function update(Request $request){
         $user = Auth::user();
@@ -115,8 +110,7 @@ class UsersController extends Controller
 
         return redirect()->action('UsersController@show');
     }
-    */
-    /*
+
     //Método para borrar a un usuario
     public function destroy($id){
         $userType = Auth::user()->type;
@@ -126,6 +120,5 @@ class UsersController extends Controller
             return redirect()->action('HomeController@index');
         }
     }
-    */
 
 }

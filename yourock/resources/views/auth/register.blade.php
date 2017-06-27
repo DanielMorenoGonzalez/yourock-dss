@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ action('UsersController@store') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('nif') ? ' has-error' : '' }}">
@@ -158,6 +158,15 @@
                             </div>
                         </div>
 
+                        <br/>
+                        <p>Provincia2:</p>
+                        <select id="country" name="country"></select>
+                        <br/>
+                        <p>Ciudad2:</p>
+                        <select name="state" id="state"></select>
+                        <br/>
+                        
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -171,5 +180,7 @@
         </div>
     </div>
 </div>
+<script language="javascript">
+populateCountries("country", "state");
 </script>
 @endsection

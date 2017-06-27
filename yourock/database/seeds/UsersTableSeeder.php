@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
-use App\Customer;
 
 class UsersTableSeeder extends Seeder
 {
@@ -17,7 +16,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->delete();
 
         //Creamos y guardamos distintos objetos relacionados
-        $customer1 = new Customer([
+        $user1 = new User([
             'nif' => '42985567K',
             'name' => 'Isabel',
             'surname' => 'Morales',
@@ -27,11 +26,12 @@ class UsersTableSeeder extends Seeder
             'zipCode' => '03690',
             'phoneNumber' => '678992432',
             'email' => 'isabellaRE93@gmail.com',
-            'password' => bcrypt('gp1bike')
+            'password' => bcrypt('gp1bike'),
+            'type' => 'cliente'
         ]);
-        $customer1->save();
+        $user1->save();
 
-        $customer2 = new Customer([
+        $user2 = new User([
             'nif' => '72548977S',
             'name' => 'Pedro',
             'surname' => 'García',
@@ -41,11 +41,12 @@ class UsersTableSeeder extends Seeder
             'zipCode' => '23440',
             'phoneNumber' => '613235643',
             'email' => 'pgarcia21@gmail.com',
-            'password' => 'm0t0rbikes'
+            'password' => bcrypt('m0t0rbikes'),
+            'type' => 'cliente'
         ]); 
-        $customer2->save();
+        $user2->save();
 
-        $customer3 = new Customer([
+        $user3 = new User([
             'nif' => '47228234P',
             'name' => 'Daniel',
             'surname' => 'Sánchez',
@@ -55,9 +56,10 @@ class UsersTableSeeder extends Seeder
             'zipCode' => '33205',
             'phoneNumber' => '692134321',
             'email' => 'danisanchezMUSIC@gmail.com',
-            'password' => 'mlove94'
+            'password' => bcrypt('mlove94'),
+            'type' => 'cliente'
         ]);
-        $customer3->save();
+        $user3->save();
 
     }
 }
