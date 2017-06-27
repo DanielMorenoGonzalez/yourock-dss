@@ -52,59 +52,49 @@ class UsersController extends Controller
     //Método para actualizar la información de un usuario
     public function update(Request $request){
         $user = Auth::user();
+
+        $this->validate($request, [
+			'nif' => 'max:9',
+            'name' => 'max:20',
+            'surname' => 'max:30',
+            'address' => 'max:100',
+            'city' => 'max:30',
+            'province' => 'max:20',
+            'zipCode' => 'max:5',
+		]);
+
         if($request->input('nif') != ''){
-            $this->validate($request, [
-			    'nif' => 'required'
-		    ]);
             $user->nif = $request->input('nif');
         }
         if($request->input('name') != ''){
-            $this->validate($request, [
-			    'name' => 'required'
-		    ]);
-            $user->nif = $request->input('name');
+            $user->name = $request->input('name');
         }
         if($request->input('surname') != ''){
-            $this->validate($request, [
-			    'surname' => 'required'
-		    ]);
-            $user->nif = $request->input('surname');
+            $user->surname = $request->input('surname');
         }
         if($request->input('address') != ''){
-            $this->validate($request, [
-			    'address' => 'required'
-		    ]);
-            $user->nif = $request->input('address');
+            $user->address = $request->input('address');
         }
         if($request->input('city') != ''){
-            $this->validate($request, [
-			    'city' => 'required'
-		    ]);
-            $user->nif = $request->input('city');
+            $user->city = $request->input('city');
         }
         if($request->input('province') != ''){
-            $this->validate($request, [
-			    'province' => 'required'
-		    ]);
-            $user->nif = $request->input('province');
+            $user->province = $request->input('province');
         }
         if($request->input('zipCode') != ''){
-            $this->validate($request, [
-			    'zipCode' => 'required'
-		    ]);
-            $user->nif = $request->input('zipCode');
+            $user->zipCode = $request->input('zipCode');
         }
         if($request->input('phoneNumber') != ''){
             $this->validate($request, [
-			    'phoneNumber' => 'required'
+                'phoneNumber' => 'digits:9'
 		    ]);
-            $user->nif = $request->input('phoneNumber');
+            $user->phoneNumber = $request->input('phoneNumber');
         }
         if($request->input('email') != ''){
             $this->validate($request, [
-			    'email' => 'required'
+                'email' => 'email|max:255|unique:users',
 		    ]);
-            $user->nif = $request->input('email');
+            $user->email = $request->input('email');
         }
         $user->save();
 

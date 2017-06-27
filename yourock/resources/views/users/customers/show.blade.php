@@ -2,6 +2,7 @@
 @section('title', 'YOU ROCK! - Perfil de usuario')
 @section('content')
 <h1>Perfil de usuario</h1>
+<p>{{ $user->nif }}</p>
 <p>{{ $user->name }}</p>
 <p>{{ $user->surname }}</p>
 <p>{{ $user->address }}</p>
