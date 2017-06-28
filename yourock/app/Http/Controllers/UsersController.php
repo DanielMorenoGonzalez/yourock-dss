@@ -17,8 +17,8 @@ class UsersController extends Controller
         $user->name = $request->input('name');
         $user->surname = $request->input('surname');
         $user->address = $request->input('address');
-        $user->city = $request->input('city');
         $user->province = $request->input('province');
+        $user->city = $request->input('city');
         $user->zipCode = $request->input('zipCode');
         $user->phoneNumber = $request->input('phoneNumber');
         $user->email = $request->input('email');
@@ -57,8 +57,8 @@ class UsersController extends Controller
             'name' => 'max:20',
             'surname' => 'max:30',
             'address' => 'max:100',
-            'city' => 'max:30',
             'province' => 'max:20',
+            'city' => 'max:30',
             'zipCode' => 'max:5',
 		]);
 
@@ -74,11 +74,11 @@ class UsersController extends Controller
         if($request->input('address') != ''){
             $user->address = $request->input('address');
         }
-        if($request->input('city') != ''){
-            $user->city = $request->input('city');
-        }
         if($request->input('province') != ''){
             $user->province = $request->input('province');
+        }
+        if($request->input('city') != ''){
+            $user->city = $request->input('city');
         }
         if($request->input('zipCode') != ''){
             $user->zipCode = $request->input('zipCode');
