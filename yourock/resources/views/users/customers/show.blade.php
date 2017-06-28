@@ -2,7 +2,10 @@
 @section('title', 'YOU ROCK! - Perfil de usuario')
 @section('content')
 @if (session()->has('message'))
-    <div class="alert alert-success alert-dismissable">{{ session()->get('message') }}</div>
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <strong>{{ session()->get('message') }}</strong>
+    </div>
 @endif
 <h1>Perfil de usuario</h1>
 <p>{{ $user->nif }}</p>

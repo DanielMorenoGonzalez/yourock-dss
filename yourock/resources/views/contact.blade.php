@@ -1,6 +1,12 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Contacto')
 @section('content')
+@if (session()->has('message'))
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <strong>{{ session()->get('message') }}</strong>
+    </div>
+@endif
 <h1>Página de contacto</h1>
 <div class="container">
     <div class="row">

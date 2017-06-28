@@ -29,5 +29,7 @@ class ContactController extends Controller
             $message->to('yourockmusic1992@gmail.com', 'YOU ROCK!')->subject($data['subject']);
         });
 
+        return redirect()->action('ContactController@index')->with('message', 'Mensaje enviado');
+
     }
 }

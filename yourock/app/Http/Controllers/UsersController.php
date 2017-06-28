@@ -106,7 +106,7 @@ class UsersController extends Controller
         $user = User::find($id);
         $user->delete();
         if($userType == 'cliente'){
-            return redirect()->action('HomeController@index');
+            return redirect('home');
         }
     }
 
