@@ -18,6 +18,9 @@ Route::get('/', function() {
 //Ruta para mostrar la página de contacto
 Route::get('contact', 'ContactController@index');
 
+//Ruta para mostrar la página sobre nosotros
+Route::get('aboutus', 'AboutusController@index');
+
 //Ruta para mostrar todas las categorías
 Route::get('categories', 'CategoriesController@index');
 

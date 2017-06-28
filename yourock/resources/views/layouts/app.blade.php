@@ -9,6 +9,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    @yield('style')
+
     <title>@yield('title')</title>
 
     <!-- Styles -->
@@ -28,6 +30,7 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="#">Productos</a></li>
+                    <li><a href="{{ action('AboutusController@index') }}">Sobre nosotros</a><li>
                     <li><a href="{{ action('ContactController@index') }}">Contacto</a></li>
                 </ul>
                 <form class="navbar-form navbar-left">
@@ -78,6 +81,8 @@
 
         @yield('content')
     </div>
+    <div id="map">@yield('contentmap')</div>
+    
 
     <!-- Scripts -->
     <script src="{{ asset('js/bootstrap.min.js') }}" type="text/javascript"></script>
@@ -85,5 +90,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript">></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" type="text/javascript">></script>
     <script src="{{ asset('js/provinciasyciudades.js') }}" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo7Ilzab6ON5D9MNDGdxDAWbpZzZ3sQQg&callback=initMap"
+    async defer></script>
 </body>
 </html>
