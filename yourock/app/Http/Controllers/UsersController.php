@@ -97,7 +97,7 @@ class UsersController extends Controller
         }
         $user->save();
 
-        return redirect()->action('UsersController@show');
+        return redirect()->action('UsersController@show')->with('message', 'Perfil actualizado');
     }
 
     //Método para borrar a un usuario

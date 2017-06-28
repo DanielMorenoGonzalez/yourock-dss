@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Document</title>
+        <title>Email enviado</title>
     </head>
     <body>
         <p><strong>Email: </strong>{{ $email }}</p>

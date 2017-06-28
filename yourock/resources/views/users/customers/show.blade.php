@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Perfil de usuario')
 @section('content')
+@if (session()->has('message'))
+    <div class="alert alert-success alert-dismissable">{{ session()->get('message') }}</div>
+@endif
 <h1>Perfil de usuario</h1>
 <p>{{ $user->nif }}</p>
 <p>{{ $user->name }}</p>
