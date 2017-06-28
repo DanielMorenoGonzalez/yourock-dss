@@ -70,8 +70,8 @@
                             <label for="province" class="col-md-4 control-label">Provincia:</label>
 
                             <div class="col-md-6">
-                                <select id="province" class="form-control" name="province" size="1" onchange="makeSubmenu(this.value)">
-                                    <option selected>Albacete</option>
+                                <select id="province" class="form-control" name="province" size="1" onchange="makeSubmenu(this.value)" required>
+                                    <option>Albacete</option>
                                     <option>Alicante</option>
                                     <option>Almería</option>
                                     <option>Álava</option>
@@ -136,8 +136,8 @@
                             <label for="city" class="col-md-4 control-label">Ciudad:</label>
 
                             <div class="col-md-6">
-                                <select id="city" class="form-control" name="city" size="1">
-                                    <option selected>Alcoy</option>
+                                <select id="city" class="form-control" name="city" size="1" required>
+                                    <option></option>
                                 </select>
 
                                 @if ($errors->has('city'))
@@ -227,10 +227,11 @@
 </div>
 <script type="text/javascript">
         var citiesByProvince = {
-            Albacete: ["hola","hola2"],
+            Albacete: ["Abengibre","Alatoz","Albacete","Albatana","Alcalá del Júcar","Alcaraz","Almansa","Alpera","Ayna","Balazote","Barrax","Bienservida","Bonete","Casas-Ibáñez","Caudete","Chinchilla de Montearagón","El Bonillo","Elche de la Sierra","Férez","Fuensanta","Fuente Álamo","Fuentealbilla","Hellín","Higueruela","Hoya-Gonzálo","La Gineta","La Roda","Letur","Lezuza","Liétor","Madrigueras","Mahora","Minalla","Molinicos","Montealegre del Castillo","Munera","Nerpio","Ontur","Ossa de Montiel","Peñas de San Pedro","Povedilla","Pozo Cañada","Riópar","Robledo","Salobre","Socovos","Tarrazona de la Mancha","Tobarra","Villamalea","Villarrobledo","Yeste"],
             Alicante: ["Adsubia","Agost","Alcoy","Alicante","Alfaz del Pi","Almoradí","Altea","Aspe","Benidorm","Elche","Denia","Torrevieja","Jávea","Orihuela","Calpe","Villajoyosa","Villena","Elda","Benisa","Santa Pola","San Juan de Alicante","Guardamar del Segura","Campello","Petrel","Guadalest","Teulada","San Vicente del Raspeig","Castalla","Jijona","Crevillente","Novelda","Rojales","Concentaina","Jalón","Pego","Muchamiel","San Fulgencio","Pilar de la Horadada","Sax","Ibi","La Nucia","Biar","Salinas","Muro de Alcoy","Busot","Bañeres","Monóvar","Callosa de Ensarriá","Callosa de Segura","Elda","Dolores","Monforte del Cid"],
             Almería: ["Abla","Adra","Albox","Alhama de Almería","Almería","Antas","Arboleas","Bacares","Balanegra","Benahadux","Benitagla","Berja","Roquetas de Mar","Níjar","El Ejido","Vera","Mojácar","Huércal-Overa","Tabernas","Carboneras","Cuevas de Almanzora","Garrucha","Gádor","Pulpí","Sorbas","María","Macael","Vélez-Blanco","Dalías","Laujar de Andarax","Vélez-Rubio","Pechina","Olula del Río","Gérgal","Purchena","Fondón","Canjáyar","Chirivel","Viator","Fiñana","Serón","San José","Tijola","Fines","Turre","Enix","Vícar","La Mojonera","Nacimiento","Oria","Rioja"],
-            Álava: ["Alegría de Álava","Amurrio","Añana","Aramayona","Arceniega","Armiñón","Arraya-Maestu","Arrazua-Ubarrundia","Aspárrena","Ayala","Azáceta","Baños de Ebro","Barrundia","Berantevilla","Bernedo","Campezo","Cigoitia","Cripán","Cuartango","Elburgo","Elciego","Elvillar","Fontecha","Iruña de Oca","Iruraiz-Gauna","Labastida","Lagrán","Laguardia","Lanciego","Lantarón","Lapuebla de labarca","Leza","Llodio","Navaridas","Oquendo","Oyón","Peñacerrada","Ribera Alta","Ribera Baja","Salvatierra","Samaniego","San Millán","Urcabustaiz","Valdegovia","Villabuena de Álava","Villarreal de Álava","Villodas","Yécora","Zalduendo de Álava","Zambrana","Zuya"]
+            Álava: ["Alegría de Álava","Amurrio","Añana","Aramayona","Arceniega","Armiñón","Arraya-Maestu","Arrazua-Ubarrundia","Aspárrena","Ayala","Azáceta","Baños de Ebro","Barrundia","Berantevilla","Bernedo","Campezo","Cigoitia","Cripán","Cuartango","Elburgo","Elciego","Elvillar","Fontecha","Iruña de Oca","Iruraiz-Gauna","Labastida","Lagrán","Laguardia","Lanciego","Lantarón","Lapuebla de labarca","Leza","Llodio","Navaridas","Oquendo","Oyón","Peñacerrada","Ribera Alta","Ribera Baja","Salvatierra","Samaniego","San Millán","Urcabustaiz","Valdegovia","Villabuena de Álava","Villarreal de Álava","Villodas","Yécora","Zalduendo de Álava","Zambrana","Zuya"],
+            Asturias: ["Aller","Amieva","Arriondas","Avilés","Cangas del Garjea","Carreño","Caso","Castrillón","Castropol","Coaña","Corvera de Asturias","Cudillero","Degaña","Gijón","Gozón","Grado","Langreo","Laviana","Lena","Llanera","Llanes","Mieres","Morcín","Nava","Navia","Noreña","Onís","Oviedo","Parres","Peñamellera Alta","Peñamellera Baja","Piloña","Ponga","Pravia","Ribadedeva","Ribadesella","Riosa","Salas","San Martín del Rey Aurelio","San Tirso de Abres","Siero","Somiedo","Soto del Barco","Tapia de Casariego","Taramundi","Teverga","Tineo","Valdés","Vegadeo","Villanueva de Oscos","Villaviciosa"]
         }
         function makeSubmenu(value) {
             if(value.length==0)
@@ -243,16 +244,5 @@
                 document.getElementById("city").innerHTML = citiesOptions;
             }
         }
-        /*
-        function displaySelected() {
-            var country = document.getElementById("countrySelect").value;
-            var city = document.getElementById("citySelect").value;
-            alert(country+"\n"+city);
-        }
-        function resetSelection() {
-            document.getElementById("countrySelect").selectedIndex = 0;
-            document.getElementById("citySelect").selectedIndex = 0;
-        }
-        */
 </script>
 @endsection
