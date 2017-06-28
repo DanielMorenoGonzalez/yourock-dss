@@ -13,6 +13,19 @@ class UsersController extends Controller
     public function store(Request $request) {
         $user = new User;
 
+        $this->validate($request, [
+			'nif' => 'required|max:9',
+            'name' => 'required|max:20',
+            'surname' => 'required|max:30',
+            'address' => 'required|max:100',
+            'province' => 'required|max:20',
+            'city' => 'required|max:30',
+            'zipCode' => 'required|max:5',
+            'phoneNumber' => 'required|digits:9',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
+		]);
+
         $user->nif = $request->input('nif');
         $user->name = $request->input('name');
         $user->surname = $request->input('surname');

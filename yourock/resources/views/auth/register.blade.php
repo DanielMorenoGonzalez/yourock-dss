@@ -14,7 +14,7 @@
                             <label for="nif" class="col-md-4 control-label">NIF:</label>
 
                             <div class="col-md-6">
-                                <input id="nif" type="text" class="form-control" name="nif" value="{{ old('nif') }}" required>
+                                <input id="nif" type="text" class="form-control" name="nif" value="{{ old('nif') }}">
 
                                 @if ($errors->has('nif'))
                                     <span class="help-block">
@@ -28,7 +28,7 @@
                             <label for="name" class="col-md-4 control-label">Nombre:</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -42,7 +42,7 @@
                             <label for="surname" class="col-md-4 control-label">Apellidos:</label>
 
                             <div class="col-md-6">
-                                <input id="surname" type="text" class="form-control" name="surname" value="{{ old('surname') }}" required>
+                                <input id="surname" type="text" class="form-control" name="surname" value="{{ old('surname') }}">
 
                                 @if ($errors->has('surname'))
                                     <span class="help-block">
@@ -56,7 +56,7 @@
                             <label for="address" class="col-md-4 control-label">Dirección:</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required>
+                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}">
 
                                 @if ($errors->has('address'))
                                     <span class="help-block">
@@ -70,8 +70,8 @@
                             <label for="province" class="col-md-4 control-label">Provincia:</label>
 
                             <div class="col-md-6">
-                                <select id="province" class="form-control" name="province" size="1" onchange="makeSubmenu(this.value)" required>
-                                    <option><option>
+                                <select id="province" class="form-control" name="province" onchange="makeSubmenu(this.value)" required>
+                                    <option></option>
                                     <option>Albacete</option>
                                     <option>Alicante</option>
                                     <option>Almería</option>
@@ -137,7 +137,7 @@
                             <label for="city" class="col-md-4 control-label">Ciudad:</label>
 
                             <div class="col-md-6">
-                                <select id="city" class="form-control" name="city" size="1" required>
+                                <select id="city" class="form-control" name="city" required>
                                     <option></option>
                                 </select>
 
@@ -153,7 +153,7 @@
                             <label for="zipCode" class="col-md-4 control-label">Código postal:</label>
 
                             <div class="col-md-6">
-                                <input id="zipCode" type="text" class="form-control" name="zipCode" value="{{ old('zipCode') }}" required>
+                                <input id="zipCode" type="text" class="form-control" name="zipCode" value="{{ old('zipCode') }}">
 
                                 @if ($errors->has('zipCode'))
                                     <span class="help-block">
@@ -167,7 +167,7 @@
                             <label for="phoneNumber" class="col-md-4 control-label">Teléfono:</label>
 
                             <div class="col-md-6">
-                                <input id="phoneNumber" type="number" class="form-control" name="phoneNumber" value="{{ old('phoneNumber') }}" required>
+                                <input id="phoneNumber" type="tel" class="form-control" name="phoneNumber" value="{{ old('phoneNumber') }}">
 
                                 @if ($errors->has('phoneNumber'))
                                     <span class="help-block">
@@ -181,7 +181,7 @@
                             <label for="email" class="col-md-4 control-label">Email:</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -195,7 +195,7 @@
                             <label for="password" class="col-md-4 control-label">Contraseña:</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="password" class="form-control" name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -209,7 +209,7 @@
                             <label for="password-confirm" class="col-md-4 control-label">Confirmar contraseña:</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                             </div>
                         </div>
 
@@ -236,15 +236,11 @@
             Ávila: ["Adanero","Aldeaseca","Arenas de San Pedro","Arévalo","Ávila","Becedas","Blasconuño de Matacabras","Bohoyo","Bonilla de la Sierra","Burgohondo","Candeleda","Cardeñosa","Casasola","Casavieja","Cebreros","El Arenal","El Barco de Ávila","El Barraco","El Hoyo de Pinares","El Tiemblo","Fontiveros","Gavilanes","Guisando","Herradón de Pinares","Hoyos del Espino","Horcajo de las Torres","La Adrada","La Colilla","La Horcajada","Las Berlanas","Las Navas del Marqués","Lanzahita","Madrigal de las Altas Torres","Maello","Martiherrero","Mijares","Mingorria","Mombeltrán","Nava de Arévalo","Navalperal de Pinares","Navaluenga","Pedro Bernardo","Piedrahita","Piedralaves","Poyales del Hoyo","San Bartolomé de Pinares","San Estebán del Valle","Sanchidrián","Solosancho","Sotillo de la Adrada","Tornadizos de Ávila"]
         }
         function makeSubmenu(value) {
-            if(value.length==0)
-                document.getElementById("city").innerHTML = "<option></option>";
-            else {
-                var citiesOptions = "";
-                for(cityId in citiesByProvince[value]) {
-                    citiesOptions+="<option>"+citiesByProvince[value][cityId]+"</option>";
-                }
-                document.getElementById("city").innerHTML = citiesOptions;
+            var citiesOptions = "";
+            for(cityId in citiesByProvince[value]) {
+                citiesOptions+="<option>"+citiesByProvince[value][cityId]+"</option>";
             }
+            document.getElementById("city").innerHTML = citiesOptions;
         }
 </script>
 @endsection
