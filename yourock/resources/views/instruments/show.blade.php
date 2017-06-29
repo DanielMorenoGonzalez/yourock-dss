@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'YOU ROCK! - Descripción')
+@section('title', 'YOU ROCK! - Producto')
 @section('content')
 <h1>Instrumento {{ $instrument->name }}</h1>
 <p>Fabricante: {{ $instrument->manufacturer }}</p>

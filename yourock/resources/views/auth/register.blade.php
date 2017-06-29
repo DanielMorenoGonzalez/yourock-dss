@@ -136,7 +136,7 @@
                             <label for="city" class="col-md-4 control-label">Ciudad:</label>
 
                             <div class="col-md-6">
-                                <select id="city" class="form-control" name="city" required>
+                                <select id="city" class="form-control" name="city">
                                     <option></option>
                                 </select>
 

@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use DB;
-use Session;
+use Image;
 
 class UsersController extends Controller
 {
@@ -113,9 +113,13 @@ class UsersController extends Controller
 		    ]);
             $user->email = $request->input('email');
         }
+        if($request->hasFile('avatar')){
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300,300)->save(public_path('/uploads/avatars/' . $filename));
+            $user->avatar = $filename;
+        }
         $user->save();
-
-        //Session::flash('success', 'Te has registrado en nuestra web');
 
         return redirect()->action('UsersController@show')->with('message', 'Perfil actualizado');
     }

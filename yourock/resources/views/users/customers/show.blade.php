@@ -8,16 +8,16 @@
     </div>
 @endif
 <h1>Perfil de usuario</h1>
-<p>Nif: {{ $user->nif }}</p>
+<p>NIF: {{ $user->nif }}</p>
 <p>Nombre: {{ $user->name }}</p>
 <p>Apellidos: {{ $user->surname }}</p>
 <p>Dirección: {{ $user->address }}</p>
 <p>Provincia: {{ $user->province }}</p>
-<p>CIudad: {{ $user->city }}</p>
+<p>Ciudad: {{ $user->city }}</p>
 <p>Código postal: {{ $user->zipCode }}</p>
 <p>Teléfono: {{ $user->phoneNumber }}</p>
 <p>Email: {{ $user->email }}</p>
-<li><a href="{{ action('UsersController@edit') }}" class="btn btn-default" role="button">Editar perfil</a></li>
+<a href="{{ action('UsersController@edit') }}" class="btn btn-default" role="button">Editar perfil</a>
 
 <!--Botón con el que aparece un modal para confirmar que se quiere eliminar la cuenta-->
 <button class="btn btn-default" data-toggle="modal" data-target="#confirm-delete">Borrar cuenta</button>

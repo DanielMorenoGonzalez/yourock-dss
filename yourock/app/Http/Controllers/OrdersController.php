@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Order;
 use App\Instrument;
+use Session;
 use DB;
 
 class OrdersController extends Controller
@@ -27,4 +28,5 @@ class OrdersController extends Controller
     public function __construct(){
         $this->middleware('auth');
     }
+
 }
