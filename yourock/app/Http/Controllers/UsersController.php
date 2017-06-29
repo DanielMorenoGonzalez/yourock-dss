@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use DB;
 use Image;
+use File;
 
 class UsersController extends Controller
 {
@@ -115,8 +116,17 @@ class UsersController extends Controller
         }
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
-            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            $filename = Auth::user()->name . time() . '.' . $avatar->getClientOriginalExtension();
             Image::make($avatar)->fit(300,300)->save(public_path('/uploads/avatars/' . $filename));
+
+            //Si el usuario tiene una foto distinta a la de por defecto,
+            //la borramos y guardamos la nueva
+            if (Auth::user()->avatar != "default.jpg") {
+                $path = '/uploads/avatars/';
+                $lastpath= Auth::user()->avatar;
+                File::Delete(public_path( $path . $lastpath) );
+            }
+
             $user->avatar = $filename;
         }
         $user->save();
