@@ -8,24 +8,16 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Editar perfil</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ action('UsersController@update') }}">
+                    <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ action('UsersController@update') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('avatar') ? ' has-error' : '' }}">
-                            <label for="avatar" class="col-md-4 control-label">FOTO:</label>
-
-                            <div class="col-md-6">
+                        <div class="col-md-10 col-md-offset-1">
                             <img src="/uploads/avatars/{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
-                                <input id="avatar" type="file" name="avatar" class="form-control" value="{{ old('avatar') }}">
-
-                                @if ($errors->has('avatar'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('avatar') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                            <h2>{{ $user->name }}'s Profile</h2>
+            
+                            <label>Update Profile Image</label>
+                            <input type="file" name="avatar">
                         </div>
-
 
                         <div class="form-group{{ $errors->has('nif') ? ' has-error' : '' }}">
                             <label for="nif" class="col-md-4 control-label">NIF:</label>

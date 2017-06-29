@@ -8,6 +8,9 @@
     </div>
 @endif
 <h1>Perfil de usuario</h1>
+<div class="container">
+<img src="/uploads/avatars/{{$user->avatar}}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
+</div>
 <p>NIF: {{ $user->nif }}</p>
 <p>Nombre: {{ $user->name }}</p>
 <p>Apellidos: {{ $user->surname }}</p>
