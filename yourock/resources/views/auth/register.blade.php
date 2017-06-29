@@ -79,7 +79,6 @@
                                     <option>Asturias</option>
                                     <option>Ávila</option>
                                     <option>Badajoz</option>
-                                    <option>Islas Baleares</option>
                                     <option>Barcelona</option>
                                     <option>Bizkaia</option>
                                     <option>Burgos</option>
@@ -96,6 +95,7 @@
                                     <option>Granada</option>
                                     <option>Guadalajara</option>
                                     <option>Huelva</option>
+                                    <option>Islas Baleares</option>
                                     <option>Jaén</option>
                                     <option>León</option>
                                     <option>Lleida</option>
@@ -226,21 +226,4 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-        var citiesByProvince = {
-            Albacete: ["Abengibre","Alatoz","Albacete","Albatana","Alcalá del Júcar","Alcaraz","Almansa","Alpera","Ayna","Balazote","Barrax","Bienservida","Bonete","Casas-Ibáñez","Caudete","Chinchilla de Montearagón","El Bonillo","Elche de la Sierra","Férez","Fuensanta","Fuente Álamo","Fuentealbilla","Hellín","Higueruela","Hoya-Gonzálo","La Gineta","La Roda","Letur","Lezuza","Liétor","Madrigueras","Mahora","Minalla","Molinicos","Montealegre del Castillo","Munera","Nerpio","Ontur","Ossa de Montiel","Peñas de San Pedro","Povedilla","Pozo Cañada","Riópar","Robledo","Salobre","Socovos","Tarrazona de la Mancha","Tobarra","Villamalea","Villarrobledo","Yeste"],
-            Alicante: ["Adsubia","Agost","Alcoy","Alicante","Alfaz del Pi","Almoradí","Altea","Aspe","Bañeres","Benidorm","Benisa","Biar","Busot","Callosa de Ensarriá","Callosa de Segura","Calpe","Campello","Castalla","Concentaina","Crevillente","Denia","Dolores","Elche","Elda","Guadalest","Guardamar del Segura","Ibi","Jalón","Jávea","Jijona","La Nucia","Monóvar","Monforte del Cid","Muchamiel","Muro de Alcoy","Novelda","Orihuela","Pego","Petrel","Pilar de la Horadada","Rojales","Salinas","San Fulgencio","San Juan de Alicante","San Vicente del Raspeig","Santa Pola","Sax","Teulada","Torrevieja","Villajoyosa","Villena"],
-            Almería: ["Abla","Adra","Albox","Alhama de Almería","Almería","Antas","Arboleas","Bacares","Balanegra","Baños de Ebro","Benahadux","Benitagla","Berja","Canjáyar","Carboneras","Chirivel","Cuevas de Almanzora","Dalías","El Ejido","Enix","Fines","Fiñana","Fondón","Gádor","Garrucha","Gérgal","Huércal-Overa","La Mojonera","Laujar de Andarax","Macael","María","Mojácar","Nacimiento","Níjar","Olula del Río","Oria","Pechina","Pulpí","Purchena","Rioja","Roquetas de Mar","San José","Serón","Sorbas","Tabernas","Tijola","Turre","Vélez-Blanco","Vélez-Rubio","Vera","Viator","Vícar"],
-            Álava: ["Alegría de Álava","Amurrio","Añana","Aramayona","Arceniega","Armiñón","Arraya-Maestu","Arrazua-Ubarrundia","Aspárrena","Ayala","Azáceta","Barrundia","Berantevilla","Bernedo","Campezo","Cigoitia","Cripán","Cuartango","Elburgo","Elciego","Elvillar","Fontecha","Iruña de Oca","Iruraiz-Gauna","Labastida","Lagrán","Laguardia","Lanciego","Lantarón","Lapuebla de labarca","Leza","Llodio","Navaridas","Oquendo","Oyón","Peñacerrada","Ribera Alta","Ribera Baja","Salvatierra","Samaniego","San Millán","Urcabustaiz","Valdegovia","Villabuena de Álava","Villarreal de Álava","Villodas","Yécora","Zalduendo de Álava","Zambrana","Zuya"],
-            Asturias: ["Aller","Amieva","Arriondas","Avilés","Cangas del Garjea","Carreño","Caso","Castrillón","Castropol","Coaña","Corvera de Asturias","Cudillero","Degaña","Gijón","Gozón","Grado","Langreo","Laviana","Lena","Llanera","Llanes","Mieres","Morcín","Nava","Navia","Noreña","Onís","Oviedo","Parres","Peñamellera Alta","Peñamellera Baja","Piloña","Ponga","Pravia","Ribadedeva","Ribadesella","Riosa","Salas","San Martín del Rey Aurelio","San Tirso de Abres","Siero","Somiedo","Soto del Barco","Tapia de Casariego","Taramundi","Teverga","Tineo","Valdés","Vegadeo","Villanueva de Oscos","Villaviciosa"],
-            Ávila: ["Adanero","Aldeaseca","Arenas de San Pedro","Arévalo","Ávila","Becedas","Blasconuño de Matacabras","Bohoyo","Bonilla de la Sierra","Burgohondo","Candeleda","Cardeñosa","Casasola","Casavieja","Cebreros","El Arenal","El Barco de Ávila","El Barraco","El Hoyo de Pinares","El Tiemblo","Fontiveros","Gavilanes","Guisando","Herradón de Pinares","Hoyos del Espino","Horcajo de las Torres","La Adrada","La Colilla","La Horcajada","Las Berlanas","Las Navas del Marqués","Lanzahita","Madrigal de las Altas Torres","Maello","Martiherrero","Mijares","Mingorria","Mombeltrán","Nava de Arévalo","Navalperal de Pinares","Navaluenga","Pedro Bernardo","Piedrahita","Piedralaves","Poyales del Hoyo","San Bartolomé de Pinares","San Estebán del Valle","Sanchidrián","Solosancho","Sotillo de la Adrada","Tornadizos de Ávila"]
-        }
-        function makeSubmenu(value) {
-            var citiesOptions = "";
-            for(cityId in citiesByProvince[value]) {
-                citiesOptions+="<option>"+citiesByProvince[value][cityId]+"</option>";
-            }
-            document.getElementById("city").innerHTML = citiesOptions;
-        }
-</script>
 @endsection

@@ -8,15 +8,15 @@
     </div>
 @endif
 <h1>Perfil de usuario</h1>
-<p>{{ $user->nif }}</p>
-<p>{{ $user->name }}</p>
-<p>{{ $user->surname }}</p>
-<p>{{ $user->address }}</p>
-<p>{{ $user->city }}</p>
-<p>{{ $user->province }}</p>
-<p>{{ $user->zipCode }}</p>
-<p>{{ $user->phoneNumber }}</p>
-<p>{{ $user->email }}</p>
+<p>Nif: {{ $user->nif }}</p>
+<p>Nombre: {{ $user->name }}</p>
+<p>Apellidos: {{ $user->surname }}</p>
+<p>Dirección: {{ $user->address }}</p>
+<p>Provincia: {{ $user->province }}</p>
+<p>CIudad: {{ $user->city }}</p>
+<p>Código postal: {{ $user->zipCode }}</p>
+<p>Teléfono: {{ $user->phoneNumber }}</p>
+<p>Email: {{ $user->email }}</p>
 <li><a href="{{ action('UsersController@edit') }}" class="btn btn-default" role="button">Editar perfil</a></li>
 
 <!--Botón con el que aparece un modal para confirmar que se quiere eliminar la cuenta-->
