@@ -4,13 +4,7 @@
             <a class="navbar-brand" href="{{ url('/') }}">YOU ROCK!</a>
         </div>
         <ul class="nav navbar-nav">
-            <li>
-                <a data-target="#" class="dropdown-toggle" role="button" data-toggle="dropdown">Productos
-                <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Guitarras eléctricas</a></li>
-                    </ul>
-            </li>
+            <li><a href="{{ action('CategoriesController@index') }}">Productos</a></li>
             <li><a href="{{ action('AboutusController@index') }}">Sobre nosotros</a><li>
             <li><a href="{{ action('ContactController@index') }}">Contacto</a></li>
         </ul>

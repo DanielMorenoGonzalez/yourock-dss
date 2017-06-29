@@ -89,8 +89,8 @@
                                     <option>Córdoba</option>
                                     <option>Coruña</option>
                                     <option>Cuenca</option>
-                                    <option>Guipuzcoa</option>
-                                    <option>Girona</option>
+                                    <option>Guipúzcoa</option>
+                                    <option>Gerona</option>
                                     <option>Granada</option>
                                     <option>Guadalajara</option>
                                     <option>Huelva</option>
@@ -105,7 +105,7 @@
                                     <option>Navarra</option>
                                     <option>Ourense</option>
                                     <option>Palencia</option>
-                                    <option>Las Palmas</option>
+                                    <option>Las Palmas de Gran Canaria</option>
                                     <option>Pontevedra</option>
                                     <option>Las Rioja</option>
                                     <option>Salamanca</option>
