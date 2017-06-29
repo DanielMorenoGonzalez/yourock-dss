@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use DB;
+use Session;
 
 class UsersController extends Controller
 {
@@ -26,17 +28,20 @@ class UsersController extends Controller
             'password' => 'required|min:6|confirmed',
 		]);
 
-        $user->nif = $request->input('nif');
-        $user->name = $request->input('name');
-        $user->surname = $request->input('surname');
-        $user->address = $request->input('address');
-        $user->province = $request->input('province');
-        $user->city = $request->input('city');
-        $user->zipCode = $request->input('zipCode');
-        $user->phoneNumber = $request->input('phoneNumber');
-        $user->email = $request->input('email');
-        $user->password = bcrypt($request->input('password'));
-        $user->type = 'cliente';
+        $user = new User([
+            'nif' => $request->input('nif'),
+            'name' => $request->input('name'),
+            'surname' => $request->input('surname'),
+            'address' => $request->input('address'),
+            'province' => $request->input('province'),
+            'city' => $request->input('city'),
+            'zipCode' => $request->input('zipCode'),
+            'phoneNumber' => $request->input('phoneNumber'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+            'type' => 'cliente'
+        ]);
+
         $user->save();
 
         return redirect('home');
@@ -109,6 +114,8 @@ class UsersController extends Controller
             $user->email = $request->input('email');
         }
         $user->save();
+
+        //Session::flash('success', 'Te has registrado en nuestra web');
 
         return redirect()->action('UsersController@show')->with('message', 'Perfil actualizado');
     }

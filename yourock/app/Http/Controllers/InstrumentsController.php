@@ -14,9 +14,4 @@ class InstrumentsController extends Controller
         return view('instruments.show', (['instrument' => $instrument]));
     }
 
-    public function search($description) {
-        $instruments = Order::search($description)->get();
-        return view('instruments.index', (['instruments' => $instrument]));
-    }
-
 }
