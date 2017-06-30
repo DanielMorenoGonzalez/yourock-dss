@@ -24,6 +24,10 @@ class OrdersController extends Controller
         return view('orders.show', array('order' => $order, 'orderlines' => $orderlines));
     }
 
+    public function getCart(){
+        return view('shoppingcart');
+    }
+
     //Sólo tendran acceso los usuarios autenticados
     public function __construct(){
         $this->middleware('auth');

@@ -4,7 +4,7 @@
             <a class="navbar-brand" href="{{ url('/') }}">YOU ROCK!</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="{{ action('CategoriesController@index') }}">Productos</a></li>
+            <li><a href="{{ action('CategoriesController@index') }}">Categorías</a></li>
             <li><a href="{{ action('AboutusController@index') }}">Sobre nosotros</a><li>
             <li><a href="{{ action('ContactController@index') }}">Contacto</a></li>
         </ul>

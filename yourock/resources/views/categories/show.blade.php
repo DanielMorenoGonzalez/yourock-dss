@@ -5,7 +5,7 @@
 <h4>{{ $category->description }}</h4>
 <br/>
 
-<li>Filtrar {{ $category->name }} por fabricante:</li>
+<p>Filtrar {{ $category->name }} por fabricante:</p>
 @foreach ($instruments as $instrument)
     <div class="checkbox">
     <label><input type="checkbox" value="{{ $instrument->manufacturer }}">{{ $instrument->manufacturer }}</label>
@@ -31,4 +31,5 @@
 @endforeach
 
 {{ $instruments->links() }}
+
 @endsection

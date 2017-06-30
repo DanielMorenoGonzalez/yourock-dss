@@ -24,14 +24,14 @@ Route::post('contact', 'ContactController@postContact');
 //Ruta para mostrar la página sobre nosotros
 Route::get('aboutus', 'AboutusController@index');
 
+
+Route::get('shoppingcart', 'OrdersController@getCart');
+
 //Ruta para mostrar todas las categorías
 Route::get('categories', 'CategoriesController@index');
 
 //Ruta para mostrar una categoría con sus respectivos instrumentos
 Route::get('categories/{category}', 'CategoriesController@show');
-
-//Ruta para mostrar instrumentos
-//Route::get('instruments/search', 'InstrumentsController@search');
 
 //Ruta para mostrar un instrument específico con sus detalles
 Route::get('instruments/{instrument}', 'InstrumentsController@show');
