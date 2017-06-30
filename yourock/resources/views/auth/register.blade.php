@@ -97,7 +97,7 @@
                                     <option>Islas Baleares</option>
                                     <option>Jaén</option>
                                     <option>León</option>
-                                    <option>Lleida</option>
+                                    <option>Lérida</option>
                                     <option>Lugo</option>
                                     <option>Madrid</option>
                                     <option>Málaga</option>

@@ -9,6 +9,7 @@ use Session;
 
 class Order extends Model
 {
+    //Array que utilizaremos para añadir al carrito de la compra
     public $items = array();
     public $timestamps = false;
 

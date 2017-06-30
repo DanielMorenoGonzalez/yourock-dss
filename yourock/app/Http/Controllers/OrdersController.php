@@ -12,6 +12,11 @@ use DB;
 
 class OrdersController extends Controller
 {
+    //Sólo tendran acceso los usuarios autenticados
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index(){
         $user = Auth::user();
         $orders = Order::where('user_id', $user->id)->get();
@@ -38,10 +43,5 @@ class OrdersController extends Controller
         return redirect()->action('OrderlinesController@index');
     }
     */
-
-    //Sólo tendran acceso los usuarios autenticados
-    public function __construct(){
-        $this->middleware('auth');
-    }
 
 }
