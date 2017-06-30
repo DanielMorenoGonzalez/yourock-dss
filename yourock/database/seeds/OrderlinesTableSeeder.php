@@ -17,8 +17,11 @@ class OrderlinesTableSeeder extends Seeder
         //Borramos los datos de la tabla
         DB::table('orderlines')->delete();
 
-        //Recuperamos la primera batería acústica
+        //Recuperamos la cuarta guitarra eléctrica
         $instrument1 = Instrument::find(4);
+
+        //Recuperamos la quinta guitarra eléctrica
+        $instrument2 = Instrument::find(5);
 
         //Recuperamos el primer pedido
         $order1 = Order::find(1);
@@ -41,6 +44,13 @@ class OrderlinesTableSeeder extends Seeder
         $orderline2->instrument()->associate($instrument1);
         $orderline2->order()->associate($order2);
         $orderline2->save();
+
+        $orderline3 = new Orderline([
+            'quantity' => '3'
+        ]);
+        $orderline3->instrument()->associate($instrument2);
+        $orderline3->order()->associate($order1);
+        $orderline3->save();
         
     }
 }

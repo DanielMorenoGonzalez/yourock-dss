@@ -24,10 +24,10 @@ Route::post('contact', 'ContactController@postContact');
 //Ruta para mostrar la página sobre nosotros
 Route::get('aboutus', 'AboutusController@index');
 
-//Ruta para mostrar todas las categorías
+//Ruta para mostrar todas las categorías (con algunos de sus instrumentos)
 Route::get('categories', 'CategoriesController@index');
 
-//Ruta para mostrar una categoría con sus respectivos instrumentos
+//Ruta para mostrar una categoría con todos sus instrumentos
 Route::get('categories/{category}', 'CategoriesController@show');
 
 //Ruta para mostrar un instrument específico con sus detalles

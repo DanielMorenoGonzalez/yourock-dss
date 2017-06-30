@@ -4,10 +4,11 @@
 <h1>Pedido {{ $order->id }}</h1>
 <p>Pago realizado: {{ $order->payment }}</p>
 <p>Estado: {{ $order->state }}</p>
-<p>Coste total: </p>
+<p>Coste total: {{ $order->getTotal() }}</p>
 @foreach ($orderlines as $orderline)
         <div>
             <li>Línea de pedido que contiene {{ $orderline->quantity }} unidades del instrumento <a href="{{ action('InstrumentsController@show', [$orderline->instrument->id]) }}">{{ $orderline->instrument->name }}</a></li>
+            <li>Coste de la línea de pedido: {{$orderline->getSubtotal()}}</li>
         </div>
         <br/>
 @endforeach

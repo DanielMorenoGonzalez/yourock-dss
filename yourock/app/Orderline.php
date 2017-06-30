@@ -20,4 +20,9 @@ class Orderline extends Model
         return $this->belongsTo('App\Order');
     }
 
+    public function getSubtotal(){
+        $total = $this->quantity * $this->instrument->price;
+        return $total;
+    }
+
 }

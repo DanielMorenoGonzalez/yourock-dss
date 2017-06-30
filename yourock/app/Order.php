@@ -18,4 +18,16 @@ class Order extends Model
         //Order tiene la clave ajena user_id
         return $this->belongsTo('App\User');
     }
+
+    public function getTotal(){
+        $total = 0.0;
+
+        $orderlines = $this->orderlines;
+        foreach($orderlines as $orderline){
+            $total += $orderline->getSubtotal();
+        }
+
+        return $total;
+    }
+
 }
