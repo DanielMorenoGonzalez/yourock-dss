@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Orderline;
 use App\User;
+use Session;
 
 class Order extends Model
 {
@@ -27,6 +28,12 @@ class Order extends Model
             $total += $orderline->getSubtotal();
         }
         return $total;
+    }
+
+    public function addShoppingCart() {
+        $this->items[] = Session::get('orderline');
+        return $this->items;
+
     }
     
 /*

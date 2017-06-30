@@ -3,7 +3,7 @@
 @section('content')
 @if (Session::has('order'))
 @foreach(Session::get('order') as $order)
-    <p>{{ $order }}</p>
+    <p>{{ $order[0] }}</p>
 @endforeach
 @else
     <p>Hola</p>
