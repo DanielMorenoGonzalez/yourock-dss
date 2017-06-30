@@ -25,4 +25,10 @@ class Orderline extends Model
         return $total;
     }
 
+    public function getProduct() {
+        return $this->instrument();
+    }
+
+    
+
 }

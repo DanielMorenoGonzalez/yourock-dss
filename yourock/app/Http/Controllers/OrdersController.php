@@ -24,6 +24,12 @@ class OrdersController extends Controller
         return view('orders.show', array('order' => $order, 'orderlines' => $orderlines));
     }
 
+    public function listshoppingcart(){
+        $this->items[] = Session::get('orderline');
+        Session::push('order', '1');
+        return redirect()->action('OrderlinesController@index');
+    }
+
     //Sólo tendran acceso los usuarios autenticados
     public function __construct(){
         $this->middleware('auth');

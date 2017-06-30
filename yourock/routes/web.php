@@ -24,6 +24,12 @@ Route::post('contact', 'ContactController@postContact');
 //Ruta para mostrar la página sobre nosotros
 Route::get('aboutus', 'AboutusController@index');
 
+Route::get('add-to-cart/{id}', 'OrderlinesController@addToCart');
+
+Route::get('shopping-cart', 'OrderlinesController@index');
+
+Route::get('shopping-cart/user', 'OrdersController@listshoppingcart');
+
 //Ruta para mostrar todas las categorías (con algunos de sus instrumentos)
 Route::get('categories', 'CategoriesController@index');
 

@@ -1,6 +1,13 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Home')
 @section('content')
+@if (Session::has('order'))
+@foreach(Session::get('order') as $order)
+    <p>{{ $order }}</p>
+@endforeach
+@else
+    <p>Hola</p>
+@endif
 <h1>Página carrito de la compra</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
