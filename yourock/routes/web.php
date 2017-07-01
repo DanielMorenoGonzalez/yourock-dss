@@ -24,11 +24,12 @@ Route::post('contact', 'ContactController@postContact');
 //Ruta para mostrar la página sobre nosotros
 Route::get('aboutus', 'AboutusController@index');
 
-Route::get('add-to-cart/{id}', 'OrderlinesController@addToCart');
+//Ruta para añadir un instrumento al carrito de la compra
+Route::get('addtocart/{id}', 'OrderlinesController@addToCart');
 
-Route::get('shopping-cart', 'OrderlinesController@index');
+//Route::get('shoppingcart', 'OrderlinesController@index');
 
-Route::get('shopping-cart/user', 'OrdersController@listshoppingcart');
+Route::get('shoppingcart', 'OrdersController@listshoppingcart');
 
 //Ruta para mostrar todas las categorías (con algunos de sus instrumentos)
 Route::get('categories', 'CategoriesController@index');

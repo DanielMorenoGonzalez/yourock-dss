@@ -9,7 +9,7 @@ use Session;
 
 class Order extends Model
 {
-    //Array que utilizaremos para añadir al carrito de la compra
+    //Array que utilizaremos para añadir al carrito de la compra temporalmente
     public $items = array();
     public $timestamps = false;
 
@@ -22,33 +22,28 @@ class Order extends Model
         return $this->belongsTo('App\User');
     }
 
+    //Método para obtener el total del pedido
     public function getTotal(){
-        $total = 0.0;
-        $orderlines = $this->orderlines;
+        $total = 0;
+        $orderlines = $this->getOrderlines();
         foreach($orderlines as $orderline){
             $total += $orderline->getSubtotal();
         }
         return $total;
     }
 
+    //Método para añadir la línea de pedido a la lista de items (de pedidos)
     public function addShoppingCart() {
         $this->items[] = Session::get('orderline');
+        //$clave = array_search('orderline.id_instrument', $this->items); // $clave = 2;
+        //\Log::info($clave); 
         return $this->items;
 
     }
-    
-/*
-    public function add($item, $id) {
-        
-        $storedItem = $item;
-        if($this->items){
-            if(array_key_exists($id, $this->items)){
-                $storedItem = $this->items[$id];
-            }
-        }
-        $this->items[$id] = $storedItem;
-        
+
+    //Método para obtener las líneas de pedido del pedido actual
+    public function getOrderlines() {
+        return $this->orderlines;
     }
-    */
 
 }

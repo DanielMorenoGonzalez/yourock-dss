@@ -32,16 +32,9 @@ class OrdersController extends Controller
     public function listshoppingcart(){
         $order = new Order;
         $listitems = $order->addShoppingCart();
-        $this->items[] = Session::get('orderline');
         Session::push('order', $listitems);
-        return redirect()->action('OrderlinesController@index');
+        return view('shoppingcart');
+        //return redirect()->action('OrderlinesController@index');
     }
-/*
-    public function listshoppingcart(){
-        $this->items[] = Session::get('orderline');
-        Session::push('order', $this->items);
-        return redirect()->action('OrderlinesController@index');
-    }
-    */
 
 }
