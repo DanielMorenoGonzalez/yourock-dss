@@ -96,6 +96,8 @@
                                     <option>Huelva</option>
                                     <option>Islas Baleares</option>
                                     <option>Jaén</option>
+                                    <option>La Rioja</option>
+                                    <option>Las Palmas de Gran Canaria</option>
                                     <option>León</option>
                                     <option>Lérida</option>
                                     <option>Lugo</option>
@@ -103,11 +105,9 @@
                                     <option>Málaga</option>
                                     <option>Murcia</option>
                                     <option>Navarra</option>
-                                    <option>Ourense</option>
+                                    <option>Orense</option>
                                     <option>Palencia</option>
-                                    <option>Las Palmas de Gran Canaria</option>
                                     <option>Pontevedra</option>
-                                    <option>Las Rioja</option>
                                     <option>Salamanca</option>
                                     <option>Santa Cruz de Tenerife</option>
                                     <option>Segovia</option>
