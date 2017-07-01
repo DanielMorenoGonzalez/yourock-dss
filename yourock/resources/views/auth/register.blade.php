@@ -120,8 +120,6 @@
                                     <option>Valladolid</option>
                                     <option>Zamora</option>
                                     <option>Zaragoza</option>
-                                    <option>Ceuta</option>
-                                    <option>Melilla</option>
                                 </select>
 
                                 @if ($errors->has('province'))
