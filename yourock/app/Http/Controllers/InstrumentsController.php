@@ -18,22 +18,4 @@ class InstrumentsController extends Controller
         return view('instruments.show', (['instrument' => $instrument]));
     }
 
-    public function addToCart(Request $request, $id) {
-        $instrument = Instrument::findOrFail($id);
-        $orderline = new Orderline;
-        $orderline->quantity = 3;
-        $orderline->instrument_id = $id;
-        Session::put('orderline', $orderline);
-        return redirect()->action('OrderlinesController@index');
-        /*
-        $instrument = Instrument::findOrFail($id);
-        $orderline = new Orderline;
-        $orderline->quantity = 5;
-        $orderline->instrument_id = $id;
-        //$request->session()->put('order', $order);
-        Session::put('orderline', $orderline);
-        return redirect()->action('OrderlinesController@index');
-        */
-    }
-
 }
