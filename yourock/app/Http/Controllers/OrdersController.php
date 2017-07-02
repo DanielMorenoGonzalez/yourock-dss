@@ -12,6 +12,7 @@ use Session;
 use DB;
 use Stripe\Stripe;
 use Stripe\Charge;
+use Mail;
 
 class OrdersController extends Controller
 {
@@ -108,6 +109,20 @@ class OrdersController extends Controller
         }
 
         Session::forget('order');
+        $orderlines = $order->getOrderlines();
+
+        $data = array(
+            'email' => Auth::user()->email,
+            'subject' => 'Compra realizada en YOU ROCK!',
+            'bodyOrder' => $order,
+            'bodyUser' => Auth::user(),
+            'bodyOrderlines' => $orderlines
+        );
+
+        Mail::send('emails.purchase', $data, function($message) use ($data){
+            $message->from('yourockmusic1992@gmail.com', 'YOU ROCK!');
+            $message->to($data['email'])->subject($data['subject']);
+        });
 
         return redirect('home')->with('success', 'Compra realizada con éxito');
     }
