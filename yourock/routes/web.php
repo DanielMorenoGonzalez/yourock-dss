@@ -29,11 +29,11 @@ Route::get('aboutus', function() {
 })->name('aboutus');
 
 //Ruta para añadir un instrumento al carrito de la compra
-Route::get('addtocart/{id}', 'OrderlinesController@addInstrumentToCart')->middleware('auth');
+Route::get('addtocart/{id}', 'OrderlinesController@addInstrumentToCart');
 
-Route::get('user/shoppingcart', 'OrdersController@addOrderlinesToOrder')->middleware('auth');
+Route::get('user/shoppingcart', 'OrdersController@addOrderlinesToOrder');
 
-Route::get('shoppingcart', 'OrderlinesController@index')->middleware('auth');
+Route::get('shoppingcart', 'OrderlinesController@index');
 
 Route::get('checkout', 'OrdersController@checkout')->middleware('auth')->name('checkout');
 
@@ -49,10 +49,10 @@ Route::get('categories/{category}', 'CategoriesController@show');
 Route::get('instruments/{instrument}', 'InstrumentsController@show');
 
 //Ruta para ver los pedidos de un usuario
-Route::get('user/orders', 'OrdersController@index');
+Route::get('user/orders', 'OrdersController@index')->middleware('auth');
 
 //Ruta para ver un pedido concreto de un usuario
-Route::get('user/orders/{order}', 'OrdersController@show');
+Route::get('user/orders/{order}', 'OrdersController@show')->middleware('auth');
 
 //Ruta mostrar el perfil de usuario
 Route::get('user/profile', 'UsersController@show');

@@ -60,6 +60,8 @@
                         </div>
                     </form>
                 </div>
+                <p>¿No formas parte de nuestra comunidad?</p>
+                <p><a href="{{ route('register') }}">Regístrate aquí</a></p>
             </div>
         </div>
     </div>

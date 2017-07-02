@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Order;
+use App\Orderline;
 use App\Instrument;
 use Session;
 use DB;
@@ -14,11 +15,6 @@ use Stripe\Charge;
 
 class OrdersController extends Controller
 {
-    //Sólo tendran acceso los usuarios autenticados
-    public function __construct(){
-        $this->middleware('auth');
-    }
-
     //Método para mostrar todos los pedidos que ha realizado un usuario
     public function index(){
         $user = Auth::user();
@@ -85,17 +81,34 @@ class OrdersController extends Controller
 
         Stripe::setApiKey('sk_test_vhzOEvOnC2tb8fwFD1TQcDCs');
         try{
-            Charge::create(array(
+            $charge = Charge::create(array(
                 "amount" => $total * 100,
                 "currency" => "eur",
                 "description" => "Test Charge",
                 "source" => $request->input('stripeToken')
             ));
+
+            $order = new Order;
+            $order->state = 'Procesando pedido';
+            $order->payment = $charge->id;
+            $order->user()->associate(Auth::user());
+            $order->save();
+
+            foreach(Session::get('order') as $orderlinePrueba){
+                $instrument = $orderlinePrueba[0]->getInstrument();
+                $orderline = new Orderline;
+                $orderline->quantity = $orderlinePrueba[0]->quantity;
+                $orderline->order()->associate($order);
+                $orderline->instrument()->associate($instrument);
+                $orderline->save();
+            }
+
         } catch (\Exception $e) {
             return redirect('checkout')->with('error', $e->getMessage());
         }
 
+        Session::forget('order');
+
         return redirect('home')->with('success', 'Compra realizada con éxito');
     }
-
 }
