@@ -11,43 +11,45 @@ use Session;
 class OrderlinesController extends Controller
 {
     //Método para añadir un instrumento a una línea de pedido
-    public function addToCart(Request $request, $id) {
+    public function addInstrumentToCart(Request $request, $id) {
         $instrument = Instrument::findOrFail($id);
         $encontrado = false;
 
+        //Comprobamos si existe ya un pedido en la sesión
         if(Session::has('order')){
+            //Para cada línea de pedido contenida en el pedido de la sesión
             foreach(Session::get('order') as $orderlinePrueba){
+                //Si ya existe el instrumento que acabamos de añadir
                 if($orderlinePrueba[0]->instrument_id == $id){
-                    //\Log::info("HAY ORDER, INCREMENTANDO CANTIDAD");
                     $orderlinePrueba[0]->quantity += 1;
                     Session::put('orderline', $orderlinePrueba[0]);
                     $encontrado = true;
                     break;
                 }
             }
+            //Si es un instrumento diferente a los que existen en el pedido de la sesión
             if(!$encontrado){
-                    //\Log::info("HAY ORDER, CREANDO ORDERLINE");
                     $orderline = new Orderline;
                     $orderline->quantity = 1;
                     $orderline->instrument_id = $id;
                     Session::put('orderline', $orderline);
-                }
+            }
         }
+        //Si es el primer instrumento que añadimos al carrito
         else{
-            //\Log::info("NO HAY ORDER, CREANDO ORDERLINE");
             $orderline = new Orderline;
             $orderline->quantity = 1;
             $orderline->instrument_id = $id;
             Session::put('orderline', $orderline);
         }
         
-        return redirect()->action('OrdersController@listshoppingcart');
+        return redirect()->action('OrdersController@addOrderlinesToOrder');
     }
-
-    /*
+    
     //Método para mostrar todas las líneas de pedido de un pedido concreto
     public function index(Request $request){
+        $request->session()->flash('itemadded', '¡Instrumento añadido!');
+        //Session::flash('message','');
         return view('shoppingcart');
     }
-    */
 }

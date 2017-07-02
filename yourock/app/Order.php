@@ -32,17 +32,13 @@ class Order extends Model
         return $total;
     }
 
-    
     //Método para añadir la línea de pedido a la lista de items (de pedidos)
-    public function addShoppingCart() {
+    public function addOrderlineToCart() {
         $this->items[] = Session::get('orderline');
-        //$clave = array_search('orderline.id_instrument', $this->items); // $clave = 2;
-        //\Log::info($clave); 
         return $this->items;
 
     }
     
-
     //Método para obtener las líneas de pedido del pedido actual
     public function getOrderlines() {
         return $this->orderlines;

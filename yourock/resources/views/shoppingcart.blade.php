@@ -1,6 +1,12 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Home')
 @section('content')
+@if (session()->has('itemadded'))
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <strong>{{ session()->get('itemadded') }}</strong>
+    </div>
+@endif
 @if (Session::has('order'))
 @foreach(Session::get('order') as $order)
     <p>{{ $order[0] }}</p>

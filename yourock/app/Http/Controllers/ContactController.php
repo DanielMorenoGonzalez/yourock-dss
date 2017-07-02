@@ -7,11 +7,6 @@ use Mail;
 
 class ContactController extends Controller
 {
-    //Función para mostrar la página de contacto
-    public function index() {
-        return view('contact');
-    }
-
     //Función para enviar un email a la compañía
     public function postContact(Request $request) {
         $this->validate($request, [

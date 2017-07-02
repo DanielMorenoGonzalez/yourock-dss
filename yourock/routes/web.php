@@ -16,20 +16,24 @@ Route::get('/', function() {
 });
 
 //Ruta para mostrar la página de contacto
-Route::get('contact', 'ContactController@index');
+Route::get('contact', function() {
+    return view('contact');
+});
 
 //Ruta para mostrar la página de contacto
 Route::post('contact', 'ContactController@postContact');
 
 //Ruta para mostrar la página sobre nosotros
-Route::get('aboutus', 'AboutusController@index');
+Route::get('aboutus', function() {
+    return view('aboutus');
+});
 
 //Ruta para añadir un instrumento al carrito de la compra
-Route::get('addtocart/{id}', 'OrderlinesController@addToCart');
+Route::get('addtocart/{id}', 'OrderlinesController@addInstrumentToCart')->middleware('auth');
 
-//Route::get('shoppingcart', 'OrderlinesController@index');
+Route::get('user/shoppingcart', 'OrdersController@addOrderlinesToOrder')->middleware('auth');
 
-Route::get('shoppingcart', 'OrdersController@listshoppingcart');
+Route::get('shoppingcart', 'OrderlinesController@index')->middleware('auth');
 
 //Ruta para mostrar todas las categorías (con algunos de sus instrumentos)
 Route::get('categories', 'CategoriesController@index');

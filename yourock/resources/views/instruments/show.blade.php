@@ -8,8 +8,9 @@
 
 @if($instrument->stock != 0)
     <p>Actualmente disponible con {{ $instrument->stock }} unidades</p>
-    <a href="{{ action('OrderlinesController@addToCart', [$instrument->id]) }}" class="btn btn-default" role="button">Añadir al carrito</a>
+    <a href="{{ action('OrderlinesController@addInstrumentToCart', [$instrument->id]) }}" class="btn btn-default" role="button">Añadir al carrito</a>
 @else
     <p>Agotado. Llegarán nuevas unidades pronto</p>
+    <button class="btn btn-default disabled" type="button">Añadir al carrito</a>
 @endif
 @endsection
