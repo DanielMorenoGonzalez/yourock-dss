@@ -9,6 +9,8 @@ use App\Order;
 use App\Instrument;
 use Session;
 use DB;
+use Stripe\Stripe;
+use Stripe\Charge;
 
 class OrdersController extends Controller
 {
@@ -64,13 +66,36 @@ class OrdersController extends Controller
         if(!Session::has('order')){
             return redirect('shoppingcart');
         }
-        return view('checkout');
+
+        //Calculamos el total de todos los instrumentos de las líneas de pedido
+        $orderShoppingCart = new Order;
+        $total = $orderShoppingCart->getTotalShoppingCart();
+
+        return view('checkout', (['total' => $total]));
     }
 
     public function postCheckout(Request $request) {
         if(!Session::has('order')){
             return redirect('shoppingcart');
         }
+
+        //Calculamos el total de todos los instrumentos de las líneas de pedido
+        $orderShoppingCart = new Order;
+        $total = $orderShoppingCart->getTotalShoppingCart();
+
+        Stripe::setApiKey('sk_test_vhzOEvOnC2tb8fwFD1TQcDCs');
+        try{
+            Charge::create(array(
+                "amount" => $total * 100,
+                "currency" => "eur",
+                "description" => "Test Charge",
+                "source" => $request->input('stripeToken')
+            ));
+        } catch (\Exception $e) {
+            return redirect('checkout')->with('error', $e->getMessage());
+        }
+
+        return redirect('home')->with('success', 'Compra realizada con éxito');
     }
 
 }

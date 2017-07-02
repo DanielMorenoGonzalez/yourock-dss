@@ -44,4 +44,13 @@ class Order extends Model
         return $this->orderlines;
     }
 
+    public function getTotalShoppingCart() {
+        $total = 0;
+        foreach(Session::get('order') as $orderlinePrueba){
+            $instrument = $orderlinePrueba[0]->getInstrument();
+            $total += $instrument->price * $orderlinePrueba[0]->quantity;
+        }
+        return $total;
+    }
+
 }

@@ -72,4 +72,4 @@ Route::get('auth/logout', 'Auth\LoginController@logout');
 
 Auth::routes();
 //Ruta para mostrar la página home
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');
