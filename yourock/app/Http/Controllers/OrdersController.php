@@ -57,7 +57,6 @@ class OrdersController extends Controller
             Session::push('order', $listitems);
         }
         
-        //return view('shoppingcart');
         return redirect()->action('OrderlinesController@index');
     }
 
@@ -66,6 +65,12 @@ class OrdersController extends Controller
             return redirect('shoppingcart');
         }
         return view('checkout');
+    }
+
+    public function postCheckout(Request $request) {
+        if(!Session::has('order')){
+            return redirect('shoppingcart');
+        }
     }
 
 }
