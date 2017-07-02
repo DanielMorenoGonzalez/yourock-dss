@@ -1,18 +1,12 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Home')
 @section('content')
-@if (session()->has('itemadded'))
-    <div class="alert alert-success alert-dismissable">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('itemadded') }}</strong>
-    </div>
-@endif
 @if (Session::has('order'))
 @foreach(Session::get('order') as $order)
     <p>{{ $order[0] }}</p>
 @endforeach
 @else
-    <p>Hola</p>
+    <p>El carrito de la compra está vacío :(</p>
 @endif
 <h1>Página carrito de la compra</h1>
 <div class="row">
@@ -25,9 +19,9 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <a href="{{ route('checkout') }} "type="submit" class="btn btn-primary">
                                     Comprar
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </form>

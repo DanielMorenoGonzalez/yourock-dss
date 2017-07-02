@@ -10,7 +10,8 @@
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "5.4.*",
-        "nanigans/single-table-inheritance": "0.7.*"
+        "nanigans/single-table-inheritance": "0.7.*",
+        "stripe/stripe-php": "4.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -61,4 +61,11 @@ class OrdersController extends Controller
         return redirect()->action('OrderlinesController@index');
     }
 
+    public function checkout() {
+        if(!Session::has('order')){
+            return redirect('shoppingcart');
+        }
+        return view('checkout');
+    }
+
 }

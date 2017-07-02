@@ -48,8 +48,6 @@ class OrderlinesController extends Controller
     
     //Método para mostrar todas las líneas de pedido de un pedido concreto
     public function index(Request $request){
-        $request->session()->flash('itemadded', '¡Instrumento añadido!');
-        //Session::flash('message','');
         return view('shoppingcart');
     }
 }

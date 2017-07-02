@@ -5,8 +5,8 @@
         </div>
         <ul class="nav navbar-nav">
             <li><a href="{{ action('CategoriesController@index') }}">Categorías</a></li>
-            <li><a href="{{ action('AboutusController@index') }}">Sobre nosotros</a><li>
-            <li><a href="{{ action('ContactController@index') }}">Contacto</a></li>
+            <li><a href="{{ route('aboutus') }}">Sobre nosotros</a><li>
+            <li><a href="{{ route('contact') }}">Contacto</a></li>
         </ul>
         <form class="navbar-form navbar-left">
             <div class="input-group">
@@ -49,7 +49,7 @@
                     </ul>
                 </li>
             @endif
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Carrito</a></li>
+                <li><a href="{{ action('OrderlinesController@index') }}"><span class="glyphicon glyphicon-shopping-cart"></span>Carrito</a></li>
         </ul>
     </div>
 </nav>
