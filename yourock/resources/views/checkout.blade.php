@@ -18,26 +18,19 @@
                         {{ csrf_field() }}
 
                         <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">Nombre:</label>
+                            <label for="cardholder-name" class="col-md-4 control-label">Titular de la tarjeta:</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="card-holder" class="col-md-4 control-label">Titular de la tarjeta:</label>
-                            <div class="col-md-6">
-                                <input id="card-holder" type="text" class="form-control">
+                                <input id="cardholder-name" name="cardholder-name" type="text" class="form-control" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                         <label for="card-element" class="col-md-4 control-label">Tarjeta:</label>
-                            <div id="card-element">
+                            <div class="col-md-6" id="card-element">
                             <!-- a Stripe Element will be inserted here. -->
                             </div>
                             <!-- Used to display Element errors -->
-                            <div id="card-errors" role="alert"></div>
+                            <div class="col-md-6" id="card-errors" role="alert"></div>
                         </div>
 
                         <div class="form-group">

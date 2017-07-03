@@ -79,13 +79,14 @@ class OrdersController extends Controller
         //Calculamos el total de todos los instrumentos de las líneas de pedido
         $orderShoppingCart = new Order;
         $total = $orderShoppingCart->getTotalShoppingCart();
+        $descripcion = "Compra realizada por " . Auth::user()->email;
 
         Stripe::setApiKey('sk_test_vhzOEvOnC2tb8fwFD1TQcDCs');
         try{
             $charge = Charge::create(array(
                 "amount" => $total * 100,
                 "currency" => "eur",
-                "description" => "Test Charge",
+                "description" => $descripcion,
                 "source" => $request->input('stripeToken')
             ));
 
@@ -109,6 +110,7 @@ class OrdersController extends Controller
         }
 
         Session::forget('order');
+        
         $orderlines = $order->getOrderlines();
 
         $data = array(

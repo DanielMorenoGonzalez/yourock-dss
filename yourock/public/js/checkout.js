@@ -34,7 +34,11 @@ var form = document.getElementById('payment-form');
 form.addEventListener('submit', function(event) {
   event.preventDefault();
 
-  stripe.createToken(card).then(function(result) {
+  var extraDetails = {
+    name: form.querySelector('input[name=cardholder-name]').value,
+  };
+
+  stripe.createToken(card, extraDetails).then(function(result) {
     if (result.error) {
       // Inform the user if there was an error
       var errorElement = document.getElementById('card-errors');
