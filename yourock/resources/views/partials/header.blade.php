@@ -49,7 +49,7 @@
                     </ul>
                 </li>
             @endif
-                <li><a href="{{ action('OrderlinesController@index') }}"><span class="glyphicon glyphicon-shopping-cart"></span>Carrito</a></li>
+                <li><a href="{{ action('OrderlinesController@index') }}"><span class="glyphicon glyphicon-shopping-cart"></span>Carrito<span class="badge">{{Session::has('order') ? Session::get('quantity') : ''}}</span></a></li>
         </ul>
     </div>
 </nav>

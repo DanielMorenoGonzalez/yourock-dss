@@ -20,7 +20,7 @@ Route::get('contact', function() {
     return view('contact');
 })->name('contact');
 
-//Ruta para mostrar la página de contacto
+//Ruta para enviar un email a nuestro contacto
 Route::post('contact', 'ContactController@postContact');
 
 //Ruta para mostrar la página sobre nosotros
@@ -65,9 +65,6 @@ Route::post('user/edit', 'UsersController@update');
 
 //Ruta para borrar un usuario
 Route::get('user/delete/{id}', 'UsersController@destroy');
-
-//Ruta para borrar un usuario
-Route::get('category/delete/{id}', 'CategoriesController@destroy');
 
 Route::post('auth/register', 'UsersController@store');
 Route::post('auth/login', 'Auth\LoginController@login');

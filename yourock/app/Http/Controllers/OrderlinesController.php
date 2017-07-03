@@ -22,6 +22,7 @@ class OrderlinesController extends Controller
                 //Si ya existe el instrumento que acabamos de añadir
                 if($orderlinePrueba[0]->instrument_id == $id){
                     $orderlinePrueba[0]->quantity += 1;
+                    Session::put('quantity', $orderlinePrueba[0]->quantity);
                     Session::put('orderline', $orderlinePrueba[0]);
                     $encontrado = true;
                     break;
@@ -32,6 +33,7 @@ class OrderlinesController extends Controller
                     $orderline = new Orderline;
                     $orderline->quantity = 1;
                     $orderline->instrument_id = $id;
+                    Session::put('quantity', Session::get('quantity')+1);
                     Session::put('orderline', $orderline);
             }
         }
@@ -40,6 +42,7 @@ class OrderlinesController extends Controller
             $orderline = new Orderline;
             $orderline->quantity = 1;
             $orderline->instrument_id = $id;
+            Session::put('quantity', 1);
             Session::put('orderline', $orderline);
         }
         

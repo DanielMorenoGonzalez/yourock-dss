@@ -109,6 +109,7 @@ class OrdersController extends Controller
             return redirect('checkout')->with('error', $e->getMessage());
         }
 
+        Session::forget('quantity');
         Session::forget('order');
         
         $orderlines = $order->getOrderlines();
@@ -126,6 +127,6 @@ class OrdersController extends Controller
             $message->to($data['email'])->subject($data['subject']);
         });
 
-        return redirect('home')->with('success', 'Compra realizada con éxito');
+        return redirect('home')->with('success', 'Compra realizada con éxito. Te acabamos de enviar un email con los datos de la misma');
     }
 }
