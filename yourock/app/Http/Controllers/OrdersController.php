@@ -39,7 +39,7 @@ class OrdersController extends Controller
             //Para cada línea de pedido contenida en el pedido de la sesión
             foreach(Session::get('order') as $orderlinePrueba){
                 //Si el instrumento de la linea de pedido X es el que el usuario acaba de añadir
-                if($orderlinePrueba[0]->instrument_id == Session::get('orderline')->instrument_id){;
+                if($orderlinePrueba[0]->instrument_id == Session::get('orderline')->instrument_id){
                     $encontrado = true;
                     break;
                 }

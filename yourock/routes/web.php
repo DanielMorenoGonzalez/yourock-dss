@@ -66,11 +66,15 @@ Route::post('user/edit', 'UsersController@update');
 //Ruta para borrar un usuario
 Route::get('user/delete/{id}', 'UsersController@destroy');
 
-Route::get('category/delete/{id}', 'CategoriesController@destroy');
-
+//Route::get('category/delete/{id}', 'CategoriesController@destroy');
 Route::post('auth/register', 'UsersController@store');
 Route::post('auth/login', 'Auth\LoginController@login');
 Route::get('auth/logout', 'Auth\LoginController@logout');
+
+Route::get('admin/index', 'UsersController@adminIndex')->middleware('admin');
+Route::get('admin/instruments', 'InstrumentsController@index')->middleware('admin');
+Route::get('admin/instruments/edit/{id}', 'InstrumentsController@edit')->middleware('admin');
+
 
 Auth::routes();
 //Ruta para mostrar la página home

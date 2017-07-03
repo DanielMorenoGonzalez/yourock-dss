@@ -27,7 +27,7 @@ class UsersTableSeeder extends Seeder
             'phoneNumber' => '678992432',
             'email' => 'isabellaRE93@gmail.com',
             'password' => bcrypt('gp1bike'),
-            'type' => 'cliente'
+            'type' => 'customer'
         ]);
         $user1->save();
 
@@ -42,7 +42,7 @@ class UsersTableSeeder extends Seeder
             'phoneNumber' => '613235643',
             'email' => 'pgarcia21@gmail.com',
             'password' => bcrypt('m0t0rbikes'),
-            'type' => 'cliente'
+            'type' => 'admin'
         ]); 
         $user2->save();
 
@@ -57,7 +57,7 @@ class UsersTableSeeder extends Seeder
             'phoneNumber' => '692134321',
             'email' => 'danisanchezMUSIC@gmail.com',
             'password' => bcrypt('mlove94'),
-            'type' => 'cliente'
+            'type' => 'customer'
         ]);
         $user3->save();
 

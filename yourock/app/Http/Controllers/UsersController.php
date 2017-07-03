@@ -40,7 +40,7 @@ class UsersController extends Controller
             'phoneNumber' => $request->input('phoneNumber'),
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
-            'type' => 'cliente'
+            'type' => 'customer'
         ]);
 
         $user->save();
@@ -51,7 +51,7 @@ class UsersController extends Controller
     //Método para mostrar la vista al usuario según los permisos que tenga
     public function show(){
         $user = Auth::user();
-        if($user->type == 'cliente'){
+        if($user->type == 'customer'){
             return view('users.customers.show', (['user' => $user]));
         }
         else {
@@ -62,7 +62,7 @@ class UsersController extends Controller
     //Método para recuperar el usuario autenticado y mostrarle la vista de editar perfil
     public function edit(){
 		$user = Auth::user();
-        if($user->type == 'cliente'){
+        if($user->type == 'customer'){
             return view('users.customers.edit', (['user' => $user]));
         }
 	}
@@ -139,9 +139,14 @@ class UsersController extends Controller
         $userType = Auth::user()->type;
         $user = User::find($id);
         $user->delete();
-        if($userType == 'cliente'){
+        if($userType == 'customer'){
             return redirect('home');
         }
+    }
+
+    public function adminIndex() {
+        $user = Auth::user();
+		return view('users.admin.index', (['user' => $user]));
     }
 
 }

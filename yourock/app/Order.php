@@ -36,7 +36,6 @@ class Order extends Model
     public function addOrderlineToCart() {
         $this->items[] = Session::get('orderline');
         return $this->items;
-
     }
     
     //Método para obtener las líneas de pedido del pedido actual

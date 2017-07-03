@@ -14,7 +14,7 @@ class OrderlinesController extends Controller
     public function addInstrumentToCart(Request $request, $id) {
         $instrument = Instrument::findOrFail($id);
         $encontrado = false;
-
+        
         //Comprobamos si existe ya un pedido en la sesión
         if(Session::has('order')){
             //Para cada línea de pedido contenida en el pedido de la sesión
