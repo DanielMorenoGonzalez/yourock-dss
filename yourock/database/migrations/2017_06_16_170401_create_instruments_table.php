@@ -21,8 +21,8 @@ class CreateInstrumentsTable extends Migration
             $table->integer('stock');
             $table->string('urlPhoto');
             $table->string('manufacturer');
-            $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->integer('category_id')->unsigned()->index();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -21,4 +21,10 @@ class CategoriesController extends Controller
         $instruments = $category->instruments()->paginate(5);
         return view('categories.show', array('category' => $category, 'instruments' => $instruments));
     }
+
+    public function destroy($id) {
+        $category = Category::find($id);
+        $category->delete();
+        return redirect('home');
+    }
 }

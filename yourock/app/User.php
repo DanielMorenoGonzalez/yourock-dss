@@ -9,6 +9,7 @@ use App\Order;
 class User extends Authenticatable
 {
     use Notifiable;
+    protected $dates = ['deleted_at'];
 
     /**
      * The attributes that are mass assignable.

@@ -35,7 +35,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <a href="{{ action('UsersController@destroy', [$user->id]) }}" class="btn btn-danger btn-ok">Borrar</a>
+                <a type="submit" href="{{ action('UsersController@destroy', [$user->id]) }}" class="btn btn-danger btn-ok">Borrar</a>
             </div>
         </div>
     </div>
