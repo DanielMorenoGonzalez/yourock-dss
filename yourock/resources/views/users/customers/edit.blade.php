@@ -75,29 +75,82 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
-                            <label for="city" class="col-md-4 control-label">Ciudad:</label>
+                        <div class="form-group{{ $errors->has('province') ? ' has-error' : '' }}">
+                            <label for="province" class="col-md-4 control-label">Provincia:</label>
 
                             <div class="col-md-6">
-                                <input id="city" type="text" class="form-control" name="city" value="{{ old('city') }}" placeholder="{{ $user->city }}">
+                                <select id="province" class="form-control" name="province" onchange="makeSubmenu(this.value)">
+                                    <option value="" disabled selected style="display: none;">{{ $user->province }}</option>
+                                    <option>Albacete</option>
+                                    <option>Alicante</option>
+                                    <option>Almería</option>
+                                    <option>Álava</option>
+                                    <option>Asturias</option>
+                                    <option>Ávila</option>
+                                    <option>Badajoz</option>
+                                    <option>Barcelona</option>
+                                    <option>Bizkaia</option>
+                                    <option>Burgos</option>
+                                    <option>Cáceres</option>
+                                    <option>Cádiz</option>
+                                    <option>Cantabria</option>
+                                    <option>Castellón</option>
+                                    <option>Ciudad Real</option>
+                                    <option>Córdoba</option>
+                                    <option>Coruña</option>
+                                    <option>Cuenca</option>
+                                    <option>Guipúzcoa</option>
+                                    <option>Gerona</option>
+                                    <option>Granada</option>
+                                    <option>Guadalajara</option>
+                                    <option>Huelva</option>
+                                    <option>Islas Baleares</option>
+                                    <option>Jaén</option>
+                                    <option>La Rioja</option>
+                                    <option>Las Palmas de Gran Canaria</option>
+                                    <option>León</option>
+                                    <option>Lérida</option>
+                                    <option>Lugo</option>
+                                    <option>Madrid</option>
+                                    <option>Málaga</option>
+                                    <option>Murcia</option>
+                                    <option>Navarra</option>
+                                    <option>Orense</option>
+                                    <option>Palencia</option>
+                                    <option>Pontevedra</option>
+                                    <option>Salamanca</option>
+                                    <option>Santa Cruz de Tenerife</option>
+                                    <option>Segovia</option>
+                                    <option>Sevilla</option>
+                                    <option>Soria</option>
+                                    <option>Tarragona</option>
+                                    <option>Teruel</option>
+                                    <option>Toledo</option>
+                                    <option>Valencia</option>
+                                    <option>Valladolid</option>
+                                    <option>Zamora</option>
+                                    <option>Zaragoza</option>
+                                </select>
 
-                                @if ($errors->has('city'))
+                                @if ($errors->has('province'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('city') }}</strong>
+                                        <strong>{{ $errors->first('province') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('province') ? ' has-error' : '' }}">
-                            <label for="province" class="col-md-4 control-label">Provincia:</label>
+                        <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                            <label for="city" class="col-md-4 control-label">Ciudad:</label>
 
                             <div class="col-md-6">
-                                <input id="province" type="text" class="form-control" name="province" value="{{ old('province') }}" placeholder="{{ $user->province }}">
+                                <select id="city" class="form-control" name="city">
+                                    <option value="" disabled selected style="display: none;">{{ $user->city }}</option>
+                                </select>
 
-                                @if ($errors->has('province'))
+                                @if ($errors->has('city'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('province') }}</strong>
+                                        <strong>{{ $errors->first('city') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -148,7 +201,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Guardar información
+                                    Guardar
                                 </button>
                             </div>
                         </div>

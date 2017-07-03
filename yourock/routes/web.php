@@ -74,6 +74,7 @@ Route::get('auth/logout', 'Auth\LoginController@logout');
 Route::get('admin/index', 'UsersController@adminIndex')->middleware('admin');
 Route::get('admin/instruments', 'InstrumentsController@index')->middleware('admin');
 Route::get('admin/instruments/edit/{id}', 'InstrumentsController@edit')->middleware('admin');
+Route::post('admin/instruments/edit/{id}', 'InstrumentsController@update')->middleware('admin');
 
 
 Auth::routes();

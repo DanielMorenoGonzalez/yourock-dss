@@ -76,8 +76,6 @@ class UsersController extends Controller
             'name' => 'max:20',
             'surname' => 'max:30',
             'address' => 'max:100',
-            'province' => 'max:20',
-            'city' => 'max:30',
             'zipCode' => 'max:5',
 		]);
 

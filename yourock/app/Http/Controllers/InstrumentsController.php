@@ -26,4 +26,41 @@ class InstrumentsController extends Controller
         return view('instruments.edit', (['instrument' => $instrument]));
     }
 
+    //Método para actualizar un instrumento (esto lo hará el administrador)
+    public function update(Request $request, $id) {
+        $instrument = Instrument::find($id);
+
+        $this->validate($request, [
+            'name' => 'max:30',
+            'description' => 'max:255',
+            'price' => 'max:5',
+            'stock' => 'max:3',
+            'urlPhoto' => 'max:100',
+            'manufacturer' => 'max:30',
+		]);
+
+        if($request->input('name') != ''){
+            $instrument->name = $request->input('name');
+        }
+        if($request->input('description') != ''){
+            $instrument->description = $request->input('description');
+        }
+        if($request->input('price') != ''){
+            $instrument->price = $request->input('price');
+        }
+        if($request->input('stock') != ''){
+            $instrument->stock = $request->input('stock');
+        }
+        if($request->input('urlPhoto') != ''){
+            $instrument->urlPhoto = $request->input('urlPhoto');
+        }
+        if($request->input('manufacturer') != ''){
+            $instrument->manufacturer = $request->input('manufacturer');
+        }
+
+        $instrument->save();
+
+        return redirect()->action('InstrumentsController@index')->with('instrumentupdate', 'Instrumento actualizado');
+    }
+
 }
