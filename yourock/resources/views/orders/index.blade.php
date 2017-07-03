@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Pedidos realizados')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li class="active">Mis pedidos</li>
+</ol>
     <h1>Pedidos realizados</h1>
     @if ($orders->count() == 0)
         <p>No hay pedidos</p>

@@ -33,29 +33,29 @@ Route::get('addtocart/{id}', 'OrderlinesController@addInstrumentToCart');
 
 Route::get('user/shoppingcart', 'OrdersController@addOrderlinesToOrder');
 
-Route::get('shoppingcart', 'OrderlinesController@index');
+Route::get('shoppingcart', 'OrderlinesController@index')->name('shoppingcart');
 
 Route::get('checkout', 'OrdersController@checkout')->middleware('auth')->name('checkout');
 
 Route::post('checkout', 'OrdersController@postCheckout')->middleware('auth')->name('checkout');
 
 //Ruta para mostrar todas las categorías (con algunos de sus instrumentos)
-Route::get('categories', 'CategoriesController@index');
+Route::get('categories', 'CategoriesController@index')->name('categories');
 
 //Ruta para mostrar una categoría con todos sus instrumentos
-Route::get('categories/{category}', 'CategoriesController@show');
+Route::get('categories/{category}', 'CategoriesController@show')->name('category');
 
 //Ruta para mostrar un instrument específico con sus detalles
 Route::get('instruments/{instrument}', 'InstrumentsController@show');
 
 //Ruta para ver los pedidos de un usuario
-Route::get('user/orders', 'OrdersController@index')->middleware('auth');
+Route::get('user/orders', 'OrdersController@index')->name('orders')->middleware('auth');
 
 //Ruta para ver un pedido concreto de un usuario
 Route::get('user/orders/{order}', 'OrdersController@show')->middleware('auth');
 
 //Ruta mostrar el perfil de usuario
-Route::get('user/profile', 'UsersController@show');
+Route::get('user/profile', 'UsersController@show')->name('userprofile');
 
 //Ruta para mostrar la página de editar usuario
 Route::get('user/edit', 'UsersController@edit');
@@ -73,6 +73,8 @@ Route::get('auth/logout', 'Auth\LoginController@logout');
 
 Route::get('admin/index', 'UsersController@adminIndex')->middleware('admin');
 Route::get('admin/instruments', 'InstrumentsController@index')->middleware('admin');
+Route::get('admin/instruments/create', 'InstrumentsController@create')->middleware('admin');
+Route::post('admin/instruments/create', 'InstrumentsController@store')->middleware('admin');
 Route::get('admin/instruments/edit/{id}', 'InstrumentsController@edit')->middleware('admin');
 Route::post('admin/instruments/edit/{id}', 'InstrumentsController@update')->middleware('admin');
 

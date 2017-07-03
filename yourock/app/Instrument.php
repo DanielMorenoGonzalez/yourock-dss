@@ -5,7 +5,6 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Category;
-use App\Orderline;
 
 class Instrument extends Model
 {
@@ -16,7 +15,18 @@ class Instrument extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'description', 'price', 'stock', 'urlPhoto', 'manufacturer'
+    ];
+
     public $timestamps = false;
+
 
     public function category() {
         //Instrument tiene la clave ajena category_id
@@ -25,6 +35,10 @@ class Instrument extends Model
 
     public function orderlines() {
         return $this->hasMany('App\Orderline');
+    }
+
+    public function getCategory() {
+        return $this->category;
     }
     
 }

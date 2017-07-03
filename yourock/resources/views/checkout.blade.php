@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Checkout')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('shoppingcart') }}">Carrito</a></li>
+  <li class="active">Checkout</li>
+</ol>
 @if (session()->has('error'))
     <div class="alert alert-danger alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>

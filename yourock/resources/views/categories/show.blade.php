@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Instrumentos de la categoría')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('categories') }}">Categorías</a></li>
+  <li class="active">{{ $category->name }}</li>
+</ol>
 <h2>Categoría {{ $category->name }}</h2>
 <h4>{{ $category->description }}</h4>
 <br/>

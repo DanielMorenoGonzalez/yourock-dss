@@ -16,6 +16,10 @@
 </style>
 @endsection
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li class="active">Sobre nosotros</li>
+</ol>
 <h1>Página sobre nosotros</h1>
 <script>
     var map;

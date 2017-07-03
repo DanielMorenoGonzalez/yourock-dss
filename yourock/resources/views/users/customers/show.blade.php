@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Perfil de usuario')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li class="active">Mi perfil</li>
+</ol>
 <div class="container">
 @if (session()->has('message'))
     <div class="alert alert-success alert-dismissable">

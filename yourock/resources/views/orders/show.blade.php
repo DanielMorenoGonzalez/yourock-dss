@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Carrito de la compra')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('orders') }}">Mis pedidos</a></li>
+  <li class="active">Pedido {{ $order->id }}</li>
+</ol>
 <h1>Pedido {{ $order->id }}</h1>
 <p>Estado: {{ $order->state }}</p>
 <p>Coste total: {{ $order->getTotal() }}</p>

@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Categorías')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li class="active">Categorías</li>
+</ol>
 @foreach ($categories as $category)
 <div class="container">
     <p><a href="{{ action('CategoriesController@show', [$category->id]) }}">Categoría: {{ $category->name }}</a></p>

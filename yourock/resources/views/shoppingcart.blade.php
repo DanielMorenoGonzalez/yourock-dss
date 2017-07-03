@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Home')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li class="active">Carrito</li>
+</ol>
 @if (Session::has('order'))
 @foreach(Session::get('order') as $order)
     <p>{{ $order[0] }}</p>

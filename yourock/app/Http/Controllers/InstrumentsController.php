@@ -11,9 +11,38 @@ use Session;
 
 class InstrumentsController extends Controller
 {
+    public function create() {
+        return view('instruments.create');
+    }
+
+    public function store(Request $request) {
+        $this->validate($request, [
+            'name' => 'required|max:30|unique:instruments',
+            'description' => 'required|max:255',
+            'price' => 'required|max:5',
+            'stock' => 'required|max:3',
+            'urlPhoto' => 'required|max:100',
+            'manufacturer' => 'required|max:30',
+		]);
+
+        $instrument = new Instrument([
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price'),
+            'stock' => $request->input('stock'),
+            'urlPhoto' => $request->input('urlPhoto'),
+            'manufacturer' => $request->input('manufacturer')
+        ]);
+
+        $instrument->save();
+
+        return redirect()->action('InstrumentsController@index');
+    }
+
     public function show($id) {
         $instrument = Instrument::findOrFail($id);
-        return view('instruments.show', (['instrument' => $instrument]));
+        $category = $instrument->getCategory();
+        return view('instruments.show', array('instrument' => $instrument, 'category' => $category));
     }
 
     public function index() {

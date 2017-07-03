@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Perfil de usuario')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('userprofile') }}">Mi perfil</a></li>
+  <li class="active">Editar perfil</li>
+</ol>
 <h1>Editar perfil de usuario</h1>
     <div class="row">
 
