@@ -128,6 +128,15 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        //Hacemos que los instrumentos de la categoría ya no apunten a ésta
+        foreach($category->instruments as $instrument) {
+            $instrument->category()->dissociate();
+            $instrument->save();
+        }
+        //$instrument->category()->dissociate();
+        //$instrument->save();
+        $category->delete();
+
+        return redirect()->action('CategoriesController@indexCategories')->with('categorydelete', '¡Categoría borrada!');
     }
 }

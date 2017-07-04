@@ -48,7 +48,11 @@
                     <td>{{ $category->description }}</td>
                     <td><a role="button" class="btn btn-warning" href="{{ action('CategoriesController@showDetails', [$category->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
                     <td><a role="button" class="btn btn-primary" href="{{ action('CategoriesController@edit', [$category]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <td><a href=""><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <form role="form" method="POST" action="{{ action('CategoriesController@destroy', [$category]) }}">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <td><button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>
+                    </form>
                 </tr>
             @endforeach
         </tbody>

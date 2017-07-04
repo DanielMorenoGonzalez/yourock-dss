@@ -57,7 +57,7 @@
                     <form role="form" method="POST" action="{{ action('InstrumentsController@destroy', [$instrument]) }}">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
-                        <td><button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span></button></td>
+                        <td><button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>
                     </form>
                 </tr>
             @endforeach

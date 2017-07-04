@@ -44,7 +44,11 @@
 
                             <div class="col-md-6">
                                 <select id="category" class="form-control" name="category">
+                                @if(!$category)
+                                    <option value="" disabled selected style="display: none;"></option>
+                                @else
                                     <option value="" disabled selected style="display: none;">{{ $category->name }}</option>
+                                @endif 
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach

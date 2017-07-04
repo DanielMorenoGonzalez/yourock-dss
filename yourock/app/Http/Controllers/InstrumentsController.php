@@ -157,6 +157,9 @@ class InstrumentsController extends Controller
      */
     public function destroy(Instrument $instrument)
     {
+        //Hacemos que el instrumento ya no apunte a ninguna categoría
+        $instrument->category()->dissociate();
+        $instrument->save();
         $instrument->delete();
 
         return redirect()->action('InstrumentsController@index')->with('instrumentdelete', '¡Instrumento borrado!');
