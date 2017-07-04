@@ -45,14 +45,23 @@ class InstrumentsController extends Controller
         return view('instruments.show', array('instrument' => $instrument, 'category' => $category));
     }
 
+    public function showForAdmin($id) {
+        
+        $instrument = Instrument::findOrFail($id);
+        $category = $instrument->getCategory();
+        return view('instruments.showforadmin', array('instrument' => $instrument, 'category' => $category));  
+    }
+
     public function index() {
         $instruments = Instrument::paginate(10);
         return view('instruments.index', (['instruments' => $instruments]));
     }
 
     public function edit($id) {
+        $categories = Category::all();
         $instrument = Instrument::find($id);
-        return view('instruments.edit', (['instrument' => $instrument]));
+        $category = $instrument->getCategory();
+        return view('instruments.edit', array('instrument' => $instrument, 'category' => $category, 'categories' => $categories));
     }
 
     //Método para actualizar un instrumento (esto lo hará el administrador)
@@ -73,6 +82,9 @@ class InstrumentsController extends Controller
         }
         if($request->input('description') != ''){
             $instrument->description = $request->input('description');
+        }
+        if($request->input('category') != ''){
+            $instrument->category_id = $request->input('category');
         }
         if($request->input('price') != ''){
             $instrument->price = $request->input('price');

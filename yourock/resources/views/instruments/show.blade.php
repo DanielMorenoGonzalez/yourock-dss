@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'YOU ROCK! - Producto')
+@section('title', 'YOU ROCK! - Instrumento')
 @section('content')
 <ol class="breadcrumb">
   <li><a href="{{ route('home') }}">Home</a></li>

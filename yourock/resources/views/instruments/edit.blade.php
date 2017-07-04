@@ -38,6 +38,25 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
+                            <label for="category" class="col-md-4 control-label">Categoría:</label>
+
+                            <div class="col-md-6">
+                                <select id="category" class="form-control" name="category">
+                                    <option value="" disabled selected style="display: none;">{{ $category->name }}</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('category'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('category') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
                             <label for="price" class="col-md-4 control-label">Precio:</label>
 
