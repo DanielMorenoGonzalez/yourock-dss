@@ -77,7 +77,14 @@ class InstrumentsController extends Controller
     public function show(Instrument $instrument)
     {
         //$instrument = Instrument::findOrFail($id);
-        $category = $instrument->getCategory();
+        $category = $instrument->category;
+        return view('instruments.show', array('instrument' => $instrument, 'category' => $category));
+    }
+
+    public function showDetails(Instrument $instrument)
+    {
+        //$instrument = Instrument::findOrFail($id);
+        $category = $instrument->category;
         return view('instruments.showforadmin', array('instrument' => $instrument, 'category' => $category)); 
     }
 

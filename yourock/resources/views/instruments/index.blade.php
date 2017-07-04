@@ -46,7 +46,7 @@
                     <td>{{ $instrument->id }}</td>
                     <td>{{ $instrument->name }}</td>
                     <td>{{ $instrument->manufacturer }}</td>
-                    <td><a role="button" class="btn btn-warning" href=""><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                    <td><a role="button" class="btn btn-warning" href="{{ action('InstrumentsController@showDetails', [$instrument]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
                     <td><a role="button" class="btn btn-primary" href="{{ action('InstrumentsController@edit', [$instrument]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <form role="form" method="POST" action="{{ action('InstrumentsController@destroy', [$instrument]) }}">
                         {{ csrf_field() }}

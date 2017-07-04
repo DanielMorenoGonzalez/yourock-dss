@@ -45,9 +45,6 @@ Route::get('categories', 'CategoriesController@index')->name('categories');
 //Ruta para mostrar una categoría con todos sus instrumentos
 Route::get('categories/{category}', 'CategoriesController@show')->name('category');
 
-//Ruta para mostrar un instrument específico con sus detalles
-Route::get('instruments/{instrument}', 'InstrumentsController@show');
-
 //Ruta para ver los pedidos de un usuario
 Route::get('user/orders', 'OrdersController@index')->name('orders')->middleware('auth');
 
@@ -73,25 +70,17 @@ Route::get('auth/logout', 'Auth\LoginController@logout');
 
 Route::get('admin/index', 'UsersController@adminIndex')->middleware('admin');
 
-//Declaramos la ruta para el recurso
-//Route::resource('admin/instruments', 'InstrumentsController');
+//Ruta para mostrar un instrument específico con sus detalles (auth o guest)
+Route::get('instruments/{instrument}', 'InstrumentsController@show')->middleware('guest', 'customer');
 
+//Declaramos la ruta para el admin (con su prefijo y middleware adecuados) 
 Route::prefix('admin')->middleware('admin')->group(function () {
-    //Declaramos la ruta para el recurso (esto será parte del admin)
+    //Declaramos la ruta para el recurso instruments
     Route::resource('instruments', 'InstrumentsController', ['except' => [
         'show'
     ]]);
+    Route::get('instruments/{instrument}', 'InstrumentsController@showDetails');
 });
-
-//Route::get('admin/instruments', 'InstrumentsController@index')->middleware('admin');
-//Route::get('admin/instruments/create', 'InstrumentsController@create')->middleware('admin');
-//Route::post('admin/instruments/create', 'InstrumentsController@store')->middleware('admin');
-//Route::get('admin/instruments/{id}', 'InstrumentsController@showForAdmin')->middleware('admin');
-//Route::get('admin/instruments/edit/{id}', 'InstrumentsController@edit')->middleware('admin');
-//Route::post('admin/instruments/edit/{id}', 'InstrumentsController@update')->middleware('admin');
-
-//Declaramos la ruta para el recurso
-//Route::resource('instruments', 'InstrumentsController');
 
 Route::get('admin/categories', 'CategoriesController@indexForAdmin')->middleware('admin');
 Route::get('admin/categories/create', 'CategoriesController@create')->middleware('admin');
