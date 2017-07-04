@@ -45,16 +45,18 @@ Route::get('user/orders', 'OrdersController@index')->name('orders')->middleware(
 //Ruta para ver un pedido concreto de un usuario
 Route::get('user/orders/{order}', 'OrdersController@show')->middleware('auth');
 
-//Ruta mostrar el perfil de usuario
+//Ruta mostrar el perfil de usuario con el que hemos iniciado sesión
 Route::get('user/profile', 'UsersController@show')->name('userprofile');
 
-//Ruta para mostrar la página de editar usuario
+//Ruta para mostrar la página de editar usuario con el que hemos iniciado sesión
 Route::get('user/edit', 'UsersController@edit');
 
-//Ruta para editar (acción) un usuario
+//Ruta para editar (acción) el perfil de usuario con el que hemos iniciado sesión
 Route::post('user/edit', 'UsersController@update');
 
-//Route::get('category/delete/{id}', 'CategoriesController@destroy');
+//Ruta borrar el usuario (cliente) con el que hemos iniciado sesión
+Route::delete('user/delete', 'UsersController@destroy');
+
 Route::post('auth/register', 'UsersController@store');
 Route::post('auth/login', 'Auth\LoginController@login');
 Route::get('auth/logout', 'Auth\LoginController@logout');
@@ -94,8 +96,6 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::put('users/edit/{id}', 'UsersController@updateUser');
     Route::delete('users/{id}', 'UsersController@destroyUser');
 });
-
-//Route::get('admin/users', 'UsersController@index')->middleware('admin');
 
 Auth::routes();
 //Ruta para mostrar la página home

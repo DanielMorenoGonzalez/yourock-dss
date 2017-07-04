@@ -165,7 +165,7 @@
                             <label for="zipCode" class="col-md-4 control-label">Código postal:</label>
 
                             <div class="col-md-6">
-                                <input id="zipCode" type="number" class="form-control" name="zipCode" value="{{ old('zipCode') }}" placeholder="{{ $user->zipCode }}">
+                                <input id="zipCode" type="text" class="form-control" name="zipCode" value="{{ old('zipCode') }}" placeholder="{{ $user->zipCode }}">
 
                                 @if ($errors->has('zipCode'))
                                     <span class="help-block">
@@ -179,7 +179,7 @@
                             <label for="phoneNumber" class="col-md-4 control-label">Teléfono:</label>
 
                             <div class="col-md-6">
-                                <input id="phoneNumber" type="number" class="form-control" name="phoneNumber" value="{{ old('phoneNumber') }}" placeholder="{{ $user->phoneNumber }}">
+                                <input id="phoneNumber" type="tel" class="form-control" name="phoneNumber" value="{{ old('phoneNumber') }}" placeholder="{{ $user->phoneNumber }}">
 
                                 @if ($errors->has('phoneNumber'))
                                     <span class="help-block">

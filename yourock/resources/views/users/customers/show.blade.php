@@ -39,7 +39,11 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <a type="submit" href="{{ action('UsersController@destroy', [$user->id]) }}" class="btn btn-danger btn-ok">Borrar</a>
+                <form role="form" method="POST" action="{{ action('UsersController@destroy') }}">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>Borrar</button>
+                </form>
             </div>
         </div>
     </div>
