@@ -252,14 +252,17 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyUser($id)
     {
-        //Hacemos que los instrumentos de la categoría ya no apunten a ésta
-        //foreach($category->instruments as $instrument) {
-            //$instrument->category()->dissociate();
-            //$instrument->save();
-        //}
         $user = User::find($id);
+
+        if($user->orders){
+            foreach($user->orders as $order){
+                $order->user()->dissociate();
+                $order->save();
+            }
+        }
+
         $user->delete();
 
         return redirect()->action('UsersController@index')->with('userdelete', '¡Usuario borrado!');

@@ -17,7 +17,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+        return view('categories.index', ['categories' => $categories]);
     }
 
     public function indexCategories() {
@@ -64,9 +65,11 @@ class CategoriesController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $instruments = $category->instruments()->paginate(5);
+        return view('categories.show', array('category' => $category, 'instruments' => $instruments));
     }
 
     public function showDetails($id) {

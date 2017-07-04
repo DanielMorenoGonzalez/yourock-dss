@@ -54,15 +54,12 @@ Route::get('user/edit', 'UsersController@edit');
 //Ruta para editar (acción) un usuario
 Route::post('user/edit', 'UsersController@update');
 
-//Ruta para borrar un usuario
-Route::get('user/delete/{id}', 'UsersController@destroy');
-
 //Route::get('category/delete/{id}', 'CategoriesController@destroy');
 Route::post('auth/register', 'UsersController@store');
 Route::post('auth/login', 'Auth\LoginController@login');
 Route::get('auth/logout', 'Auth\LoginController@logout');
 
-//Ruta para mostrar un instrument específico con sus detalles (auth o guest)
+//Ruta para mostrar un instrument específico con sus detalles
 Route::get('instruments/{instrument}', 'InstrumentsController@show');
 
 //Ruta para mostrar todas las categorías (con algunos de sus instrumentos)
@@ -95,10 +92,10 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('users/{id}', 'UsersController@showUser');
     Route::get('users/edit/{id}', 'UsersController@editUser');
     Route::put('users/edit/{id}', 'UsersController@updateUser');
-    Route::delete('users/{id}', 'UsersController@destroy');
+    Route::delete('users/{id}', 'UsersController@destroyUser');
 });
 
-Route::get('admin/users', 'UsersController@index')->middleware('admin');
+//Route::get('admin/users', 'UsersController@index')->middleware('admin');
 
 Auth::routes();
 //Ruta para mostrar la página home

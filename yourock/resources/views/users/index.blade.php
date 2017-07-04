@@ -42,6 +42,7 @@
         </tr>
         </thead>
         <tbody>
+        @if($users)
             @foreach($users as $user)
                 <tr>
                     <td>{{ $user->id }}</td>
@@ -51,13 +52,18 @@
                     <td>{{ $user->type }}</td>
                     <td><a role="button" class="btn btn-warning" href="{{ action('UsersController@showUser', [$user->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
                     <td><a role="button" class="btn btn-primary" href="{{ action('UsersController@editUser', [$user->id]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <form role="form" method="POST" action="{{ action('UsersController@destroy', [$user->id]) }}">
+                    <form role="form" method="POST" action="{{ action('UsersController@destroyUser', [$user->id]) }}">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <td><button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>
                     </form>
                 </tr>
             @endforeach
+        @else
+            <tr>
+                <td>No hay usuarios</td>
+            </tr>
+        @endif
         </tbody>
     </table>
     </div>
