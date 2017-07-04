@@ -150,6 +150,8 @@ class InstrumentsController extends Controller
      */
     public function destroy(Instrument $instrument)
     {
-        //
+        $instrument->delete();
+
+        return redirect()->action('InstrumentsController@index')->with('instrumentdelete', '¡Instrumento borrado!');
     }
 }

@@ -7,10 +7,18 @@
         <strong>{{ session()->get('instrumentupdate') }}</strong>
     </div>
 @endif
+
 @if (session()->has('instrumentcreate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
         <strong>{{ session()->get('instrumentcreate') }}</strong>
+    </div>
+@endif
+
+@if (session()->has('instrumentdelete'))
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <strong>{{ session()->get('instrumentdelete') }}</strong>
     </div>
 @endif
 
@@ -27,9 +35,9 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Fabricante</th>
-            <th>Ver detalles</th>
-            <th>Editar</th>
-            <th>Borrar</th>
+            <th></th>
+            <th></th>
+            <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
@@ -38,9 +46,13 @@
                     <td>{{ $instrument->id }}</td>
                     <td>{{ $instrument->name }}</td>
                     <td>{{ $instrument->manufacturer }}</td>
-                    <td><a href="{{ action('InstrumentsController@showForAdmin', [$instrument->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
-                    <td><a href="{{ action('InstrumentsController@edit', [$instrument]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <td><a href="#"><span class="glyphicon glyphicon-remove-sign"></span></a></td>
+                    <td><a role="button" class="btn btn-warning" href=""><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                    <td><a role="button" class="btn btn-primary" href="{{ action('InstrumentsController@edit', [$instrument]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <form role="form" method="POST" action="{{ action('InstrumentsController@destroy', [$instrument]) }}">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <td><button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove-sign"></span></button></td>
+                    </form>
                 </tr>
             @endforeach
         </tbody>

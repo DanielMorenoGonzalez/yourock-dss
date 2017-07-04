@@ -86,7 +86,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 //Route::get('admin/instruments', 'InstrumentsController@index')->middleware('admin');
 //Route::get('admin/instruments/create', 'InstrumentsController@create')->middleware('admin');
 //Route::post('admin/instruments/create', 'InstrumentsController@store')->middleware('admin');
-Route::get('admin/instruments/{id}', 'InstrumentsController@showForAdmin')->middleware('admin');
+//Route::get('admin/instruments/{id}', 'InstrumentsController@showForAdmin')->middleware('admin');
 //Route::get('admin/instruments/edit/{id}', 'InstrumentsController@edit')->middleware('admin');
 //Route::post('admin/instruments/edit/{id}', 'InstrumentsController@update')->middleware('admin');
 
