@@ -81,6 +81,8 @@ Route::post('admin/instruments/edit/{id}', 'InstrumentsController@update')->midd
 Route::get('admin/categories', 'CategoriesController@indexForAdmin')->middleware('admin');
 Route::get('admin/categories/create', 'CategoriesController@create')->middleware('admin');
 Route::post('admin/categories/create', 'CategoriesController@store')->middleware('admin');
+Route::get('admin/categories/edit/{id}', 'CategoriesController@edit')->middleware('admin');
+Route::post('admin/categories/edit/{id}', 'CategoriesController@update')->middleware('admin');
 
 
 Auth::routes();

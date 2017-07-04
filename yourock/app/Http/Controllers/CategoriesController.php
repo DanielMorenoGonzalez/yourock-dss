@@ -13,6 +13,27 @@ class CategoriesController extends Controller
         return view('categories.create');
     }
 
+    //Método para actualizar un instrumento (esto lo hará el administrador)
+    public function update(Request $request, $id) {
+        $category = Category::find($id);
+
+        $this->validate($request, [
+            'name' => 'max:30',
+            'description' => 'max:255',
+		]);
+
+        if($request->input('name') != ''){
+            $category->name = $request->input('name');
+        }
+        if($request->input('description') != ''){
+            $category->description = $request->input('description');
+        }
+
+        $category->save();
+
+        return redirect()->action('CategoriesController@indexForAdmin')->with('categoryupdate', '¡Categoría actualizada!');
+    }
+
     public function store(Request $request){
         $this->validate($request, [
             'name' => 'required|max:50|unique:categories',
@@ -27,6 +48,11 @@ class CategoriesController extends Controller
         $category->save();
 
         return redirect()->action('CategoriesController@indexForAdmin')->with('categorycreate', '¡Categoría creada!');
+    }
+
+    public function edit($id) {
+        $category = Category::find($id);
+        return view('categories.edit', (['category' => $category]));
     }
 
     //Con este método tenemos todas las categorías

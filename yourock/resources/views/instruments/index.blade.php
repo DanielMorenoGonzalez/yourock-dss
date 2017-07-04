@@ -7,6 +7,12 @@
         <strong>{{ session()->get('instrumentupdate') }}</strong>
     </div>
 @endif
+@if (session()->has('instrumentcreate'))
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <strong>{{ session()->get('instrumentcreate') }}</strong>
+    </div>
+@endif
 
     <div class="panel panel-default">
     <div class="panel-heading">Instrumentos</div>

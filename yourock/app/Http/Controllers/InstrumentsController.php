@@ -41,7 +41,7 @@ class InstrumentsController extends Controller
 
         $instrument->save();
 
-        return redirect()->action('InstrumentsController@index');
+        return redirect()->action('InstrumentsController@index')->with('instrumentcreate', '¡Instrumento creado!');
     }
 
     public function show($id) {
@@ -106,7 +106,7 @@ class InstrumentsController extends Controller
 
         $instrument->save();
 
-        return redirect()->action('InstrumentsController@index')->with('instrumentupdate', 'Instrumento actualizado');
+        return redirect()->action('InstrumentsController@index')->with('instrumentupdate', '¡Instrumento actualizado!');
     }
 
 }

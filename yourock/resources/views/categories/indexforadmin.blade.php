@@ -39,7 +39,7 @@
                     <td>{{ $category->name }}</td>
                     <td>{{ $category->description }}</td>
                     <td><a href=""><span class="glyphicon glyphicon-eye-open"></span></a></td>
-                    <td><a href=""><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href="{{ action('CategoriesController@edit', [$category->id]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <td><a href="#"><span class="glyphicon glyphicon-remove-sign"></span></a></td>
                 </tr>
             @endforeach
