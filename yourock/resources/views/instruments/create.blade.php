@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'YOU ROCK! - Editar instrumento')
+@section('title', 'YOU ROCK! - Crear instrumento')
 @section('content')
 <h1>Crear un nuevo instrumento</h1>
 <div class="row">
@@ -33,6 +33,25 @@
                                 @if ($errors->has('description'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
+                            <label for="category" class="col-md-4 control-label">Categoría:</label>
+
+                            <div class="col-md-6">
+                                <select id="category" class="form-control" name="category">
+                                    <option value=""></option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('category'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('category') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -97,7 +116,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Guardar
+                                    Añadir
                                 </button>
                             </div>
                         </div>

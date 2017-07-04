@@ -12,12 +12,13 @@ use Session;
 class InstrumentsController extends Controller
 {
     public function create() {
-        return view('instruments.create');
+        $categories = Category::all();
+        return view('instruments.create', (['categories' => $categories]));
     }
 
     public function store(Request $request) {
         $this->validate($request, [
-            'name' => 'required|max:30|unique:instruments',
+            'name' => 'required|max:50|unique:instruments',
             'description' => 'required|max:255',
             'price' => 'required|max:5',
             'stock' => 'required|max:3',
@@ -33,6 +34,10 @@ class InstrumentsController extends Controller
             'urlPhoto' => $request->input('urlPhoto'),
             'manufacturer' => $request->input('manufacturer')
         ]);
+
+        if($request->input('category') != ''){
+            $instrument->category_id = $request->input('category');
+        }
 
         $instrument->save();
 
