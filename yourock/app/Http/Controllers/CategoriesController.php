@@ -2,21 +2,102 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Category;
 use App\Instrument;
+use Illuminate\Http\Request;
 use DB;
 
 class CategoriesController extends Controller
 {
-    public function create(){
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
+    public function indexCategories() {
+        $categories = Category::paginate(10);
+        return view('categories.indexforadmin', (['categories' => $categories]));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
         return view('categories.create');
     }
 
-    //Método para actualizar un instrumento (esto lo hará el administrador)
-    public function update(Request $request, $id) {
-        $category = Category::find($id);
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:50|unique:categories',
+            'description' => 'required|max:255',
+		]);
 
+        $category = new Category([
+            'name' => $request->input('name'),
+            'description' => $request->input('description')
+        ]);
+        $category->save();
+
+        return redirect()->action('CategoriesController@indexCategories')->with('categorycreate', '¡Categoría creada!');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Category  $category
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Category $category)
+    {
+        //
+    }
+
+    public function showDetails($id) {
+        //$instruments = new Instrument;
+        //$category = Category::find($category);
+        //$this->category = $category;
+        //$instruments = Instrument::all();
+        $category = Category::findOrFail($id);
+        $instruments = $category->instruments()->paginate(5);
+        return view('categories.showforadmin', array('category' => $category, 'instruments' => $instruments));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Category  $category
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Category $category)
+    {
+        $instruments = Instrument::whereNull('category_id')->get();
+        return view('categories.edit', array('category' => $category, 'instruments' => $instruments));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Category  $category
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Category $category)
+    {
         $this->validate($request, [
             'name' => 'max:30',
             'description' => 'max:255',
@@ -36,64 +117,17 @@ class CategoriesController extends Controller
 
         $category->save();
 
-        return redirect()->action('CategoriesController@indexForAdmin')->with('categoryupdate', '¡Categoría actualizada!');
+        return redirect()->action('CategoriesController@indexCategories')->with('categoryupdate', '¡Categoría actualizada!');
     }
 
-    public function store(Request $request){
-        $this->validate($request, [
-            'name' => 'required|max:50|unique:categories',
-            'description' => 'required|max:255',
-		]);
-
-        $category = new Category([
-            'name' => $request->input('name'),
-            'description' => $request->input('description')
-        ]);
-        $category->save();
-
-        return redirect()->action('CategoriesController@indexForAdmin')->with('categorycreate', '¡Categoría creada!');
-    }
-
-    public function edit($id) {
-        $category = Category::find($id);
-        $instruments = Instrument::whereNull('category_id')->get();
-        return view('categories.edit', array('category' => $category, 'instruments' => $instruments));
-    }
-
-    //Con este método tenemos todas las categorías
-    public function index() {
-        $categories = Category::all();
-        return view('categories.index', ['categories' => $categories]);
-    }
-
-    public function indexForAdmin() {
-        $categories = Category::paginate(10);
-        return view('categories.indexforadmin', ['categories' => $categories]);
-    }
-
-    //Con este método tenemos los productos de cada categoría, el total y la paginación
-    public function show($id){
-        $category = Category::findOrFail($id);
-        $instruments = $category->instruments()->paginate(5);
-        return view('categories.show', array('category' => $category, 'instruments' => $instruments));
-    }
-
-    public function showForAdmin($id){
-        $category = Category::findOrFail($id);
-        $instruments = $category->instruments()->paginate(5);
-        return view('categories.showforadmin', array('category' => $category, 'instruments' => $instruments));
-    }
-
-    public function destroy($id) {
-        $category = Category::find($id);
-        $instruments = $category->instruments;
-        $category->delete();
-
-        foreach($instruments as $instrument){
-            $instrument->category_id = null;
-        }
-
-        return redirect()->action('CategoriesController@indexForAdmin', (['instruments' => $instruments]))->with('categorydelete', '¡Categoría borrada!');
-        //return view('categories.indexforadmin')->with('categorydelete', '¡Categoría borrada!');
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Category  $category
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Category $category)
+    {
+        //
     }
 }

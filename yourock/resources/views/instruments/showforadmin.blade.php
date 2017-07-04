@@ -2,10 +2,10 @@
 @section('title', 'YOU ROCK! - Instrumento')
 @section('content')
 <h1>Instrumento: {{ $instrument->name }}</h1>
-@if(!$category->id)
-    <p>Todavía no pertenece a ninguna categoría. <a href="{{ action('InstrumentsController@edit', [$instrument->id]) }}">Asignar ahora</a></p>
+@if(!$category)
+    <p>Todavía no pertenece a ninguna categoría. <a href="{{ action('InstrumentsController@edit', [$instrument]) }}">Asignar ahora</a></p>
 @else
-    <p>Pertenece a la categoría <strong>{{ $category->name }}</strong>. <a href="{{ action('InstrumentsController@edit', [$instrument->id]) }}">Cambiar</a></p>
+    <p>Pertenece a la categoría <strong>{{ $category->name }}</strong>. <a href="{{ action('InstrumentsController@edit', [$instrument]) }}">Cambiar</a></p>
 @endif
 <p>Fabricante: {{ $instrument->manufacturer }}</p>
 <p>Descripción: {{ $instrument->description }}</p>

@@ -12,11 +12,11 @@
         <p>Existen {{ $instruments->total() }} instrumentos que pertenecen a esta categoría</p>
     @endif 
     @foreach ($instruments as $instrument)
-        <p>Instrumento: {{ $instrument->name }}. <a href="{{ action('InstrumentsController@showForAdmin', [$instrument->id]) }}">Más detalles</a></p>
+        <p>Instrumento: {{ $instrument->name }}. <a href="{{ action('InstrumentsController@showDetails', [$instrument]) }}">Más detalles</a></p>
     @endforeach
-    <p><a href="{{ action('CategoriesController@edit', [$category->id]) }}">Añadir instrumento a esta categoría</a></p>
+    <p><a href="{{ action('CategoriesController@edit', [$category]) }}">Añadir instrumento a esta categoría</a></p>
 @else
-    <p>Todavía no existen instrumentos asociados a esta categoría. <a href="{{ action('CategoriesController@edit', [$category->id]) }}">Añadir ahora</a></p>
+    <p>Todavía no existen instrumentos asociados a esta categoría. <a href="{{ action('CategoriesController@edit', [$category]) }}">Añadir ahora</a></p>
 @endif
 
 {{ $instruments->links() }}

@@ -32,7 +32,7 @@ class Category extends Model
     }
 
     public function getInstruments() {
-        return $this->instruments();
+        return $this->instruments;
     }
 
 }

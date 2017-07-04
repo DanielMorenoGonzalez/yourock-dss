@@ -74,16 +74,16 @@ class InstrumentsController extends Controller
      * @param  \App\Instrument  $instrument
      * @return \Illuminate\Http\Response
      */
-    public function show(Instrument $instrument)
+    public function show($id)
     {
         //$instrument = Instrument::findOrFail($id);
         $category = $instrument->category;
         return view('instruments.show', array('instrument' => $instrument, 'category' => $category));
     }
 
-    public function showDetails(Instrument $instrument)
+    public function showDetails($id)
     {
-        //$instrument = Instrument::findOrFail($id);
+        $instrument = Instrument::findOrFail($id);
         $category = $instrument->category;
         return view('instruments.showforadmin', array('instrument' => $instrument, 'category' => $category)); 
     }

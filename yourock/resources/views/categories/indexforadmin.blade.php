@@ -46,9 +46,9 @@
                     <td>{{ $category->id }}</td>
                     <td>{{ $category->name }}</td>
                     <td>{{ $category->description }}</td>
-                    <td><a href="{{ action('CategoriesController@showForAdmin', [$category->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
-                    <td><a href="{{ action('CategoriesController@edit', [$category->id]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <td><a href="{{ action('CategoriesController@destroy', [$category->id]) }}"><span class="glyphicon glyphicon-remove-sign"></span></a></td>
+                    <td><a role="button" class="btn btn-warning" href="{{ action('CategoriesController@showDetails', [$category->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                    <td><a role="button" class="btn btn-primary" href="{{ action('CategoriesController@edit', [$category]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a href=""><span class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
             @endforeach
         </tbody>
