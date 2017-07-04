@@ -1,4 +1,4 @@
- @extends('layouts.master')
+@extends('layouts.master')
 @section('title', 'YOU ROCK! - Crear usuario')
 @section('content')
 <h1>Crear un nuevo cliente</h1>

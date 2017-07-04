@@ -88,11 +88,14 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::resource('users', 'UsersController', ['only' => [
         'index'
     ]]);
-    Route::get('users/customers/create', 'UsersController@create');
+    Route::get('users/customers/create', 'UsersController@createCustomer');
     Route::post('users/customers/create', 'UsersController@storeCustomer');
+    Route::get('users/admins/create', 'UsersController@createAdmin');
+    Route::post('users/admins/create', 'UsersController@storeAdmin');
     Route::get('users/{id}', 'UsersController@showUser');
     Route::get('users/edit/{id}', 'UsersController@editUser');
     Route::put('users/edit/{id}', 'UsersController@updateUser');
+    Route::delete('users/{id}', 'UsersController@destroy');
 });
 
 Route::get('admin/users', 'UsersController@index')->middleware('admin');

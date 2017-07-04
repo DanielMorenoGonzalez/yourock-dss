@@ -6,6 +6,8 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use Image;
+use File;
 
 class UsersController extends Controller
 {
@@ -30,9 +32,14 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createCustomer()
     {
-        return view('users.create');
+        return view('users.customers.create');
+    }
+
+    public function createAdmin()
+    {
+        return view('users.admin.create');
     }
 
     /**
@@ -79,6 +86,35 @@ class UsersController extends Controller
         $user->save();
 
         return redirect()->action('UsersController@index')->with('customercreate', '¡Cliente creado!');
+    }
+
+    public function storeAdmin(Request $request) {
+        $user = new User;
+
+        $this->validate($request, [
+			'nif' => 'required|max:9',
+            'name' => 'required|max:20',
+            'surname' => 'required|max:30',
+            'job_title' => 'required|max:30',
+            'phoneNumber' => 'required|digits:9',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
+		]);
+
+        $user = new User([
+            'nif' => $request->input('nif'),
+            'name' => $request->input('name'),
+            'surname' => $request->input('surname'),
+            'job_title' => $request->input('job_title'),
+            'phoneNumber' => $request->input('phoneNumber'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+            'type' => 'admin'
+        ]);
+
+        $user->save();
+
+        return redirect()->action('UsersController@index')->with('admincreate', '¡Administrador creado!');
     }
 
     /**
@@ -216,8 +252,16 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        //Hacemos que los instrumentos de la categoría ya no apunten a ésta
+        //foreach($category->instruments as $instrument) {
+            //$instrument->category()->dissociate();
+            //$instrument->save();
+        //}
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect()->action('UsersController@index')->with('userdelete', '¡Usuario borrado!');
     }
 }
