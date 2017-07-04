@@ -17,5 +17,4 @@
 @endforeach
 
 {{ $instruments->links() }}
-
 @endsection

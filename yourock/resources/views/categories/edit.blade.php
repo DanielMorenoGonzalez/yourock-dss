@@ -38,6 +38,25 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('instrument') ? ' has-error' : '' }}">
+                            <label for="instrument" class="col-md-4 control-label">Añadir instrumento a la categoría:</label>
+
+                            <div class="col-md-6">
+                                <select id="instrument" class="form-control" name="instrument">
+                                    <option value=""></option>
+                                    @foreach($instruments as $instrument)
+                                        <option value="{{ $instrument->id }}">{{ $instrument->name }}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('instrument'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('instrument') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

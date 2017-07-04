@@ -28,6 +28,11 @@ class CategoriesController extends Controller
         if($request->input('description') != ''){
             $category->description = $request->input('description');
         }
+        if($request->input('instrument') != ''){
+            $instrument = Instrument::find($request->input('instrument'));
+            $instrument->category()->associate($category);
+            $instrument->save();
+        }
 
         $category->save();
 
@@ -52,7 +57,8 @@ class CategoriesController extends Controller
 
     public function edit($id) {
         $category = Category::find($id);
-        return view('categories.edit', (['category' => $category]));
+        $instruments = Instrument::whereNull('category_id')->get();
+        return view('categories.edit', array('category' => $category, 'instruments' => $instruments));
     }
 
     //Con este método tenemos todas las categorías
@@ -71,6 +77,12 @@ class CategoriesController extends Controller
         $category = Category::findOrFail($id);
         $instruments = $category->instruments()->paginate(5);
         return view('categories.show', array('category' => $category, 'instruments' => $instruments));
+    }
+
+    public function showForAdmin($id){
+        $category = Category::findOrFail($id);
+        $instruments = $category->instruments()->paginate(5);
+        return view('categories.showforadmin', array('category' => $category, 'instruments' => $instruments));
     }
 
     public function destroy($id) {
