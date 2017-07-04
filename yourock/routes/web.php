@@ -71,7 +71,7 @@ Route::get('auth/logout', 'Auth\LoginController@logout');
 Route::get('admin/index', 'UsersController@adminIndex')->middleware('admin');
 
 //Ruta para mostrar un instrument específico con sus detalles (auth o guest)
-Route::get('instruments/{instrument}', 'InstrumentsController@show')->middleware('guest', 'customer');
+Route::get('instruments/{instrument}', 'InstrumentsController@show');
 
 //Declaramos la ruta para el admin (con su prefijo y middleware adecuados) 
 Route::prefix('admin')->middleware('admin')->group(function () {

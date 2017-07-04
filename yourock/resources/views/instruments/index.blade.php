@@ -35,9 +35,10 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Fabricante</th>
-            <th></th>
-            <th></th>
-            <th>Acciones</th>
+            <th>Categoría</th>
+            <th>Ver</th>
+            <th>Editar</th>
+            <th>Borrar</th>
         </tr>
         </thead>
         <tbody>
@@ -46,6 +47,7 @@
                     <td>{{ $instrument->id }}</td>
                     <td>{{ $instrument->name }}</td>
                     <td>{{ $instrument->manufacturer }}</td>
+                    <td>{{ $instrument->category->name }}</td>
                     <td><a role="button" class="btn btn-warning" href="{{ action('InstrumentsController@showDetails', [$instrument]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
                     <td><a role="button" class="btn btn-primary" href="{{ action('InstrumentsController@edit', [$instrument]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <form role="form" method="POST" action="{{ action('InstrumentsController@destroy', [$instrument]) }}">
