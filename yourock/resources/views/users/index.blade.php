@@ -50,7 +50,7 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->type }}</td>
                     <td><a role="button" class="btn btn-warning" href="{{ action('UsersController@showUser', [$user->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
-                    <td><a role="button" class="btn btn-primary" href="#"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a role="button" class="btn btn-primary" href="{{ action('UsersController@editUser', [$user->id]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <form role="form" method="POST" action="">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}

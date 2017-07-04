@@ -91,6 +91,8 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('users/customers/create', 'UsersController@create');
     Route::post('users/customers/create', 'UsersController@storeCustomer');
     Route::get('users/{id}', 'UsersController@showUser');
+    Route::get('users/edit/{id}', 'UsersController@editUser');
+    Route::put('users/edit/{id}', 'UsersController@updateUser');
 });
 
 Route::get('admin/users', 'UsersController@index')->middleware('admin');

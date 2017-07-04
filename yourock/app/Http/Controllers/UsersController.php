@@ -109,6 +109,12 @@ class UsersController extends Controller
         //
     }
 
+    public function editUser($id)
+    {
+        $user = User::find($id);
+        return view('users.edit', (['user' => $user]));
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -116,9 +122,92 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, User $user){
+
+    }
+
+    public function updateUser(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        if($user->type == 'customer'){
+            $this->validate($request, [
+                'nif' => 'max:9',
+                'name' => 'max:20',
+                'surname' => 'max:30',
+                'address' => 'max:100',
+                'zipCode' => 'max:5',
+		    ]);
+        }
+        else{
+            $this->validate($request, [
+                'nif' => 'max:9',
+                'name' => 'max:20',
+                'surname' => 'max:30',
+                'job_title' => 'max:50'
+		    ]);
+        }
+        
+        if($request->input('nif') != ''){
+            $user->nif = $request->input('nif');
+        }
+        if($request->input('name') != ''){
+            $user->name = $request->input('name');
+        }
+        if($request->input('surname') != ''){
+            $user->surname = $request->input('surname');
+        }
+
+        if($user->type == 'customer') {
+            if($request->input('address') != ''){
+                $user->address = $request->input('address');
+            }
+            if($request->input('province') != ''){
+                $user->province = $request->input('province');
+            }
+            if($request->input('city') != ''){
+                $user->city = $request->input('city');
+            }
+            if($request->input('zipCode') != ''){
+                $user->zipCode = $request->input('zipCode');
+            }
+        }
+        else{
+            if($request->input('job_title') != ''){
+                $user->job_title = $request->input('job_title');
+            }
+        }
+        
+        if($request->input('phoneNumber') != ''){
+            $this->validate($request, [
+                'phoneNumber' => 'digits:9'
+		    ]);
+            $user->phoneNumber = $request->input('phoneNumber');
+        }
+        if($request->input('email') != ''){
+            $this->validate($request, [
+                'email' => 'email|max:255|unique:users',
+		    ]);
+            $user->email = $request->input('email');
+        }
+        if($request->hasFile('avatar')){
+            $avatar = $request->file('avatar');
+            $filename = Auth::user()->name . time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->fit(300,300)->save(public_path('/uploads/avatars/' . $filename));
+
+            //Si el usuario tiene una foto distinta a la de por defecto,
+            //la borramos y guardamos la nueva
+            if (Auth::user()->avatar != "default.jpg") {
+                $path = '/uploads/avatars/';
+                $lastpath= Auth::user()->avatar;
+                File::Delete(public_path( $path . $lastpath) );
+            }
+            $user->avatar = $filename;
+        }
+
+        $user->save();
+
+        return redirect()->action('UsersController@index')->with('userupdate', '¡Usuario actualizado!');
     }
 
     /**
