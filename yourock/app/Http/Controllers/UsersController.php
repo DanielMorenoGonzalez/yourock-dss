@@ -81,7 +81,7 @@ class UsersController extends Controller
 
         $user->save();
 
-        return redirect('home');
+        return redirect('login')->with('afterregister', '¡Te acabas de registrar en nuestra web! Inicia sesión y disfruta de la música');
     }
 
     public function storeCustomer(Request $request) {

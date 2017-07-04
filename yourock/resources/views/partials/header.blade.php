@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ url('/') }}">YOU ROCK!</a>
+            <a class="navbar-brand" href="{{ route('home') }}">YOU ROCK!</a>
         </div>
         <ul class="nav navbar-nav">
             <li><a href="{{ action('CategoriesController@index') }}">Categorías</a></li>
