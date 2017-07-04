@@ -12,6 +12,11 @@ use File;
 
 class UsersController extends Controller
 {
+    public function index() {
+        $users = User::paginate(10);
+        return view('users.index', ['users' => $users]);
+    }
+
     //Método para guardar un usuario
     public function store(Request $request) {
         $user = new User;

@@ -84,6 +84,7 @@ Route::post('admin/categories/create', 'CategoriesController@store')->middleware
 Route::get('admin/categories/edit/{id}', 'CategoriesController@edit')->middleware('admin');
 Route::post('admin/categories/edit/{id}', 'CategoriesController@update')->middleware('admin');
 Route::get('admin/categories/{id}', 'CategoriesController@showForAdmin')->middleware('admin');
+Route::get('admin/users', 'UsersController@index')->middleware('admin');
 
 
 Auth::routes();
