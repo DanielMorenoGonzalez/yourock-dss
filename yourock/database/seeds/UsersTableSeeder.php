@@ -35,11 +35,8 @@ class UsersTableSeeder extends Seeder
             'nif' => '72548977S',
             'name' => 'Pedro',
             'surname' => 'García',
-            'address' => 'Calle Tres Fuentes',
-            'province' => 'Jaén',
-            'city' => 'Baeza',
-            'zipCode' => '23440',
             'phoneNumber' => '613235643',
+            'job_title' => 'Técnico',
             'email' => 'pgarcia21@gmail.com',
             'password' => bcrypt('m0t0rbikes'),
             'type' => 'admin'

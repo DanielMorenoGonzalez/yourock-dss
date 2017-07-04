@@ -13,11 +13,18 @@
         <strong>{{ session()->get('usercreate') }}</strong>
     </div>
 @endif
+@if (session()->has('userdelete'))
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <strong>{{ session()->get('userdelete') }}</strong>
+    </div>
+@endif
 
     <div class="panel panel-default">
     <div class="panel-heading">Usuarios</div>
     <div class="panel-body">
-        <a class="btn btn-primary" role="button" role="button" href=""><span class="glyphicon glyphicon-plus"></span>Añadir usuario</a> 
+        <a class="btn btn-primary" role="button" href="{{ action('UsersController@create') }}"><span class="glyphicon glyphicon-plus"></span>Añadir cliente</a>
+        <a class="btn btn-primary" role="button" href=""><span class="glyphicon glyphicon-plus"></span>Añadir administrador</a>  
     </div>
 
     <div class="table-responsive">
@@ -29,7 +36,7 @@
             <th>Nombre</th>
             <th>Email</th>
             <th>Tipo</th>
-            <th>Ver detalles</th>
+            <th>Ver</th>
             <th>Editar</th>
             <th>Borrar</th>
         </tr>
@@ -42,9 +49,13 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->type }}</td>
-                    <td><a href=""><span class="glyphicon glyphicon-eye-open"></span></a></td>
-                    <td><a href=""><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <td><a href="#"><span class="glyphicon glyphicon-remove-sign"></span></a></td>
+                    <td><a role="button" class="btn btn-warning" href="{{ action('UsersController@showUser', [$user->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                    <td><a role="button" class="btn btn-primary" href="#"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <form role="form" method="POST" action="">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <td><button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>
+                    </form>
                 </tr>
             @endforeach
         </tbody>

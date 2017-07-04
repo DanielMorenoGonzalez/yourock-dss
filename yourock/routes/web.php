@@ -62,9 +62,6 @@ Route::post('auth/register', 'UsersController@store');
 Route::post('auth/login', 'Auth\LoginController@login');
 Route::get('auth/logout', 'Auth\LoginController@logout');
 
-//Ruta para mostrar el índice del admin
-Route::get('admin/index', 'UsersController@adminIndex')->middleware('admin');
-
 //Ruta para mostrar un instrument específico con sus detalles (auth o guest)
 Route::get('instruments/{instrument}', 'InstrumentsController@show');
 
@@ -76,6 +73,7 @@ Route::get('categories/{category}', 'CategoriesController@show')->name('category
 
 //Declaramos la ruta para el admin (con su prefijo y middleware adecuados) 
 Route::prefix('admin')->middleware('admin')->group(function () {
+    Route::get('index', 'UsersController@adminIndex');
     //Declaramos la ruta para el recurso instruments
     Route::resource('instruments', 'InstrumentsController', ['except' => [
         'show'
@@ -87,18 +85,15 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     ]]);
     Route::get('categories', 'CategoriesController@indexCategories');
     Route::get('categories/{id}', 'CategoriesController@showDetails');
+    Route::resource('users', 'UsersController', ['only' => [
+        'index'
+    ]]);
+    Route::get('users/customers/create', 'UsersController@create');
+    Route::post('users/customers/create', 'UsersController@storeCustomer');
+    Route::get('users/{id}', 'UsersController@showUser');
 });
 
-//Route::get('admin/categories', 'CategoriesController@indexForAdmin')->middleware('admin');
-//Route::get('admin/categories/create', 'CategoriesController@create')->middleware('admin');
-//Route::post('admin/categories/create', 'CategoriesController@store')->middleware('admin');
-//Route::get('admin/categories/edit/{id}', 'CategoriesController@edit')->middleware('admin');
-//Route::post('admin/categories/edit/{id}', 'CategoriesController@update')->middleware('admin');
-//Route::get('admin/categories/{id}', 'CategoriesController@showForAdmin')->middleware('admin');
-//Route::get('admin/categories/delete/{id}', 'CategoriesController@destroy')->middleware('admin');
-
 Route::get('admin/users', 'UsersController@index')->middleware('admin');
-
 
 Auth::routes();
 //Ruta para mostrar la página home

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Instrument;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use DB;
 
 class CategoriesController extends Controller
@@ -51,6 +52,7 @@ class CategoriesController extends Controller
             'name' => $request->input('name'),
             'description' => $request->input('description')
         ]);
+        
         $category->save();
 
         return redirect()->action('CategoriesController@indexCategories')->with('categorycreate', '¡Categoría creada!');
@@ -68,10 +70,6 @@ class CategoriesController extends Controller
     }
 
     public function showDetails($id) {
-        //$instruments = new Instrument;
-        //$category = Category::find($category);
-        //$this->category = $category;
-        //$instruments = Instrument::all();
         $category = Category::findOrFail($id);
         $instruments = $category->instruments()->paginate(5);
         return view('categories.showforadmin', array('category' => $category, 'instruments' => $instruments));
@@ -133,8 +131,6 @@ class CategoriesController extends Controller
             $instrument->category()->dissociate();
             $instrument->save();
         }
-        //$instrument->category()->dissociate();
-        //$instrument->save();
         $category->delete();
 
         return redirect()->action('CategoriesController@indexCategories')->with('categorydelete', '¡Categoría borrada!');

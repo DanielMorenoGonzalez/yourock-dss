@@ -2,23 +2,51 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use DB;
-use Image;
-use File;
 
 class UsersController extends Controller
 {
-    public function index() {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         $users = User::paginate(10);
-        return view('users.index', ['users' => $users]);
+        return view('users.index', (['users' => $users]));
     }
 
-    //Método para guardar un usuario
-    public function store(Request $request) {
+    public function adminIndex() {
+        $user = Auth::user();
+		return view('users.admin.index', (['user' => $user]));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('users.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        
+    }
+
+    public function storeCustomer(Request $request) {
         $user = new User;
 
         $this->validate($request, [
@@ -50,106 +78,57 @@ class UsersController extends Controller
 
         $user->save();
 
-        return redirect('home');
+        return redirect()->action('UsersController@index')->with('customercreate', '¡Cliente creado!');
     }
 
-    //Método para mostrar la vista al usuario según los permisos que tenga
-    public function show(){
-        $user = Auth::user();
-        if($user->type == 'customer'){
-            return view('users.customers.show', (['user' => $user]));
-        }
-        else {
-            return view('auth.login');
-        }
-    }
-    
-    //Método para recuperar el usuario autenticado y mostrarle la vista de editar perfil
-    public function edit(){
-		$user = Auth::user();
-        if($user->type == 'customer'){
-            return view('users.customers.edit', (['user' => $user]));
-        }
-	}
-    
-    //Método para actualizar la información de un usuario
-    public function update(Request $request){
-        $user = Auth::user();
-
-        $this->validate($request, [
-			'nif' => 'max:9',
-            'name' => 'max:20',
-            'surname' => 'max:30',
-            'address' => 'max:100',
-            'zipCode' => 'max:5',
-		]);
-
-        if($request->input('nif') != ''){
-            $user->nif = $request->input('nif');
-        }
-        if($request->input('name') != ''){
-            $user->name = $request->input('name');
-        }
-        if($request->input('surname') != ''){
-            $user->surname = $request->input('surname');
-        }
-        if($request->input('address') != ''){
-            $user->address = $request->input('address');
-        }
-        if($request->input('province') != ''){
-            $user->province = $request->input('province');
-        }
-        if($request->input('city') != ''){
-            $user->city = $request->input('city');
-        }
-        if($request->input('zipCode') != ''){
-            $user->zipCode = $request->input('zipCode');
-        }
-        if($request->input('phoneNumber') != ''){
-            $this->validate($request, [
-                'phoneNumber' => 'digits:9'
-		    ]);
-            $user->phoneNumber = $request->input('phoneNumber');
-        }
-        if($request->input('email') != ''){
-            $this->validate($request, [
-                'email' => 'email|max:255|unique:users',
-		    ]);
-            $user->email = $request->input('email');
-        }
-        if($request->hasFile('avatar')){
-            $avatar = $request->file('avatar');
-            $filename = Auth::user()->name . time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->fit(300,300)->save(public_path('/uploads/avatars/' . $filename));
-
-            //Si el usuario tiene una foto distinta a la de por defecto,
-            //la borramos y guardamos la nueva
-            if (Auth::user()->avatar != "default.jpg") {
-                $path = '/uploads/avatars/';
-                $lastpath= Auth::user()->avatar;
-                File::Delete(public_path( $path . $lastpath) );
-            }
-
-            $user->avatar = $filename;
-        }
-        $user->save();
-
-        return redirect()->action('UsersController@show')->with('message', 'Perfil actualizado');
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function show(User $user)
+    {
+        //
     }
 
-    //Método para borrar a un usuario
-    public function destroy($id){
-        $userType = Auth::user()->type;
+    public function showUser($id)
+    {
         $user = User::find($id);
-        $user->delete();
-        if($userType == 'customer'){
-            return redirect('home');
-        }
+        return view('users.show', (['user' => $user]));
     }
 
-    public function adminIndex() {
-        $user = Auth::user();
-		return view('users.admin.index', (['user' => $user]));
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(User $user)
+    {
+        //
     }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, User $user)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(User $user)
+    {
+        //
+    }
 }
