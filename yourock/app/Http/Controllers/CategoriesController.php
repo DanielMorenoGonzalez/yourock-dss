@@ -49,7 +49,6 @@ class CategoriesController extends Controller
             'name' => $request->input('name'),
             'description' => $request->input('description')
         ]);
-
         $category->save();
 
         return redirect()->action('CategoriesController@indexForAdmin')->with('categorycreate', '¡Categoría creada!');
@@ -87,7 +86,14 @@ class CategoriesController extends Controller
 
     public function destroy($id) {
         $category = Category::find($id);
+        $instruments = $category->instruments;
         $category->delete();
-        return redirect('home');
+
+        foreach($instruments as $instrument){
+            $instrument->category_id = null;
+        }
+
+        return redirect()->action('CategoriesController@indexForAdmin', (['instruments' => $instruments]))->with('categorydelete', '¡Categoría borrada!');
+        //return view('categories.indexforadmin')->with('categorydelete', '¡Categoría borrada!');
     }
 }

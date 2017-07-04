@@ -72,18 +72,35 @@ Route::post('auth/login', 'Auth\LoginController@login');
 Route::get('auth/logout', 'Auth\LoginController@logout');
 
 Route::get('admin/index', 'UsersController@adminIndex')->middleware('admin');
-Route::get('admin/instruments', 'InstrumentsController@index')->middleware('admin');
-Route::get('admin/instruments/create', 'InstrumentsController@create')->middleware('admin');
-Route::post('admin/instruments/create', 'InstrumentsController@store')->middleware('admin');
+
+//Declaramos la ruta para el recurso
+//Route::resource('admin/instruments', 'InstrumentsController');
+
+Route::prefix('admin')->middleware('admin')->group(function () {
+    //Declaramos la ruta para el recurso (esto será parte del admin)
+    Route::resource('instruments', 'InstrumentsController', ['except' => [
+        'show'
+    ]]);
+});
+
+//Route::get('admin/instruments', 'InstrumentsController@index')->middleware('admin');
+//Route::get('admin/instruments/create', 'InstrumentsController@create')->middleware('admin');
+//Route::post('admin/instruments/create', 'InstrumentsController@store')->middleware('admin');
 Route::get('admin/instruments/{id}', 'InstrumentsController@showForAdmin')->middleware('admin');
-Route::get('admin/instruments/edit/{id}', 'InstrumentsController@edit')->middleware('admin');
-Route::post('admin/instruments/edit/{id}', 'InstrumentsController@update')->middleware('admin');
+//Route::get('admin/instruments/edit/{id}', 'InstrumentsController@edit')->middleware('admin');
+//Route::post('admin/instruments/edit/{id}', 'InstrumentsController@update')->middleware('admin');
+
+//Declaramos la ruta para el recurso
+//Route::resource('instruments', 'InstrumentsController');
+
 Route::get('admin/categories', 'CategoriesController@indexForAdmin')->middleware('admin');
 Route::get('admin/categories/create', 'CategoriesController@create')->middleware('admin');
 Route::post('admin/categories/create', 'CategoriesController@store')->middleware('admin');
 Route::get('admin/categories/edit/{id}', 'CategoriesController@edit')->middleware('admin');
 Route::post('admin/categories/edit/{id}', 'CategoriesController@update')->middleware('admin');
 Route::get('admin/categories/{id}', 'CategoriesController@showForAdmin')->middleware('admin');
+Route::get('admin/categories/delete/{id}', 'CategoriesController@destroy')->middleware('admin');
+
 Route::get('admin/users', 'UsersController@index')->middleware('admin');
 
 

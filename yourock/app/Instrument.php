@@ -38,7 +38,7 @@ class Instrument extends Model
     }
 
     public function getCategory() {
-        return $this->category;
+        return $this->category();
     }
     
 }

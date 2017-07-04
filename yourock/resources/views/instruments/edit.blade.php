@@ -7,8 +7,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Editar información del instrumento</div>
                 <div class="panel-body">
-                    <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ action('InstrumentsController@update', [$instrument->id]) }}">
+                    <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ action('InstrumentsController@update', [$instrument]) }}">
                         {{ csrf_field() }}
+                        {{ method_field('PUT') }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Nombre:</label>

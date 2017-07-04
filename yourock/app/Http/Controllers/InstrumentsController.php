@@ -2,21 +2,45 @@
 
 namespace App\Http\Controllers;
 
+use App\Instrument;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Instrument;
 use App\Category;
 use DB;
 use Session;
 
 class InstrumentsController extends Controller
 {
-    public function create() {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $instruments = Instrument::paginate(10);
+        return view('instruments.index', (['instruments' => $instruments]));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
         $categories = Category::all();
         return view('instruments.create', (['categories' => $categories]));
     }
 
-    public function store(Request $request) {
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         $this->validate($request, [
             'name' => 'required|max:50|unique:instruments',
             'description' => 'required|max:255',
@@ -44,34 +68,43 @@ class InstrumentsController extends Controller
         return redirect()->action('InstrumentsController@index')->with('instrumentcreate', '¡Instrumento creado!');
     }
 
-    public function show($id) {
-        $instrument = Instrument::findOrFail($id);
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Instrument  $instrument
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Instrument $instrument)
+    {
+        //$instrument = Instrument::findOrFail($id);
         $category = $instrument->getCategory();
-        return view('instruments.show', array('instrument' => $instrument, 'category' => $category));
+        return view('instruments.showforadmin', array('instrument' => $instrument, 'category' => $category)); 
     }
 
-    public function showForAdmin($id) {
-        
-        $instrument = Instrument::findOrFail($id);
-        $category = $instrument->getCategory();
-        return view('instruments.showforadmin', array('instrument' => $instrument, 'category' => $category));  
-    }
-
-    public function index() {
-        $instruments = Instrument::paginate(10);
-        return view('instruments.index', (['instruments' => $instruments]));
-    }
-
-    public function edit($id) {
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Instrument  $instrument
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Instrument $instrument)
+    {
         $categories = Category::all();
-        $instrument = Instrument::find($id);
-        $category = $instrument->getCategory();
+        //$category = new Category;
+        $category = $instrument->category;
         return view('instruments.edit', array('instrument' => $instrument, 'category' => $category, 'categories' => $categories));
     }
 
-    //Método para actualizar un instrumento (esto lo hará el administrador)
-    public function update(Request $request, $id) {
-        $instrument = Instrument::find($id);
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Instrument  $instrument
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Instrument $instrument)
+    {
+        //$instrument = Instrument::find($id);
 
         $this->validate($request, [
             'name' => 'max:30',
@@ -109,4 +142,14 @@ class InstrumentsController extends Controller
         return redirect()->action('InstrumentsController@index')->with('instrumentupdate', '¡Instrumento actualizado!');
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Instrument  $instrument
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Instrument $instrument)
+    {
+        //
+    }
 }

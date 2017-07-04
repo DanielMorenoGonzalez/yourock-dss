@@ -7,10 +7,18 @@
         <strong>{{ session()->get('categoryupdate') }}</strong>
     </div>
 @endif
+
 @if (session()->has('categorycreate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
         <strong>{{ session()->get('categorycreate') }}</strong>
+    </div>
+@endif
+
+@if (session()->has('categorydelete'))
+    <div class="alert alert-success alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <strong>{{ session()->get('categorydelete') }}</strong>
     </div>
 @endif
 
@@ -40,7 +48,7 @@
                     <td>{{ $category->description }}</td>
                     <td><a href="{{ action('CategoriesController@showForAdmin', [$category->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
                     <td><a href="{{ action('CategoriesController@edit', [$category->id]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <td><a href="#"><span class="glyphicon glyphicon-remove-sign"></span></a></td>
+                    <td><a href="{{ action('CategoriesController@destroy', [$category->id]) }}"><span class="glyphicon glyphicon-remove-sign"></span></a></td>
                 </tr>
             @endforeach
         </tbody>
