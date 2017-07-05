@@ -5,5 +5,5 @@
 <a href="{{ action('UsersController@index') }}" class="list-group-item">Ver todos los usuarios</a>
 <a href="{{ action('CategoriesController@indexCategories') }}" class="list-group-item">Ver todas las categorías</a>
 <a href="{{ action('InstrumentsController@index') }}" class="list-group-item">Ver todos los instrumentos</a>
-<a href="#" class="list-group-item">Ver todos los pedidos</a>
+<a href="{{ action('OrdersController@indexOrders') }}" class="list-group-item">Ver todos los pedidos</a>
 @endsection

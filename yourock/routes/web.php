@@ -95,6 +95,11 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('users/edit/{id}', 'UsersController@editUser');
     Route::put('users/edit/{id}', 'UsersController@updateUser');
     Route::delete('users/{id}', 'UsersController@destroyUser');
+    //Declaramos la ruta para el recurso orders
+    Route::resource('orders', 'OrdersController', ['except' => [
+        'index', 'show'
+    ]]);
+    Route::get('orders', 'OrdersController@indexOrders');
 });
 
 Auth::routes();

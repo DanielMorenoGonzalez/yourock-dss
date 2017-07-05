@@ -134,8 +134,8 @@ class CategoriesController extends Controller
             $instrument->category()->dissociate();
             $instrument->save();
         }
+        //Borramos la categoría permanentemente
         $category->delete();
-        //
 
         return redirect()->action('CategoriesController@indexCategories')->with('categorydelete', '¡Categoría borrada!');
     }
