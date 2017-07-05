@@ -19,7 +19,7 @@
                 <div class="panel-heading">Compra de los artículos</div>
                 <div class="panel-heading">Total a pagar: {{ $total }}€</div>
                 <div class="panel-body">
-                    <form id="payment-form" class="form-horizontal" role="form" method="POST" action="{{ route('checkout') }}">
+                    <form id="payment-form" class="form-horizontal" role="form" method="POST" action="{{ route('purchase') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group">

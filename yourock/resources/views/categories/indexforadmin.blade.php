@@ -35,6 +35,7 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Descripción</th>
+            <th>Instrumentos</th>
             <th>Ver detalles</th>
             <th>Editar</th>
             <th>Borrar</th>
@@ -46,6 +47,7 @@
                     <td>{{ $category->id }}</td>
                     <td>{{ $category->name }}</td>
                     <td>{{ $category->description }}</td>
+                    <td>{{ $category->instruments->count() }}</td>
                     <td><a role="button" class="btn btn-warning" href="{{ action('CategoriesController@showDetails', [$category->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
                     <td><a role="button" class="btn btn-primary" href="{{ action('CategoriesController@edit', [$category]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <form role="form" method="POST" action="{{ action('CategoriesController@destroy', [$category]) }}">

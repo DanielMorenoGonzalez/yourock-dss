@@ -11,9 +11,7 @@
 |
 */
 //Ruta para mostrar la página home
-Route::get('/', function() {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
 
 //Ruta para mostrar la página de contacto
 Route::get('contact', function() {
@@ -35,9 +33,9 @@ Route::get('user/shoppingcart', 'OrdersController@addOrderlinesToOrder');
 
 Route::get('shoppingcart', 'OrderlinesController@index')->name('shoppingcart');
 
-Route::get('checkout', 'OrdersController@checkout')->middleware('auth')->name('checkout');
-
-Route::post('checkout', 'OrdersController@postCheckout')->middleware('auth')->name('checkout');
+//Rutas para llevar a cabo la compra de instrumentos por parte de un usuario registrado
+Route::get('checkout', 'PurchaseController@checkout')->middleware('auth')->name('checkout');
+Route::post('purchase', 'PurchaseController@purchase')->middleware('auth')->name('purchase');
 
 //Ruta para ver los pedidos de un usuario
 Route::get('user/orders', 'OrdersController@index')->name('orders')->middleware('auth');
@@ -45,8 +43,11 @@ Route::get('user/orders', 'OrdersController@index')->name('orders')->middleware(
 //Ruta para ver un pedido concreto de un usuario
 Route::get('user/orders/{order}', 'OrdersController@show')->middleware('auth');
 
+//Ruta para registrar a un usuario
 Route::post('auth/register', 'UsersController@store');
+//Ruta para llevar a cabo el inicio de sesión de un usuario
 Route::post('auth/login', 'Auth\LoginController@login');
+//Ruta para llevar a cabo el cierre de sesión de un usuario
 Route::get('auth/logout', 'Auth\LoginController@logout');
 
 Route::prefix('user')->group(function () {
