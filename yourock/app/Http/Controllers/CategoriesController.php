@@ -135,6 +135,7 @@ class CategoriesController extends Controller
             $instrument->save();
         }
         $category->delete();
+        //
 
         return redirect()->action('CategoriesController@indexCategories')->with('categorydelete', '¡Categoría borrada!');
     }
