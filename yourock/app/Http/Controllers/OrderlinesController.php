@@ -10,47 +10,84 @@ use Session;
 
 class OrderlinesController extends Controller
 {
-    //Método para añadir un instrumento a una línea de pedido
-    public function addInstrumentToCart(Request $request, $id) {
-        $instrument = Instrument::findOrFail($id);
-        $encontrado = false;
-        
-        //Comprobamos si existe ya un pedido en la sesión
-        if(Session::has('order')){
-            //Para cada línea de pedido contenida en el pedido de la sesión
-            foreach(Session::get('order') as $orderlinePrueba){
-                //Si ya existe el instrumento que acabamos de añadir
-                if($orderlinePrueba[0]->instrument_id == $id){
-                    $orderlinePrueba[0]->quantity += 1;
-                    Session::put('quantity', $orderlinePrueba[0]->quantity);
-                    Session::put('orderline', $orderlinePrueba[0]);
-                    $encontrado = true;
-                    break;
-                }
-            }
-            //Si es un instrumento diferente a los que existen en el pedido de la sesión
-            if(!$encontrado){
-                    $orderline = new Orderline;
-                    $orderline->quantity = 1;
-                    $orderline->instrument_id = $id;
-                    Session::put('quantity', Session::get('quantity')+1);
-                    Session::put('orderline', $orderline);
-            }
-        }
-        //Si es el primer instrumento que añadimos al carrito
-        else{
-            $orderline = new Orderline;
-            $orderline->quantity = 1;
-            $orderline->instrument_id = $id;
-            Session::put('quantity', 1);
-            Session::put('orderline', $orderline);
-        }
-        
-        return redirect()->action('OrdersController@addOrderlinesToOrder');
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
     }
-    
-    //Método para mostrar todas las líneas de pedido de un pedido concreto
-    public function index(Request $request){
-        return view('shoppingcart');
+
+    public function indexOrderlines(){
+        $orderlines = Orderline::paginate(10);
+        return view('orderlines.indexforadmin', (['orderlines' => $orderlines]));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Orderline  $orderline
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Orderline $orderline)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Orderline  $orderline
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Orderline $orderline)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Orderline  $orderline
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Orderline $orderline)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Orderline  $orderline
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Orderline $orderline)
+    {
+        //
     }
 }

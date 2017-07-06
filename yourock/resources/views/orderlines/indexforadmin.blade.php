@@ -1,31 +1,31 @@
 @extends('layouts.master')
-@section('title', 'YOU ROCK! - Pedidos')
+@section('title', 'YOU ROCK! - Líneas de pedido')
 @section('content')
-@if (session()->has('orderupdate'))
+@if (session()->has('orderlineupdate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('orderupdate') }}</strong>
+        <strong>{{ session()->get('orderlineupdate') }}</strong>
     </div>
 @endif
 
-@if (session()->has('ordercreate'))
+@if (session()->has('orderlinecreate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('ordercreate') }}</strong>
+        <strong>{{ session()->get('orderlinecreate') }}</strong>
     </div>
 @endif
 
-@if (session()->has('orderdelete'))
+@if (session()->has('orderlinedelete'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('orderdelete') }}</strong>
+        <strong>{{ session()->get('orderlinedelete') }}</strong>
     </div>
 @endif
 
     <div class="panel panel-default">
-    <div class="panel-heading">Pedidos</div>
+    <div class="panel-heading">Líneas de pedido</div>
     <div class="panel-body">
-        <a class="btn btn-primary" role="button" role="button" href=""><span class="glyphicon glyphicon-plus"></span>Añadir pedido</a> 
+        <a class="btn btn-primary" role="button" role="button" href=""><span class="glyphicon glyphicon-plus"></span>Añadir línea de pedido</a> 
     </div>
 
     <div class="table-responsive">
@@ -33,23 +33,23 @@
         <thead>
         <tr>
             <th>ID</th>
-            <th>Método de pago</th>
-            <th>ID del pago</th>
-            <th>Estado</th>
+            <th>Instrumento</th>
+            <th>Cantidad</th>
+            <th>Coste</th>
             <th>Ver</th>
             <th>Editar</th>
             <th>Borrar</th>
         </tr>
         </thead>
         <tbody>
-            @foreach($orders as $order)
+            @foreach($orderlines as $orderline)
                 <tr>
-                    <td>{{ $order->id }}</td>
-                    <td>Tarjeta</td>
-                    <td>{{ $order->payment }}</td>
-                    <td>{{ $order->state }}</td>
-                    <td><a role="button" class="btn btn-warning" href="{{ action('OrdersController@showDetails', [$order->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
-                    <td><a role="button" class="btn btn-primary" href="{{ action('OrdersController@edit', [$order]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td>{{ $orderline->id }}</td>
+                    <td>{{ $orderline->instrument->name }}</td>
+                    <td>{{ $orderline->quantity }}</td>
+                    <td>{{ $orderline->getSubtotal() }}€</td>
+                    <td><a role="button" class="btn btn-warning" href=""><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                    <td><a role="button" class="btn btn-primary" href=""><span class="glyphicon glyphicon-edit"></span></a></td>
                     <form role="form" method="POST" action="">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
@@ -62,5 +62,5 @@
     </div>
     </div>
     
-{{ $orders->links() }}
+{{ $orderlines->links() }}
 @endsection

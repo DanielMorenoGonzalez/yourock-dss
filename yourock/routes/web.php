@@ -101,6 +101,11 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     ]]);
     Route::get('orders', 'OrdersController@indexOrders');
     Route::get('orders/{id}', 'OrdersController@showDetails');
+    //Declaramos la ruta para el recurso orderlines
+    Route::resource('orderlines', 'OrderlinesController', ['except' => [
+        'index'
+    ]]);
+    Route::get('orderlines', 'OrderlinesController@indexOrderlines');
 });
 
 Auth::routes();
