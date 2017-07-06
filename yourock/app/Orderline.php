@@ -19,6 +19,15 @@ class Orderline extends Model
     protected $dates = ['deleted_at'];
     public $timestamps = false;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'quantity'
+    ];
+
     public function instrument() {
         //Orderline tiene la clave ajena instrument_id
         return $this->belongsTo('App\Instrument');

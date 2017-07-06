@@ -25,7 +25,7 @@
     <div class="panel panel-default">
     <div class="panel-heading">Líneas de pedido</div>
     <div class="panel-body">
-        <a class="btn btn-primary" role="button" role="button" href=""><span class="glyphicon glyphicon-plus"></span>Añadir línea de pedido</a> 
+        <a class="btn btn-primary" role="button" role="button" href="{{ action('OrderlinesController@create') }}"><span class="glyphicon glyphicon-plus"></span>Añadir línea de pedido</a> 
     </div>
 
     <div class="table-responsive">
@@ -48,8 +48,8 @@
                     <td>{{ $orderline->instrument->name }}</td>
                     <td>{{ $orderline->quantity }}</td>
                     <td>{{ $orderline->getSubtotal() }}€</td>
-                    <td><a role="button" class="btn btn-warning" href=""><span class="glyphicon glyphicon-eye-open"></span></a></td>
-                    <td><a role="button" class="btn btn-primary" href=""><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td><a role="button" class="btn btn-warning" href="{{ action('OrderlinesController@show', [$orderline]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                    <td><a role="button" class="btn btn-primary" href="{{ action('OrderlinesController@edit', [$orderline]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <form role="form" method="POST" action="">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
