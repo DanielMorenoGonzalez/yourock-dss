@@ -100,6 +100,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
         'index', 'show'
     ]]);
     Route::get('orders', 'OrdersController@indexOrders');
+    Route::get('orders/{id}', 'OrdersController@showDetails');
 });
 
 Auth::routes();

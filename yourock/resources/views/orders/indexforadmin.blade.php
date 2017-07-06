@@ -48,7 +48,7 @@
                     <td>Tarjeta</td>
                     <td>{{ $order->payment }}</td>
                     <td>{{ $order->state }}</td>
-                    <td><a role="button" class="btn btn-warning" href=""><span class="glyphicon glyphicon-eye-open"></span></a></td>
+                    <td><a role="button" class="btn btn-warning" href="{{ action('OrdersController@showDetails', [$order->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
                     <td><a role="button" class="btn btn-primary" href=""><span class="glyphicon glyphicon-edit"></span></a></td>
                     <form role="form" method="POST" action="">
                         {{ csrf_field() }}

@@ -31,8 +31,4 @@ class Category extends Model
         return $this->hasMany('App\Instrument');
     }
 
-    public function getInstruments() {
-        return $this->instruments;
-    }
-
 }

@@ -60,6 +60,12 @@ class OrdersController extends Controller
         //
     }
 
+    public function showDetails($id){
+        $order = Order::find($id);
+        //$category = Category::findOrFail($id);
+        return view('orders.showforadmin', (['order' => $order]));
+    }
+    
     /**
      * Show the form for editing the specified resource.
      *
