@@ -353,8 +353,19 @@ class UsersController extends Controller
     public function destroy() 
     {
         $user = Auth::user();
+
+        Auth::logout();
+
+        if($user->orders){
+            foreach($user->orders as $order){
+                $order->user()->dissociate();
+                $order->save();
+            }
+        }
+
         $user->delete();
-        return redirect('home');
+
+        return redirect('home')->with('myuser', 'Tu cuenta se ha borrado. Esperamos verte pronto');
 
     }
 
