@@ -105,7 +105,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::resource('orderlines', 'OrderlinesController', ['except' => [
         'index'
     ]]);
-    Route::get('orderlines', 'OrderlinesController@indexOrderlines');
+    Route::get('orderlines', 'OrderlinesController@indexOrderlines')->name('orderlinesadmin');
 });
 
 Auth::routes();

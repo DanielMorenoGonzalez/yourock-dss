@@ -8,21 +8,21 @@
 @if (session()->has('orderupdate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('orderupdate') }}</strong>
+        {{ session()->get('orderupdate') }}
     </div>
 @endif
 
 @if (session()->has('ordercreate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('ordercreate') }}</strong>
+        {{ session()->get('ordercreate') }}
     </div>
 @endif
 
 @if (session()->has('orderdelete'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('orderdelete') }}</strong>
+        {{ session()->get('orderdelete') }}
     </div>
 @endif
 
@@ -56,7 +56,7 @@
                     <td>{{ $order->orderlines()->count() }}</td>
                     <td><a role="button" class="btn btn-warning" href="{{ action('OrdersController@showDetails', [$order->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
                     <td><a role="button" class="btn btn-primary" href="{{ action('OrdersController@edit', [$order]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <form role="form" method="POST" action="">
+                    <form role="form" method="POST" action="{{ action('OrdersController@destroy', [$order]) }}">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <td><button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>

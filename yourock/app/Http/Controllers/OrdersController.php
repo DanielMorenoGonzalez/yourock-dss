@@ -116,14 +116,17 @@ class OrdersController extends Controller
      */
     public function destroy(Order $order)
     {
-        /*
-        //Hacemos que el instrumento ya no apunte a ninguna categoría
-        $instrument->category()->dissociate();
-        $instrument->save();
-        $instrument->delete();
+        //Hacemos que cada línea de pedido contenida en el pedido también se borre
+        //Igualmente hacemos uso de softdelete, por lo que se mantendrán en la base de datos
+        foreach($order->orderlines as $orderline){
+            $orderline->delete();
+        }
 
-        return redirect()->action('InstrumentsController@index')->with('instrumentdelete', '¡Instrumento borrado!');
-        */
+        $order->user()->dissociate();
+        $order->save();
+        $order->delete();
+
+        return redirect()->action('OrdersController@indexOrders')->with('orderdelete', '¡Pedido y líneas de pedido asociadas borradas!');
     }
 
     public function addOrderlineToCart(){

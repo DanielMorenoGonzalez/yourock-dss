@@ -1,24 +1,28 @@
 @extends('layouts.master')
 @section('title', 'YOU ROCK! - Líneas de pedido')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li class="active">Líneas de pedido</li>
+</ol>
 @if (session()->has('orderlineupdate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('orderlineupdate') }}</strong>
+        {{ session()->get('orderlineupdate') }}
     </div>
 @endif
 
 @if (session()->has('orderlinecreate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('orderlinecreate') }}</strong>
+        {{ session()->get('orderlinecreate') }}
     </div>
 @endif
 
 @if (session()->has('orderlinedelete'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('orderlinedelete') }}</strong>
+        {{ session()->get('orderlinedelete') }}
     </div>
 @endif
 

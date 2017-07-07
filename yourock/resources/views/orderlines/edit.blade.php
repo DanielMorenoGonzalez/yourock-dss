@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('title', 'YOU ROCK! - Editar línea de pedido')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('orderlinesadmin') }}">Líneas de pedido</a></li>
+  <li class="active">Editar línea de pedido {{ $orderline->id }}</li>
+</ol>
 <h1>Editar línea de pedido</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -34,8 +39,7 @@
                             <label for="quantity" class="col-md-4 control-label">Cantidad:</label>
 
                             <div class="col-md-6">
-                                <input id="quantity" type="number" class="form-control" name="quantity" value="{{ old('quantity') }}" placeholder="{{ $orderline->quantity }}">
-                                <p class="text-danger">Modificar sólo hay algún problema con el pago</p> 
+                                <input id="quantity" type="text" class="form-control" name="quantity" value="{{ old('quantity') }}" placeholder="{{ $orderline->quantity }}">
 
                                 @if ($errors->has('quantity'))
                                     <span class="help-block">

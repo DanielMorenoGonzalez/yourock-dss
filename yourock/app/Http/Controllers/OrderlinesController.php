@@ -47,7 +47,7 @@ class OrderlinesController extends Controller
     {
         $this->validate($request, [
             'instrument' => 'required',
-            'quantity' => 'required',
+            'quantity' => 'required|max:2',
             'order' => 'required'
 		]);
 
@@ -74,8 +74,6 @@ class OrderlinesController extends Controller
      */
     public function show(Orderline $orderline)
     {
-        //$instrument = Instrument::findOrFail($id);
-        //$category = $instrument->category;
         return view('orderlines.show', (['orderline' => $orderline]));
     }
 
@@ -102,7 +100,7 @@ class OrderlinesController extends Controller
     public function update(Request $request, Orderline $orderline)
     {
         $this->validate($request, [
-            'quantity' => 'max:200'
+            'quantity' => 'max:2'
 		]);
 
         if($request->input('quantity') != ''){
@@ -132,8 +130,8 @@ class OrderlinesController extends Controller
      */
     public function destroy(Orderline $orderline)
     {
-        $orderline->order()->dissociate();
-        $orderline->save();
+        //Solo borramos la línea de pedido, ya que utilizaremos softdelete para mantener
+        //en la base de datos los pedidos y sus lineas de pedido que se hayan registrado
         $orderline->delete();
 
         return redirect()->action('OrderlinesController@indexOrderlines')->with('orderlinedelete', '¡Línea de pedido borrada!');
