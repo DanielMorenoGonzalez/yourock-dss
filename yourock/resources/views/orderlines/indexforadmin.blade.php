@@ -50,7 +50,7 @@
                     <td>{{ $orderline->getSubtotal() }}€</td>
                     <td><a role="button" class="btn btn-warning" href="{{ action('OrderlinesController@show', [$orderline]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
                     <td><a role="button" class="btn btn-primary" href="{{ action('OrderlinesController@edit', [$orderline]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <form role="form" method="POST" action="">
+                    <form role="form" method="POST" action="{{ action('OrderlinesController@destroy', [$orderline]) }}">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
                         <td><button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>

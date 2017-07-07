@@ -37,7 +37,8 @@ class OrdersController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::where('type', 'customer')->get();
+        return view('orders.create', (['users' => $users]));
     }
 
     /**

@@ -72,7 +72,7 @@ Route::get('categories/{category}', 'CategoriesController@show')->name('category
 
 //Declaramos la ruta para el admin (con su prefijo y middleware adecuados) 
 Route::prefix('admin')->middleware('admin')->group(function () {
-    Route::get('index', 'UsersController@adminIndex');
+    Route::get('home', 'UsersController@adminHome');
     //Declaramos la ruta para el recurso instruments
     Route::resource('instruments', 'InstrumentsController', ['except' => [
         'show'

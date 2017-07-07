@@ -132,7 +132,11 @@ class OrderlinesController extends Controller
      */
     public function destroy(Orderline $orderline)
     {
-        //
+        $orderline->order()->dissociate();
+        $orderline->save();
+        $orderline->delete();
+
+        return redirect()->action('OrderlinesController@indexOrderlines')->with('orderlinedelete', '¡Línea de pedido borrada!');
     }
 
     //Método para añadir un instrumento a una línea de pedido

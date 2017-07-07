@@ -22,9 +22,9 @@ class UsersController extends Controller
         return view('users.index', (['users' => $users]));
     }
 
-    public function adminIndex() {
+    public function adminHome() {
         $user = Auth::user();
-		return view('users.admin.index', (['user' => $user]));
+		return view('users.admin.home', (['user' => $user]));
     }
 
     /**

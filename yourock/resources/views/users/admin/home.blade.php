@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'YOU ROCK! - Index')
+@section('title', 'YOU ROCK! - Índice')
 @section('content')
 <h1>Índice del administrador</h1>
 <a href="{{ action('UsersController@index') }}" class="list-group-item">Ver todos los usuarios</a>

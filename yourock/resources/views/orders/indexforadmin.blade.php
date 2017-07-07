@@ -25,7 +25,7 @@
     <div class="panel panel-default">
     <div class="panel-heading">Pedidos</div>
     <div class="panel-body">
-        <a class="btn btn-primary" role="button" role="button" href=""><span class="glyphicon glyphicon-plus"></span>Añadir pedido</a> 
+        <a class="btn btn-primary" role="button" role="button" href="{{ action('OrdersController@create') }}"><span class="glyphicon glyphicon-plus"></span>Añadir pedido</a> 
     </div>
 
     <div class="table-responsive">
@@ -36,6 +36,7 @@
             <th>Método de pago</th>
             <th>ID del pago</th>
             <th>Estado</th>
+            <th>Nº de líneas de pedido
             <th>Ver</th>
             <th>Editar</th>
             <th>Borrar</th>
@@ -48,6 +49,7 @@
                     <td>Tarjeta</td>
                     <td>{{ $order->payment }}</td>
                     <td>{{ $order->state }}</td>
+                    <td>{{ $order->orderlines()->count() }}</td>
                     <td><a role="button" class="btn btn-warning" href="{{ action('OrdersController@showDetails', [$order->id]) }}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
                     <td><a role="button" class="btn btn-primary" href="{{ action('OrdersController@edit', [$order]) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <form role="form" method="POST" action="">
