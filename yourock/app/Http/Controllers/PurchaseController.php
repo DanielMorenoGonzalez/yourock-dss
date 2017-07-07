@@ -65,19 +65,21 @@ class PurchaseController extends Controller
                 $instrument = $orderlinePrueba[0]->getInstrument();
                 $orderline = new Orderline;
                 $orderline->quantity = $orderlinePrueba[0]->quantity;
+
+                //Decrementamos el stock del instrumento una vez ya está comprado
                 $instrument->decreaseStock($orderlinePrueba[0]->quantity);
                 $instrument->save();
+
                 $orderline->order()->associate($order);
                 $orderline->instrument()->associate($instrument);
                 $orderline->save();
-
-                //$instrument->decreaseStock($orderlinePrueba[0]->quantity);
             }
 
         } catch (\Exception $e) {
             return redirect('checkout')->with('error', $e->getMessage());
         }
 
+        //Olvidamos la cantidad y el pedido de la sesión
         Session::forget('quantity');
         Session::forget('order');
         

@@ -37,23 +37,17 @@ class Instrument extends Model
         return $this->hasMany('App\Orderline');
     }
 
+    //Método para actualizar el stock (por parte de un administrador)
     public function updateStock($quantity) {
-        if($quantity >= 0){
-            $this->stock = $quantity;
-        }
+        $this->stock = $quantity;
     }
 
+    //Método para decrementar el stock una vez se hace la compra
     public function decreaseStock($quantity){
-        if ($this->stock >= $quantity){
-            $this->stock -= $quantity;
-            //$this->updateStock($quantity);
-            return true;
-        }
-        else {
-            return false;
-        }
+        $this->stock -= $quantity;
     }
 
+    //Método para comprobar que existen unidades del instrumento antes de proceder con la compra
     public function checkStock($quantity) {
         if($this->stock >= $quantity) {
             return true;

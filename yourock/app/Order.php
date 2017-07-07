@@ -19,13 +19,15 @@ class Order extends Model
     protected $dates = ['deleted_at'];
 
     //Array que utilizaremos para añadir al carrito de la compra temporalmente
-    public $items = array();
+    public $itemsCart = array();
     public $timestamps = false;
 
+    //Método para obtener las líneas de pedido pertenecientes a un pedido
     public function orderlines() {
         return $this->hasMany('App\Orderline');
     }
 
+    //Método para obtener el usuario que ha realizado el pedido
     public function user() {
         //Order tiene la clave ajena user_id
         return $this->belongsTo('App\User');
@@ -35,6 +37,7 @@ class Order extends Model
     public function getTotal(){
         $total = 0;
         $orderlines = $this->getOrderlines();
+        //Por cada línea de pedido obtenemos el subtotal
         foreach($orderlines as $orderline){
             $total += $orderline->getSubtotal();
         }
@@ -43,8 +46,8 @@ class Order extends Model
 
     //Método para añadir la línea de pedido a la lista de items (de pedidos)
     public function addOrderlineToCart() {
-        $this->items[] = Session::get('orderline');
-        return $this->items;
+        $this->itemsCart[] = Session::get('orderline');
+        return $this->itemsCart;
     }
     
     //Método para obtener las líneas de pedido del pedido actual

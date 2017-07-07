@@ -67,7 +67,6 @@ class OrdersController extends Controller
 
     public function showDetails($id){
         $order = Order::find($id);
-        //$category = Category::findOrFail($id);
         return view('orders.showforadmin', (['order' => $order]));
     }
 
@@ -132,7 +131,7 @@ class OrdersController extends Controller
     public function addOrderlineToCart(){
         $order = new Order;
         $encontrado = false;
-        
+
         //Si ya existe un pedido en la sesión (carrito de la compra)
         if(Session::has('order')){
             //Para cada línea de pedido contenida en el pedido de la sesión

@@ -65,7 +65,7 @@ class CategoriesController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show($id)
     {
         $category = Category::findOrFail($id);
         $instruments = $category->instruments()->paginate(5);

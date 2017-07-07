@@ -28,11 +28,13 @@ class Orderline extends Model
         'quantity'
     ];
 
+    //Método para obtener el instrumento perteneciente a la línea de pedido
     public function instrument() {
         //Orderline tiene la clave ajena instrument_id
         return $this->belongsTo('App\Instrument');
     }
 
+    //Método para obtener el pedido al que pertenece la línea de pedido
     public function order(){
         //Orderline tiene la clave ajena order_id
         return $this->belongsTo('App\Order');

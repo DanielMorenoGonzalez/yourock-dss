@@ -21,7 +21,7 @@ class InstrumentsController extends Controller
         $instruments = Instrument::paginate(10);
         return view('instruments.index', (['instruments' => $instruments]));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -45,7 +45,7 @@ class InstrumentsController extends Controller
             'name' => 'required|max:50|unique:instruments',
             'description' => 'required|max:255',
             'price' => 'required|max:5',
-            'stock' => 'required|max:3',
+            'stock' => 'required|integer',
             'urlPhoto' => 'required|max:100',
             'manufacturer' => 'required|max:30',
 		]);
@@ -131,7 +131,6 @@ class InstrumentsController extends Controller
         }
         if($request->input('stock') != ''){
             $instrument->updateStock($request->input('stock'));
-            //$instrument->stock = $request->input('stock');
         }
         if($request->input('urlPhoto') != ''){
             $instrument->urlPhoto = $request->input('urlPhoto');
