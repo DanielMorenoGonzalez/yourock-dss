@@ -25,6 +25,14 @@ class PurchaseController extends Controller
         $orderShoppingCart = new Order;
         $total = $orderShoppingCart->getTotalShoppingCart();
 
+        //Comprobamos si existe suficiente stock en el almacen
+        foreach(Session::get('order') as $orderlinePrueba){
+            $instrument = $orderlinePrueba[0]->getInstrument();
+            if(!$instrument->checkStock($orderlinePrueba[0]->quantity)){
+                return redirect()->action('OrderlinesController@indexCart')->with('nostock', 'No hay suficiente stock del instrumento "' . $instrument->name . '"');
+            }
+        }
+
         return view('checkout', (['total' => $total]));
     }
 
@@ -57,9 +65,13 @@ class PurchaseController extends Controller
                 $instrument = $orderlinePrueba[0]->getInstrument();
                 $orderline = new Orderline;
                 $orderline->quantity = $orderlinePrueba[0]->quantity;
+                $instrument->decreaseStock($orderlinePrueba[0]->quantity);
+                $instrument->save();
                 $orderline->order()->associate($order);
                 $orderline->instrument()->associate($instrument);
                 $orderline->save();
+
+                //$instrument->decreaseStock($orderlinePrueba[0]->quantity);
             }
 
         } catch (\Exception $e) {

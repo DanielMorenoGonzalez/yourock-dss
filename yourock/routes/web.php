@@ -37,12 +37,6 @@ Route::get('shoppingcart', 'OrderlinesController@indexCart')->name('shoppingcart
 Route::get('checkout', 'PurchaseController@checkout')->middleware('auth')->name('checkout');
 Route::post('purchase', 'PurchaseController@purchase')->middleware('auth')->name('purchase');
 
-//Ruta para ver los pedidos de un usuario
-Route::get('user/orders', 'OrdersController@index')->name('orders')->middleware('auth');
-
-//Ruta para ver un pedido concreto de un usuario
-Route::get('user/orders/{order}', 'OrdersController@show')->middleware('auth');
-
 //Ruta para registrar a un usuario
 Route::post('auth/register', 'UsersController@store');
 //Ruta para llevar a cabo el inicio de sesión de un usuario
@@ -59,6 +53,10 @@ Route::prefix('user')->group(function () {
     Route::get('profile', 'UsersController@show')->name('userprofile');
     //Ruta borrar el usuario (cliente) con el que hemos iniciado sesión
     Route::delete('delete', 'UsersController@destroy');
+    //Ruta para ver los pedidos de un usuario
+    Route::get('orders', 'OrdersController@index')->name('orders')->middleware('auth');
+    //Ruta para ver un pedido concreto de un usuario
+    Route::get('orders/{order}', 'OrdersController@show')->middleware('auth');
 });
 
 //Ruta para mostrar un instrument específico con sus detalles

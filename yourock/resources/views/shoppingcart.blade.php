@@ -5,6 +5,12 @@
   <li><a href="{{ route('home') }}">Home</a></li>
   <li class="active">Carrito</li>
 </ol>
+@if (session()->has('nostock'))
+    <div class="alert alert-danger alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        {{ session()->get('nostock') }}
+    </div>
+@endif
 @if (Session::has('order'))
 @foreach(Session::get('order') as $order)
     <p>{{ $order[0] }}</p>

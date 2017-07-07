@@ -43,16 +43,24 @@ class Instrument extends Model
         }
     }
 
-    /*
     public function decreaseStock($quantity){
         if ($this->stock >= $quantity){
             $this->stock -= $quantity;
+            //$this->updateStock($quantity);
             return true;
         }
         else {
             return false;
         }
     }
-    */
+
+    public function checkStock($quantity) {
+        if($this->stock >= $quantity) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     
 }

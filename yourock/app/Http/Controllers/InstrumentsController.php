@@ -161,7 +161,7 @@ class InstrumentsController extends Controller
         $instrument->category()->dissociate();
         $instrument->save();
         $instrument->delete();
-
+        
         return redirect()->action('InstrumentsController@index')->with('instrumentdelete', '¡Instrumento borrado!');
     }
 }
