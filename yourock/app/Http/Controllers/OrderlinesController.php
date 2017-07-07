@@ -87,7 +87,9 @@ class OrderlinesController extends Controller
      */
     public function edit(Orderline $orderline)
     {
-        return view('orderlines.edit', (['orderline' => $orderline]));
+        $orders = Order::all();
+        $instruments = Instrument::all();
+        return view('orderlines.edit', array('orderline' => $orderline, 'orders' => $orders, 'instruments' => $instruments));
     }
 
     /**
@@ -99,7 +101,27 @@ class OrderlinesController extends Controller
      */
     public function update(Request $request, Orderline $orderline)
     {
-        //
+        $this->validate($request, [
+            'quantity' => 'max:200'
+		]);
+
+        if($request->input('quantity') != ''){
+            $orderline->quantity = $request->input('quantity');
+        }
+        if($request->input('instrument') != ''){
+            $instrument = Instrument::find($request->input('instrument'));
+            $orderline->instrument()->dissociate();
+            $orderline->instrument()->associate($instrument);
+        }
+        if($request->input('order') != ''){
+            $order = Order::find($request->input('order'));
+            $orderline->order()->dissociate();
+            $orderline->order()->associate($order);
+        }
+
+        $orderline->save();
+
+        return redirect()->action('OrderlinesController@indexOrderlines')->with('orderlineupdate', '¡Línea de pedido actualizada!');
     }
 
     /**
