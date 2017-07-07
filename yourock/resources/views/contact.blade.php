@@ -8,7 +8,7 @@
 @if (session()->has('message'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('message') }}</strong>
+        {{ session()->get('message') }}
     </div>
 @endif
 <h1>Página de contacto</h1>

@@ -9,7 +9,7 @@
 @if (session()->has('error'))
     <div class="alert alert-danger alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('error') }}</strong>
+        {{ session()->get('error') }}
     </div>
 @endif
 <h1>Página de checkout</h1>

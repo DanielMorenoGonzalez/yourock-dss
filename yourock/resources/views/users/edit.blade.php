@@ -14,11 +14,11 @@
     <li class="active">Editar administrador "{{ $user->name }} {{$user->surname}}"</li>
   @endif
 </ol>
-<h1>Editar instrumento</h1>
+<h1>Editar usuario</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Editar información del instrumento</div>
+                <div class="panel-heading">Editar información del usuario</div>
                 <div class="panel-body">
                     <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ action('UsersController@updateUser', [$user->id]) }}">
                         {{ csrf_field() }}

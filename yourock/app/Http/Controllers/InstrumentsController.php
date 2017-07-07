@@ -130,7 +130,8 @@ class InstrumentsController extends Controller
             $instrument->price = $request->input('price');
         }
         if($request->input('stock') != ''){
-            $instrument->stock = $request->input('stock');
+            $instrument->updateStock($request->input('stock'));
+            //$instrument->stock = $request->input('stock');
         }
         if($request->input('urlPhoto') != ''){
             $instrument->urlPhoto = $request->input('urlPhoto');

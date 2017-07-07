@@ -92,7 +92,7 @@ class OrdersController extends Controller
     public function update(Request $request, Order $order)
     {
         $this->validate($request, [
-            'payment' => 'max:30',
+            'payment' => 'max:30|unique:payment',
             'state' => 'max:30'
 		]);
 

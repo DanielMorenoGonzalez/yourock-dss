@@ -8,21 +8,21 @@
 @if (session()->has('categoryupdate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('categoryupdate') }}</strong>
+        {{ session()->get('categoryupdate') }}
     </div>
 @endif
 
 @if (session()->has('categorycreate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('categorycreate') }}</strong>
+        {{ session()->get('categorycreate') }}
     </div>
 @endif
 
 @if (session()->has('categorydelete'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('categorydelete') }}</strong>
+        {{ session()->get('categorydelete') }}
     </div>
 @endif
 

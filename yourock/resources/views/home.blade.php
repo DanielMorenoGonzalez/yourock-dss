@@ -4,13 +4,13 @@
 @if (session()->has('success'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('success') }}</strong>
+        {{ session()->get('success') }}
     </div>
 @endif
 @if (session()->has('myuser'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('myuser') }}</strong>
+        {{ session()->get('myuser') }}
     </div>
 @endif
 <h1>Página home</h1>

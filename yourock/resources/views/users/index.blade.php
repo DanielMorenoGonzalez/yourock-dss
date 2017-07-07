@@ -8,19 +8,19 @@
 @if (session()->has('userupdate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('userupdate') }}</strong>
+        {{ session()->get('userupdate') }}
     </div>
 @endif
 @if (session()->has('usercreate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('usercreate') }}</strong>
+        {{ session()->get('usercreate') }}
     </div>
 @endif
 @if (session()->has('userdelete'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('userdelete') }}</strong>
+        {{ session()->get('userdelete') }}
     </div>
 @endif
 

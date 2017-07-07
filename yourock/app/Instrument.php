@@ -37,6 +37,12 @@ class Instrument extends Model
         return $this->hasMany('App\Orderline');
     }
 
+    public function updateStock($quantity) {
+        if($quantity >= 0){
+            $this->stock = $quantity;
+        }
+    }
+
     /*
     public function decreaseStock($quantity){
         if ($this->stock >= $quantity){

@@ -100,7 +100,7 @@ class CategoriesController extends Controller
     public function update(Request $request, Category $category)
     {
         $this->validate($request, [
-            'name' => 'max:50',
+            'name' => 'max:50|unique:categories',
             'description' => 'max:255',
 		]);
 

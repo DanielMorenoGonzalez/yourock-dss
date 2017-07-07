@@ -18,7 +18,9 @@
 
 @if($instrument->stock != 0)
     <p>Actualmente disponible con {{ $instrument->stock }} unidades</p>
+    <p><a href="{{ action('InstrumentsController@edit', [$instrument]) }}">Actualizar stock</a></p>
 @else
     <p>Agotado. No hay unidades en el almacén</p>
+    <p><a href="{{ action('InstrumentsController@edit', [$instrument]) }}">Actualizar stock</a></p>
 @endif
 @endsection
