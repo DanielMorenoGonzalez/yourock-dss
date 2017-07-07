@@ -8,21 +8,21 @@
 @if (session()->has('instrumentupdate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('instrumentupdate') }}</strong>
+        {{ session()->get('instrumentupdate') }}
     </div>
 @endif
 
 @if (session()->has('instrumentcreate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('instrumentcreate') }}</strong>
+        {{ session()->get('instrumentcreate') }}
     </div>
 @endif
 
 @if (session()->has('instrumentdelete'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-        <strong>{{ session()->get('instrumentdelete') }}</strong>
+        {{ session()->get('instrumentdelete') }}
     </div>
 @endif
 

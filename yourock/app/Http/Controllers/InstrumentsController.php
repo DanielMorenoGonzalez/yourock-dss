@@ -60,7 +60,8 @@ class InstrumentsController extends Controller
         ]);
 
         if($request->input('category') != ''){
-            $instrument->category_id = $request->input('category');
+            $category = Category::find($request->input('category'));
+            $instrument->category()->associate($category);
         }
 
         $instrument->save();
@@ -97,7 +98,6 @@ class InstrumentsController extends Controller
     public function edit(Instrument $instrument)
     {
         $categories = Category::all();
-        //$category = new Category;
         $category = $instrument->category;
         return view('instruments.edit', array('instrument' => $instrument, 'category' => $category, 'categories' => $categories));
     }
@@ -114,7 +114,7 @@ class InstrumentsController extends Controller
         //$instrument = Instrument::find($id);
 
         $this->validate($request, [
-            'name' => 'max:30',
+            'name' => 'max:50',
             'description' => 'max:255',
             'price' => 'max:5',
             'stock' => 'max:3',
@@ -128,9 +128,6 @@ class InstrumentsController extends Controller
         if($request->input('description') != ''){
             $instrument->description = $request->input('description');
         }
-        if($request->input('category') != ''){
-            $instrument->category_id = $request->input('category');
-        }
         if($request->input('price') != ''){
             $instrument->price = $request->input('price');
         }
@@ -142,6 +139,10 @@ class InstrumentsController extends Controller
         }
         if($request->input('manufacturer') != ''){
             $instrument->manufacturer = $request->input('manufacturer');
+        }
+        if($request->input('category') != ''){
+            $category = Category::find($request->input('category'));
+            $instrument->category()->associate($category);
         }
 
         $instrument->save();
@@ -157,7 +158,7 @@ class InstrumentsController extends Controller
      */
     public function destroy(Instrument $instrument)
     {
-        //Hacemos que el instrumento ya no apunte a ninguna categoría
+        //Hacemos que el instrumento ya no apunte a ninguna categoría y lo borramos (softdelete)
         $instrument->category()->dissociate();
         $instrument->save();
         $instrument->delete();

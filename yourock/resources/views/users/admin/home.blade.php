@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'YOU ROCK! - Índice')
+@section('title', 'YOU ROCK! - Home')
 @section('content')
 <ol class="breadcrumb">
   <li class="active">Home</li>

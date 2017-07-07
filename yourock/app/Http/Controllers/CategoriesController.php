@@ -65,7 +65,7 @@ class CategoriesController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $category = Category::findOrFail($id);
         $instruments = $category->instruments()->paginate(5);
@@ -100,7 +100,7 @@ class CategoriesController extends Controller
     public function update(Request $request, Category $category)
     {
         $this->validate($request, [
-            'name' => 'max:30',
+            'name' => 'max:50',
             'description' => 'max:255',
 		]);
 
