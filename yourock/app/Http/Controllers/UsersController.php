@@ -59,7 +59,7 @@ class UsersController extends Controller
             'address' => 'required|max:100',
             'province' => 'required|max:20',
             'city' => 'required|max:30',
-            'zipCode' => 'required|max:5',
+            'zipCode' => 'required|digits:5',
             'phoneNumber' => 'required|digits:9',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
@@ -94,7 +94,7 @@ class UsersController extends Controller
             'address' => 'required|max:100',
             'province' => 'required|max:20',
             'city' => 'required|max:30',
-            'zipCode' => 'required|max:5',
+            'zipCode' => 'required|digits:5',
             'phoneNumber' => 'required|digits:9',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
@@ -203,8 +203,7 @@ class UsersController extends Controller
 			'nif' => 'max:9',
             'name' => 'max:20',
             'surname' => 'max:30',
-            'address' => 'max:100',
-            'zipCode' => 'max:5',
+            'address' => 'max:100'
 		]);
 
         if($request->input('nif') != ''){
@@ -226,6 +225,9 @@ class UsersController extends Controller
             $user->city = $request->input('city');
         }
         if($request->input('zipCode') != ''){
+            $this->validate($request, [
+                'zipCode' => 'digits:5'
+            ]);
             $user->zipCode = $request->input('zipCode');
         }
         if($request->input('phoneNumber') != ''){
@@ -269,8 +271,7 @@ class UsersController extends Controller
                 'nif' => 'max:9',
                 'name' => 'max:20',
                 'surname' => 'max:30',
-                'address' => 'max:100',
-                'zipCode' => 'max:5',
+                'address' => 'max:100'
 		    ]);
         }
         else{
@@ -303,6 +304,9 @@ class UsersController extends Controller
                 $user->city = $request->input('city');
             }
             if($request->input('zipCode') != ''){
+                $this->validate($request, [
+                    'zipCode' => 'digits:5'
+                ]);
                 $user->zipCode = $request->input('zipCode');
             }
         }

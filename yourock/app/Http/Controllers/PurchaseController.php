@@ -84,6 +84,6 @@ class PurchaseController extends Controller
             $message->to($data['email'])->subject($data['subject']);
         });
 
-        return redirect('home')->with('success', 'Compra realizada con éxito. Te acabamos de enviar un email con los datos de la misma');
+        return redirect('home')->with('success', 'Compra realizada con éxito. Te acabamos de enviar un email con los datos de la misma.');
     }
 }

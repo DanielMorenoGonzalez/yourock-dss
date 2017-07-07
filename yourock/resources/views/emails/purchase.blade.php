@@ -8,7 +8,7 @@
         <p><strong>Asunto: </strong>{{ $subject }}</p>
         <p><strong>Mensaje: </strong><p>
         <div class="container">
-            <p>Tu pedido se está procesando, aquí te dejamos los datos de tu compra</p>
+            <p>Tu pedido se está procesando, aquí te dejamos los datos de tu compra:</p>
             <p>Código del pedido: {{ $bodyOrder->payment }}</p>
             <p>Contenido del pedido:</p>
             @foreach($bodyOrderlines as $bodyOrderline)

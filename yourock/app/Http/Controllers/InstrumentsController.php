@@ -111,10 +111,8 @@ class InstrumentsController extends Controller
      */
     public function update(Request $request, Instrument $instrument)
     {
-        //$instrument = Instrument::find($id);
-
         $this->validate($request, [
-            'name' => 'max:50',
+            'name' => 'max:50|unique:instruments',
             'description' => 'max:255',
             'price' => 'max:5',
             'stock' => 'max:3',
