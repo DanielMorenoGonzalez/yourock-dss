@@ -126,7 +126,7 @@ class OrdersController extends Controller
         */
     }
 
-    public function addOrderlinesToOrder(){
+    public function addOrderlineToCart(){
         $order = new Order;
         $encontrado = false;
         
@@ -152,6 +152,6 @@ class OrdersController extends Controller
             Session::push('order', $listitems);
         }
         
-        return redirect()->action('OrderlinesController@index');
+        return redirect()->action('OrderlinesController@indexCart');
     }
 }

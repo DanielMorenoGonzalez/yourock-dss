@@ -29,9 +29,9 @@ Route::get('aboutus', function() {
 //Ruta para añadir un instrumento al carrito de la compra
 Route::get('addtocart/{id}', 'OrderlinesController@addInstrumentToCart');
 
-Route::get('user/shoppingcart', 'OrdersController@addOrderlinesToOrder');
+Route::get('user/shoppingcart', 'OrdersController@addOrderlineToCart');
 
-Route::get('shoppingcart', 'OrderlinesController@index')->name('shoppingcart');
+Route::get('shoppingcart', 'OrderlinesController@indexCart')->name('shoppingcart');
 
 //Rutas para llevar a cabo la compra de instrumentos por parte de un usuario registrado
 Route::get('checkout', 'PurchaseController@checkout')->middleware('auth')->name('checkout');

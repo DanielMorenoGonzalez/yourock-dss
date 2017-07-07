@@ -15,7 +15,7 @@ class OrderlinesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexCart()
     {
         return view('shoppingcart');
     }
@@ -150,8 +150,9 @@ class OrderlinesController extends Controller
             foreach(Session::get('order') as $orderlinePrueba){
                 //Si ya existe el instrumento que acabamos de añadir
                 if($orderlinePrueba[0]->instrument_id == $id){
+                    Session::put('quantity', Session::get('quantity')+1);
                     $orderlinePrueba[0]->quantity += 1;
-                    Session::put('quantity', $orderlinePrueba[0]->quantity);
+                    //Session::put('quantity', $orderlinePrueba[0]->quantity + Session::get('quantity'));
                     Session::put('orderline', $orderlinePrueba[0]);
                     $encontrado = true;
                     break;
@@ -175,6 +176,6 @@ class OrderlinesController extends Controller
             Session::put('orderline', $orderline);
         }
         
-        return redirect()->action('OrdersController@addOrderlinesToOrder');
+        return redirect()->action('OrdersController@addOrderlineToCart');
     }
 }
