@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('title', 'YOU ROCK! - Editar categoría')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('categoriesadmin') }}">Categorías</a></li>
+  <li class="active">Editar "{{ $category->name }}"</li>
+</ol>
 <h1>Editar categoría</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">

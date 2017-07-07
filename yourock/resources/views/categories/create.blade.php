@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('title', 'YOU ROCK! - Crear categoría')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('categoriesadmin') }}">Categorías</a></li>
+  <li class="active">Crear categoría</li>
+</ol>
 <h1>Crear una nueva categoría</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">

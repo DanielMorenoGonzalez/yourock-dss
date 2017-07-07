@@ -82,7 +82,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::resource('categories', 'CategoriesController', ['except' => [
         'index', 'show'
     ]]);
-    Route::get('categories', 'CategoriesController@indexCategories');
+    Route::get('categories', 'CategoriesController@indexCategories')->name('categoriesadmin');
     Route::get('categories/{id}', 'CategoriesController@showDetails');
     Route::resource('users', 'UsersController', ['only' => [
         'index'
@@ -99,7 +99,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::resource('orders', 'OrdersController', ['except' => [
         'index', 'show'
     ]]);
-    Route::get('orders', 'OrdersController@indexOrders');
+    Route::get('orders', 'OrdersController@indexOrders')->name('ordersadmin');
     Route::get('orders/{id}', 'OrdersController@showDetails');
     //Declaramos la ruta para el recurso orderlines
     Route::resource('orderlines', 'OrderlinesController', ['except' => [

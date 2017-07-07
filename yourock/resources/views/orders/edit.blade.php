@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('title', 'YOU ROCK! - Editar pedido')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('ordersadmin') }}">Pedidos</a></li>
+  <li class="active">Editar pedido {{ $order->id }}</li>
+</ol>
 <h1>Editar pedido</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -39,22 +44,6 @@
                                 @endif
                             </div>
                         </div>
-<!--
-                        <div class="form-group{{ $errors->has('user') ? ' has-error' : '' }}">
-                            <label for="user" class="col-md-4 control-label">Usuario que realizó el pedido:</label>
-
-                            <div class="col-md-6">
-                                <input id="user" type="text" class="form-control" name="user" value="{{ old('user') }}" placeholder="{{ $order->user->email }}">
-                                <p class="text-danger">Modificar sólo si hay reclamaciones.</p> 
-
-                                @if ($errors->has('user'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('user') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        -->
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

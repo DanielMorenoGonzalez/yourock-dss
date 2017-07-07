@@ -1,6 +1,10 @@
 @extends('layouts.master')
 @section('title', 'YOU ROCK! - Instrumentos')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li class="active">Instrumentos</li>
+</ol>
 @if (session()->has('instrumentupdate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>

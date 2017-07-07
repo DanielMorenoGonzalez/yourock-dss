@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('title', 'YOU ROCK! - Crear instrumento')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('instruments.index') }}">Instrumentos</a></li>
+  <li class="active">Crear instrumento</li>
+</ol>
 <h1>Crear un nuevo instrumento</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">

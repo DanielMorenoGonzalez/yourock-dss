@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('title', 'YOU ROCK! - Instrumento')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('instruments.index') }}">Instrumentos</a></li>
+  <li class="active">{{$instrument->name}}</li>
+</ol>
 <h1>Instrumento: {{ $instrument->name }}</h1>
 @if(!$category)
     <p>Todavía no pertenece a ninguna categoría. <a href="{{ action('InstrumentsController@edit', [$instrument]) }}">Asignar ahora</a></p>

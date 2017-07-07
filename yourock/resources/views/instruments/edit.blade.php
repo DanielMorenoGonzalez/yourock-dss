@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('title', 'YOU ROCK! - Editar instrumento')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('instruments.index') }}">Instrumentos</a></li>
+  <li class="active">Editar "{{$instrument->name}}"</li>
+</ol>
 <h1>Editar instrumento</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">

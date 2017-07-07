@@ -1,6 +1,10 @@
 @extends('layouts.master')
 @section('title', 'YOU ROCK! - Pedidos')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li class="active">Pedidos</li>
+</ol>
 @if (session()->has('orderupdate'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>

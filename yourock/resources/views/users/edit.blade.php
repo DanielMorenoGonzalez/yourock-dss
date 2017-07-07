@@ -5,6 +5,15 @@
     @section('title', 'YOU ROCK! - Editar administrador')
 @endif
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('users.index') }}">Usuarios</a></li>
+  @if($user->type == 'customer')
+    <li class="active">Editar cliente "{{ $user->name }} {{$user->surname}}"</li>
+  @else
+    <li class="active">Editar administrador "{{ $user->name }} {{$user->surname}}"</li>
+  @endif
+</ol>
 <h1>Editar instrumento</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">

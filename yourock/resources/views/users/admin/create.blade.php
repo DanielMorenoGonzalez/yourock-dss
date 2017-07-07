@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('title', 'YOU ROCK! - Crear usuario')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('users.index') }}">Usuarios</a></li>
+  <li class="active">Crear administrador</li>
+</ol>
 <h1>Crear un nuevo administrador</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
