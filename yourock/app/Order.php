@@ -20,7 +20,7 @@ class Order extends Model
 
     //Array que utilizaremos para añadir al carrito de la compra temporalmente
     public $itemsCart = array();
-    public $timestamps = false;
+    //public $timestamps = false;
 
     //Método para obtener las líneas de pedido pertenecientes a un pedido
     public function orderlines() {
@@ -59,5 +59,10 @@ class Order extends Model
         }
         return $total;
     }
+
+        public function setUpdatedAt($value)
+{
+    // Do nothing.
+}
 
 }

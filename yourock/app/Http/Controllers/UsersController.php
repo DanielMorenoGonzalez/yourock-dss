@@ -158,7 +158,11 @@ class UsersController extends Controller
     {
         if(Auth::user()){
             $user = Auth::user();
-            return view('users.customers.show', (['user' => $user]));
+            if($user->type == 'customer'){
+                return view('users.customers.show', (['user' => $user]));
+            } else {
+                return view('users.admin.show', (['user' => $user]));
+            }
         }
         else {
             return view('auth.login');
@@ -186,7 +190,11 @@ class UsersController extends Controller
     public function editUser($id)
     {
         $user = User::find($id);
-        return view('users.edit', (['user' => $user]));
+        if($user->type == 'customer'){
+            return view('users.customers.editforadmin', (['user' => $user]));
+        } else {
+            return view('users.admin.editforadmin', (['user' => $user]));
+        }
     }
 
     /**

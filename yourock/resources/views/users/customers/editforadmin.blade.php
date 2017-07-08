@@ -1,24 +1,16 @@
 @extends('layouts.master')
-@if($user->type == 'customer')
-    @section('title', 'YOU ROCK! - Editar cliente')
-@else
-    @section('title', 'YOU ROCK! - Editar administrador')
-@endif
+@section('title', 'YOU ROCK! - Editar cliente')
 @section('content')
 <ol class="breadcrumb">
   <li><a href="{{ route('home') }}">Home</a></li>
   <li><a href="{{ route('users.index') }}">Usuarios</a></li>
-  @if($user->type == 'customer')
-    <li class="active">Editar cliente "{{ $user->name }} {{$user->surname}}"</li>
-  @else
-    <li class="active">Editar administrador "{{ $user->name }} {{$user->surname}}"</li>
-  @endif
+  <li class="active">Editar cliente "{{ $user->name }} {{$user->surname}}"</li>
 </ol>
-<h1>Editar usuario</h1>
+<h1>Editar cliente</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Editar información del usuario</div>
+                <div class="panel-heading">Editar información del cliente</div>
                 <div class="panel-body">
                     <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ action('UsersController@updateUser', [$user->id]) }}">
                         {{ csrf_field() }}
@@ -74,20 +66,19 @@
                             </div>
                         </div>
                         
-                        @if($user->type == 'customer')
-                            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                                <label for="address" class="col-md-4 control-label">Dirección:</label>
+                        <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                            <label for="address" class="col-md-4 control-label">Dirección:</label>
 
-                                <div class="col-md-6">
-                                    <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" placeholder="{{ $user->address }}">
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" placeholder="{{ $user->address }}">
 
-                                    @if ($errors->has('address'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('address') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
+                                @if ($errors->has('address'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
                             </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('province') ? ' has-error' : '' }}">
                             <label for="province" class="col-md-4 control-label">Provincia:</label>
@@ -183,24 +174,6 @@
                                 @endif
                             </div>
                         </div>
-
-                        @else
-
-                            <div class="form-group{{ $errors->has('job_title') ? ' has-error' : '' }}">
-                            <label for="job_title" class="col-md-4 control-label">Título profesional:</label>
-
-                            <div class="col-md-6">
-                                <input id="job_title" type="text" class="form-control" name="job_title" value="{{ old('job_title') }}" placeholder="{{ $user->job_title }}">
-
-                                @if ($errors->has('job_title'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('job_title') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        @endif
 
                         <div class="form-group{{ $errors->has('phoneNumber') ? ' has-error' : '' }}">
                             <label for="phoneNumber" class="col-md-4 control-label">Teléfono:</label>
