@@ -1,9 +1,6 @@
 @extends('layouts.master')
 @section('title', 'YOU ROCK! - Home')
 @section('content')
-<ol class="breadcrumb">
-  <li class="active">Home</li>
-</ol>
 <h1>Índice del administrador</h1>
 <a href="{{ action('UsersController@index') }}" class="list-group-item">Ver todos los usuarios</a>
 <a href="{{ action('CategoriesController@indexCategories') }}" class="list-group-item">Ver todas las categorías</a>

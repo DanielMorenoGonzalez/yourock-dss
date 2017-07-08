@@ -2,7 +2,7 @@
 @section('title', 'YOU ROCK! - Carrito de la compra')
 @section('content')
 <ol class="breadcrumb">
-  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
   <li><a href="{{ route('orders') }}">Mis pedidos</a></li>
   <li class="active">Pedido {{ $order->id }}</li>
 </ol>

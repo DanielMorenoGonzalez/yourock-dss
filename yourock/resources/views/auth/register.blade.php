@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Registro')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+  <li class="active">Registro</li>
+</ol>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">

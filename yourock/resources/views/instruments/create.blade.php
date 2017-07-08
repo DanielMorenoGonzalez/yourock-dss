@@ -2,7 +2,7 @@
 @section('title', 'YOU ROCK! - Crear instrumento')
 @section('content')
 <ol class="breadcrumb">
-  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
   <li><a href="{{ route('instruments.index') }}">Instrumentos</a></li>
   <li class="active">Crear instrumento</li>
 </ol>

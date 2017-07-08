@@ -1,13 +1,16 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Iniciar sesión')
 @section('content')
+<ol class="breadcrumb">
+  <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+  <li class="active">Iniciar sesión</li>
+</ol>
 @if (session()->has('afterregister'))
     <div class="alert alert-success alert-dismissable">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
         <strong>{{ session()->get('afterregister') }}</strong>
     </div>
 @endif
-
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -18,10 +21,13 @@
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">Email:</label>
-
+                            
+                                
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                </div>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -34,7 +40,10 @@
                             <label for="password" class="col-md-4 control-label">Contraseña:</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input id="password" type="password" class="form-control" name="password">
+                                </div>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">

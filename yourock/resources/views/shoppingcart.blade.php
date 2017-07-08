@@ -2,7 +2,7 @@
 @section('title', 'YOU ROCK! - Home')
 @section('content')
 <ol class="breadcrumb">
-  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
   <li class="active">Carrito</li>
 </ol>
 @if (session()->has('nostock'))

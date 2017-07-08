@@ -2,7 +2,7 @@
 @section('title', 'YOU ROCK! - Línea de pedido')
 @section('content')
 <ol class="breadcrumb">
-  <li><a href="{{ route('home') }}">Home</a></li>
+  <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
   <li><a href="{{ route('orderlinesadmin') }}">Líneas de pedido</a></li>
   <li class="active">Línea de pedido {{ $orderline->id }}</li>
 </ol>
