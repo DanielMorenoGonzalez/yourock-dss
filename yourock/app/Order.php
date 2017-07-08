@@ -36,7 +36,7 @@ class Order extends Model
     //Método para obtener el total del pedido
     public function getTotal(){
         $total = 0;
-        $orderlines = $this->getOrderlines();
+        $orderlines = $this->orderlines;
         //Por cada línea de pedido obtenemos el subtotal
         foreach($orderlines as $orderline){
             $total += $orderline->getSubtotal();
@@ -49,16 +49,12 @@ class Order extends Model
         $this->itemsCart[] = Session::get('orderline');
         return $this->itemsCart;
     }
-    
-    //Método para obtener las líneas de pedido del pedido actual
-    public function getOrderlines() {
-        return $this->orderlines;
-    }
 
+    //Método para calcular el total del carrito de la compra
     public function getTotalShoppingCart() {
         $total = 0;
         foreach(Session::get('order') as $orderlinePrueba){
-            $instrument = $orderlinePrueba[0]->getInstrument();
+            $instrument = $orderlinePrueba[0]->instrument;
             $total += $instrument->price * $orderlinePrueba[0]->quantity;
         }
         return $total;

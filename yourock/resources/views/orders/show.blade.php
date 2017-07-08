@@ -8,7 +8,7 @@
 </ol>
 <h1>Pedido {{ $order->id }}</h1>
 <p>Estado: {{ $order->state }}</p>
-<p>Coste total: {{ $order->getTotal() }}</p>
+<p>Coste total: {{ $order->getTotal() }}€</p>
 @foreach ($orderlines as $orderline)
         <div>
         @if($orderline->quantity == 1)

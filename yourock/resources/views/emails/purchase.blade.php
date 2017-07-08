@@ -13,9 +13,9 @@
             <p>Contenido del pedido:</p>
             @foreach($bodyOrderlines as $bodyOrderline)
                 @if($bodyOrderline->quantity == 1)
-                    <p>{{ $bodyOrderline->quantity }} unidad del instrumento {{ $bodyOrderline->getInstrument()->name }} => {{ $bodyOrderline->getSubtotal() }}€</p>
+                    <p>{{ $bodyOrderline->quantity }} unidad del instrumento {{ $bodyOrderline->instrument->name }} => {{ $bodyOrderline->getSubtotal() }}€</p>
                 @else
-                    <p>{{ $bodyOrderline->quantity }} unidades del instrumento {{ $bodyOrderline->getInstrument()->name }} => {{ $bodyOrderline->getSubtotal() }}€</p>
+                    <p>{{ $bodyOrderline->quantity }} unidades del instrumento {{ $bodyOrderline->instrument->name }} => {{ $bodyOrderline->getSubtotal() }}€</p>
                 @endif
             @endforeach
             <p>Precio total del pedido: {{ $bodyOrder->getTotal() }}€</p>

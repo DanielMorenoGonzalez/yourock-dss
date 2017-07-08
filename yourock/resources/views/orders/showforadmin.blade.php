@@ -18,7 +18,7 @@
 @foreach($order->orderlines as $orderline)
     <p>ID: {{ $orderline->id }}</p>
     <p>Cantidad: {{ $orderline->quantity }}</p>
-    <p>Instrumento: {{ $orderline->getInstrument()->name }}</p>
+    <p>Instrumento: {{ $orderline->instrument->name }}</p>
     <p>Precio de esta línea: {{ $orderline->getSubtotal() }}€</p>
     <p><a href="{{ action('OrderlinesController@show', [$orderline]) }}">Más detalles...</a></p>
     <br/>

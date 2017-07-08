@@ -27,7 +27,7 @@ class PurchaseController extends Controller
 
         //Comprobamos si existe suficiente stock en el almacen
         foreach(Session::get('order') as $orderlinePrueba){
-            $instrument = $orderlinePrueba[0]->getInstrument();
+            $instrument = $orderlinePrueba[0]->instrument;
             if(!$instrument->checkStock($orderlinePrueba[0]->quantity)){
                 return redirect()->action('OrderlinesController@indexCart')->with('nostock', 'No hay suficiente stock del instrumento "' . $instrument->name . '"');
             }
@@ -62,7 +62,7 @@ class PurchaseController extends Controller
             $order->save();
 
             foreach(Session::get('order') as $orderlinePrueba){
-                $instrument = $orderlinePrueba[0]->getInstrument();
+                $instrument = $orderlinePrueba[0]->instrument;
                 $orderline = new Orderline;
                 $orderline->quantity = $orderlinePrueba[0]->quantity;
 
@@ -83,7 +83,7 @@ class PurchaseController extends Controller
         Session::forget('quantity');
         Session::forget('order');
         
-        $orderlines = $order->getOrderlines();
+        $orderlines = $order->orderlines;
 
         $data = array(
             'email' => Auth::user()->email,

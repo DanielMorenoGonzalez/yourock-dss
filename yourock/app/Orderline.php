@@ -42,18 +42,8 @@ class Orderline extends Model
 
     //Método para calcular el subtotal de la línea
     public function getSubtotal(){
-        $total = $this->quantity * $this->getInstrument()->price;
+        $total = $this->quantity * $this->instrument->price;
         return $total;
-    }
-
-    //Método para obtener el instrumento perteneciente a la línea de pedido
-    public function getInstrument() {
-        return Instrument::find($this->instrument_id);
-    }
-
-    //Método para obtener el pedido al que pertenece la línea de pedido
-    public function getOrder() {
-        return Order::find($this->order_id);
     }
 
 }

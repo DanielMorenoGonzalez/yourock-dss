@@ -21,7 +21,7 @@ class OrdersController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $orders = $user->getOrders();
+        $orders = $user->orders;
         return view('orders.index', array('user' => $user, 'orders' => $orders));
     }
 
@@ -61,7 +61,7 @@ class OrdersController extends Controller
     public function show($id)
     {
         $order = Order::findOrFail($id);
-        $orderlines = $order->getOrderlines();
+        $orderlines = $order->orderlines;
         return view('orders.show', array('order' => $order, 'orderlines' => $orderlines));
     }
 
