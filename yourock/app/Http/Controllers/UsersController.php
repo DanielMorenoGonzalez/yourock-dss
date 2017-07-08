@@ -158,13 +158,19 @@ class UsersController extends Controller
     {
         if(Auth::user()){
             $user = Auth::user();
-            if($user->type == 'customer'){
-                return view('users.customers.show', (['user' => $user]));
-            } else {
-                return view('users.admin.show', (['user' => $user]));
-            }
+            return view('users.customers.show', (['user' => $user]));
         }
         else {
+            return view('auth.login');
+        }
+    }
+
+    public function showProfileAdmin()
+    {
+        if(Auth::user()){
+            $user = Auth::user();
+            return view('users.admin.show', (['user' => $user]));
+        } else {
             return view('auth.login');
         }
     }

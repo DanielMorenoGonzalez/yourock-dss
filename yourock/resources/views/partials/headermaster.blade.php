@@ -24,16 +24,17 @@
                     </a>
 
                     <ul class="dropdown-menu" role="menu" aria-labelledby="menuusuario">
-                        <li><a href="{{ action('UsersController@show') }}">Mi perfil</a></li>
-                                
-                        <li>
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                Cerrar sesión
-                            </a>
+                        <li><a href="{{ action('UsersController@showProfileAdmin') }}"><span class="glyphicon glyphicon-user"></span> Mi perfil</a></li>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
+                         <li class="divider">       
+                            <li>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <span class="glyphicon glyphicon-log-out"></span> Cerrar sesión</a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
                         </li>
                     </ul>
                 </li>

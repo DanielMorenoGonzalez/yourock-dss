@@ -13,7 +13,7 @@
 <p>Precio: {{ $instrument->price }}€</p>
 
 @if($instrument->stock != 0)
-    <p>Actualmente disponible</p>
+    <p><span class="glyphicon glyphicon-stats"></span> Actualmente disponible</p>
     <a href="{{ action('OrderlinesController@addInstrumentToCart', [$instrument->id]) }}" class="btn btn-default" role="button">Añadir al carrito</a>
 @else
     <p>Agotado. Llegarán nuevas unidades pronto</p>

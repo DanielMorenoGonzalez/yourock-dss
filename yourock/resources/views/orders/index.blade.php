@@ -7,12 +7,11 @@
 </ol>
     <h1>Pedidos realizados</h1>
     @if ($orders->count() == 0)
-        <p>No hay pedidos</p>
+        <p>Todavía no has realizado ningún pedido</p>
     @else
     @foreach ($orders as $order)
         <div>
-            <p>Pedido :{{ $order->id }}</p>
-            <li><a href="{{ action('OrdersController@show', [$order->id]) }}">Mostrar detalles de pedido</a></li>
+            <p><a href="{{ action('OrdersController@show', [$order->id]) }}">Pedido {{ $order->id }}</a> | Coste total: {{ $order->getTotal() }}</p>
         </div>
         <br/>
     @endforeach

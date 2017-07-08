@@ -20,8 +20,8 @@
         </form>
         <ul class="nav navbar-nav navbar-right">
             @if (Auth::guest())
-                <li><a href="{{ route('register') }}"><span class="glyphicon glyphicon-user"></span>Regístrate</a></li>
-                <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span>Iniciar sesión</a></li>
+                <li><a href="{{ route('register') }}"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>
+                <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
             @else
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
@@ -34,22 +34,24 @@
                     </a>
 
                     <ul class="dropdown-menu" role="menu" aria-labelledby="menuusuario">
-                        <li><a href="{{ action('UsersController@show') }}">Mi perfil</a></li>
-                        <li><a href="{{ action('OrdersController@index') }}">Mis pedidos</a></li>
+                        <li><a href="{{ action('UsersController@show') }}"><span class="glyphicon glyphicon-user"></span> Mi perfil</a></li>
+                        <li><a href="{{ action('OrdersController@index') }}"><span class="glyphicon glyphicon-briefcase"></span> Mis pedidos</a></li>
                                 
-                        <li>
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                Cerrar sesión
-                            </a>
+                        <li class="divider">
+                            <li>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <span class="glyphicon glyphicon-log-out"></span> Cerrar sesión
+                                </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
                         </li>
                     </ul>
                 </li>
             @endif
-                <li><a href="{{ action('OrderlinesController@indexCart') }}"><span class="glyphicon glyphicon-shopping-cart"></span>Carrito<span class="badge">{{Session::has('order') ? Session::get('quantity') : ''}}</span></a></li>
+                <li><a href="{{ action('OrderlinesController@indexCart') }}"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito <span class="badge">{{Session::has('order') ? Session::get('quantity') : ''}}</span></a></li>
         </ul>
     </div>
 </nav>

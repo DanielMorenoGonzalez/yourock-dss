@@ -13,7 +13,7 @@
 @endif
 @if (Session::has('order'))
 @foreach(Session::get('order') as $order)
-    <p>{{ $order[0] }}</p>
+    <p>{{ $order[0]->instrument->name }} | {{ $order[0]->quantity }} | {{ $order[0]->getSubtotal() }}€</p>
 @endforeach
 @else
     <p>El carrito de la compra está vacío :(</p>
