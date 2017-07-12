@@ -76,9 +76,34 @@
                         </div>
                     </form>
                 </div>
-                <p>¿No formas parte de nuestra comunidad?</p>
-                <p><a href="{{ route('register') }}">Regístrate aquí</a></p>
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">¿Nuevo cliente?</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="GET" action="{{ route('register') }}">
+
+                        <div class="form-group">
+                            <label class="col-md-6 col-md-offset-3 control-label">¿Todavía no formas parte de nuestra comunidad?</label>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="btn btn-default">
+                                    Crea una nueva cuenta
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
 @endsection

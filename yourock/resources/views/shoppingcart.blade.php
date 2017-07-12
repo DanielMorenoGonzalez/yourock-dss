@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'YOU ROCK! - Home')
+@section('title', 'YOU ROCK! - Carrito')
 @section('content')
 <ol class="breadcrumb">
   <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>

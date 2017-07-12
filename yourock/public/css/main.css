@@ -1,6 +1,8 @@
 /* Para footer */
 
 footer {
+	position: absolute;
+	width: 100%;
     margin: 0;
     padding: 0;
     border: 0;
