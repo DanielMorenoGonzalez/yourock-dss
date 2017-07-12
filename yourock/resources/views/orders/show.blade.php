@@ -7,15 +7,31 @@
   <li class="active">Pedido {{ $order->id }}</li>
 </ol>
 <h1>Pedido {{ $order->id }}</h1>
+<p>ID del pago: {{ $order->payment }}</p>
 <p>Estado: {{ $order->state }}</p>
+
+<div class="table-responsive">           
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>Instrumento</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($orderlines as $orderline)
+        <tr>
+            <td>{{ $orderline->instrument->name }}</td>
+            <td>{{ $orderline->quantity }}</td>
+            <td>{{ $orderline->getSubtotal() }}€</td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+</div>
+
 <p>Coste total: {{ $order->getTotal() }}€</p>
-@foreach ($orderlines as $orderline)
-        <div>
-        @if($orderline->quantity == 1)
-            <p>{{ $orderline->quantity }} unidad del instrumento <a href="{{ action('InstrumentsController@show', [$orderline->instrument->id]) }}">{{ $orderline->instrument->name }}</a></p>
-        @else
-            <p>{{ $orderline->quantity }} unidades del instrumento <a href="{{ action('InstrumentsController@show', [$orderline->instrument->id]) }}">{{ $orderline->instrument->name }}</a></p>
-        @endif
-        </div>
-@endforeach
+
+
 @endsection

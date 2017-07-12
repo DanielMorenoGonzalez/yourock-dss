@@ -16,12 +16,15 @@
                     <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ action('UsersController@update') }}">
                         {{ csrf_field() }}
 
-                        <div class="col-md-10 col-md-offset-1">
+                        <div class="form-group">
+                        <label for="showimages" class="col-md-4 control-label">Avatar:</label>
+                        <div class="col-md-6">
+                            <div class="col-md-10 col-md-offset-3">
                             <img id="showimages" src="/uploads/avatars/{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
-                            <h2>{{ $user->name }}'s Profile</h2>
-            
-                            <label>Update Profile Image</label>
+                            </div>
+                            
                             <input id="inputimages" type="file" name="avatar">
+                            </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('nif') ? ' has-error' : '' }}">
