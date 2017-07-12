@@ -22,7 +22,7 @@
     <tbody>
         @foreach ($orderlines as $orderline)
         <tr>
-            <td>{{ $orderline->instrument->name }}</td>
+            <td><a href="{{ action('InstrumentsController@show', [$orderline->instrument->id]) }}">{{ $orderline->instrument->name }}</td>
             <td>{{ $orderline->quantity }}</td>
             <td>{{ $orderline->getSubtotal() }}€</td>
         </tr>

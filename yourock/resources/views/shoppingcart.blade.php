@@ -32,7 +32,7 @@
                                 <tbody>
                                 @foreach(Session::get('order') as $order)
                                     <tr>
-                                        <td>{{ $order[0]->instrument->name }}</td>
+                                        <td><a href="{{ action('InstrumentsController@show', [$order[0]->instrument->id]) }}">{{ $order[0]->instrument->name }}</a></td>
                                         <td>{{ $order[0]->quantity }}</td>
                                         <td>{{ $order[0]->getSubtotal() }}€</td>
                                     </tr>

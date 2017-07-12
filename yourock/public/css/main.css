@@ -136,13 +136,13 @@ ul.icons {
 					background: #df7b77;
 				}
 
-			.icon.circle.fa-github {
-				background: #dcad8b;
+			.icon.circle.fa-youtube {
+				background: #ff4d4d;
 				color: #fff;
 			}
 
-				.icon.circle.fa-github:hover {
-					background: #e1b89b;
+				.icon.circle.fa-youtube:hover {
+					background: #ff6666;
 				}
 
 		.icon > .label {

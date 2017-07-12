@@ -21,6 +21,13 @@
   <li class="active">Sobre nosotros</li>
 </ol>
 <h1>Página sobre nosotros</h1>
+<p>El 21 de mayo de 2017 abrimos las puertas de YOU ROCK!</p><br/>
+<p>Nuestro equipo se compone de:</p>
+<p><strong>Javier</strong>: Responsable de las guitarras eléctricas.</p>
+<p><strong>Lola</strong>: Responsable de los bajos acústicos.</p>
+<p><strong>Dani</strong>: Responsable de las baterías acústicas y electrónicas.</p>
+<p><strong>Adela</strong>: Responsable de los pianos de cola y teclados.</p><br/>
+<p>Nos encontramos en <span class="glyphicon glyphicon-road"></span> <strong>Calle Ancha de Castelar nº 41, San Vicente del Raspeig (Alicante)</strong></p>
 <script>
     var map;
     function initMap() {

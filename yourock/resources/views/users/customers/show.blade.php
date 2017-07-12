@@ -25,9 +25,8 @@
 <p>Teléfono: {{ $user->phoneNumber }}</p>
 <p>Email: {{ $user->email }}</p>
 <a href="{{ action('UsersController@edit') }}" class="btn btn-default" role="button">Editar perfil</a>
-
 <!--Botón con el que aparece un modal para confirmar que se quiere eliminar la cuenta-->
-<button class="btn btn-default" data-toggle="modal" data-target="#confirm-delete">Borrar cuenta</button>
+<button class="btn btn-danger" data-toggle="modal" data-target="#confirm-delete"><span class="glyphicon glyphicon-trash"></span> Borrar cuenta</button>
 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -38,11 +37,11 @@
                 ¿Estás seguro que quieres darte de baja de nuestra página web? Esta acción es irreversible, por lo que si así lo deseas, ya no podrás realizar pedidos de tus instrumentos favoritos con tu cuenta.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button style="float:left";type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                 <form role="form" method="POST" action="{{ action('UsersController@destroy') }}">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>Borrar</button>
+                    <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Borrar</button>
                 </form>
             </div>
         </div>
