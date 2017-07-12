@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('title', 'YOU ROCK! - Reestablecer contraseña')
 @section('content')
+<ol class="breadcrumb">
+    <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+    <li><a href="{{ route('login') }}">Iniciar sesión</a></li>
+    <li class="active">Reestablecer contraseña</li>
+</ol>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -33,7 +38,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Mandar enlace a email
+                                    Mandar enlace
                                 </button>
                             </div>
                         </div>

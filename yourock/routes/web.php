@@ -26,11 +26,11 @@ Route::get('aboutus', function() {
     return view('aboutus');
 })->name('aboutus');
 
-//Ruta para añadir un instrumento al carrito de la compra
+//Rutas para añadir un instrumento al carrito de la compra
 Route::get('addtocart/{id}', 'OrderlinesController@addInstrumentToCart');
-
 Route::get('user/shoppingcart', 'OrdersController@addOrderlineToCart');
 
+//Ruta para ver los artículos del carrito de la compra
 Route::get('shoppingcart', 'OrderlinesController@indexCart')->name('shoppingcart');
 
 //Rutas para llevar a cabo la compra de instrumentos por parte de un usuario registrado
@@ -110,3 +110,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 Auth::routes();
 //Ruta para mostrar la página home
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('accessdenied', function() {
+    return view('accessdenied');
+});

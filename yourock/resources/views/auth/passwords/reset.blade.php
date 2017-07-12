@@ -1,11 +1,17 @@
 @extends('layouts.app')
-@section('title', 'YOU ROCK! - Reestablecer contraseña')
+@section('title', 'YOU ROCK! - Cambiar contraseña')
 @section('content')
+<ol class="breadcrumb">
+    <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+    <li><a href="{{ route('login') }}">Iniciar sesión</a></li>
+    <li><a href="{{ route('password.request') }}">Reestablecer contraseña</a></li>
+    <li class="active">Cambiar</li>
+</ol>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Reestablecer contraseña</div>
+                <div class="panel-heading">Cambiar contraseña</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -63,7 +69,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Reestablecer contraseña
+                                    Cambiar
                                 </button>
                             </div>
                         </div>
