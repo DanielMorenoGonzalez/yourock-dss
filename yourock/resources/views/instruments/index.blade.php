@@ -27,7 +27,7 @@
 @endif
 
     <div class="panel panel-default">
-    <div class="panel-heading">Instrumentos</div>
+    <div class="panel-heading">Instrumentos en la base de datos</div>
     <div class="panel-body">
         <a class="btn btn-primary" role="button" role="button" href="{{ action('InstrumentsController@create') }}"><span class="glyphicon glyphicon-plus"></span>Añadir instrumento</a> 
     </div>

@@ -25,7 +25,7 @@
 @endif
 
     <div class="panel panel-default">
-    <div class="panel-heading">Usuarios</div>
+    <div class="panel-heading">Usuarios en la base de datos</div>
     <div class="panel-body">
         <a class="btn btn-primary" role="button" href="{{ action('UsersController@createCustomer') }}"><span class="glyphicon glyphicon-plus"></span>Añadir cliente</a>
         <a class="btn btn-primary" role="button" href="{{ action('UsersController@createAdmin') }}"><span class="glyphicon glyphicon-plus"></span>Añadir administrador</a>  

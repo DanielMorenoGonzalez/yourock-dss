@@ -1,16 +1,15 @@
 @extends('layouts.master')
-@section('title', 'YOU ROCK! - Crear instrumento')
+@section('title', 'YOU ROCK! - Añadir instrumento')
 @section('content')
 <ol class="breadcrumb">
   <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
   <li><a href="{{ route('instruments.index') }}">Instrumentos</a></li>
-  <li class="active">Crear instrumento</li>
+  <li class="active">Añadir instrumento</li>
 </ol>
-<h1>Crear un nuevo instrumento</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Crear un nuevo instrumento</div>
+                <div class="panel-heading">Añadir un nuevo instrumento</div>
                 <div class="panel-body">
                     <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ action('InstrumentsController@store') }}">
                         {{ csrf_field() }}

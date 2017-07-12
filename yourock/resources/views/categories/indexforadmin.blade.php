@@ -27,7 +27,7 @@
 @endif
 
     <div class="panel panel-default">
-    <div class="panel-heading">Categorías</div>
+    <div class="panel-heading">Categorías en la base de datos</div>
     <div class="panel-body">
         <a class="btn btn-primary" role="button" role="button" href="{{ action('CategoriesController@create') }}"><span class="glyphicon glyphicon-plus"></span>Añadir categoría</a> 
     </div>

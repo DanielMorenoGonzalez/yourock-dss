@@ -27,7 +27,7 @@
 @endif
 
     <div class="panel panel-default">
-    <div class="panel-heading">Pedidos</div>
+    <div class="panel-heading">Pedidos en la base de datos</div>
     <div class="panel-body">
         <a class="btn btn-primary" role="button" role="button" href="{{ action('OrdersController@create') }}"><span class="glyphicon glyphicon-plus"></span>Añadir pedido</a> 
     </div>

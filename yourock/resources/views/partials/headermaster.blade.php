@@ -4,9 +4,7 @@
             <a class="navbar-brand" href="{{ url('/') }}">YOU ROCK!</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="{{ action('CategoriesController@index') }}">Categorías</a></li>
-            <li><a href="{{ route('aboutus') }}">Sobre nosotros</a><li>
-            <li><a href="{{ route('contact') }}">Contacto</a></li>
+            <li><a href="{{ action('UsersController@adminHome') }}">Dashboard</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             @if (Auth::guest())

@@ -8,16 +8,6 @@
             <li><a href="{{ route('aboutus') }}">Sobre nosotros</a><li>
             <li><a href="{{ route('contact') }}">Contacto</a></li>
         </ul>
-        <form class="navbar-form navbar-left">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                    <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
         <ul class="nav navbar-nav navbar-right">
             @if (Auth::guest())
                 <li><a href="{{ route('register') }}"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>

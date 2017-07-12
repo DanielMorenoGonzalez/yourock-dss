@@ -41,6 +41,10 @@ class PurchaseController extends Controller
             return redirect('shoppingcart');
         }
 
+        $this->validate($request, [
+			'cardholder-name' => 'required|max:50'
+		]);
+
         //Calculamos el total de todos los instrumentos de las líneas de pedido
         $orderShoppingCart = new Order;
         $total = $orderShoppingCart->getTotalShoppingCart();
