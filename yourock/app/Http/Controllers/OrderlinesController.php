@@ -17,7 +17,14 @@ class OrderlinesController extends Controller
      */
     public function indexCart()
     {
-        return view('shoppingcart');
+        if(!Session::has('order')){
+            return view('shoppingcart');
+        }
+        
+        //Calculamos el total de todos los instrumentos de las líneas de pedido
+        $orderShoppingCart = new Order;
+        $total = $orderShoppingCart->getTotalShoppingCart();
+        return view('shoppingcart', (['total' => $total]));
     }
 
     public function indexOrderlines(){

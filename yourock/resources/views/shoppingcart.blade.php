@@ -11,26 +11,41 @@
         {{ session()->get('nostock') }}
     </div>
 @endif
+<h1>Carrito de la compra</h1>
 @if (Session::has('order'))
-@foreach(Session::get('order') as $order)
-    <p>{{ $order[0]->instrument->name }} | {{ $order[0]->quantity }} | {{ $order[0]->getSubtotal() }}€</p>
-@endforeach
-@else
-    <p>El carrito de la compra está vacío :(</p>
-@endif
-<h1>Página carrito de la compra</h1>
-<div class="row">
-        <div class="col-md-8 col-md-offset-2">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Carrito de la compra</div>
+                <div class="panel-heading">Instrumentos en el carrito</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="#">
                         {{ csrf_field() }}
+                        <div class="table-responsive">           
+                            <table class="table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Instrumento</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio total</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach(Session::get('order') as $order)
+                                    <tr>
+                                        <td>{{ $order[0]->instrument->name }}</td>
+                                        <td>{{ $order[0]->quantity }}</td>
+                                        <td>{{ $order[0]->getSubtotal() }}€</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            <label class="col-md-2 col-md-offset-9">Total: {{ $total }}€</label>
+                        </div>
 
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <a href="{{ route('checkout') }} "type="submit" class="btn btn-primary">
-                                    Comprar
+                            <div class="col-md-12 col-md-offset-9">
+                                <a href="{{ route('checkout') }} "type="submit" class="btn btn-warning">
+                                    Ir a caja
                                 </a>
                             </div>
                         </div>
@@ -39,4 +54,8 @@
             </div>
         </div>
     </div>
+@else
+    <p>El carrito de la compra está vacío :(</p>
+@endif
+
 @endsection
