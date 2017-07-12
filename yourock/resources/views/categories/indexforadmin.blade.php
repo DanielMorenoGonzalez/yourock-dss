@@ -40,7 +40,7 @@
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Instrumentos</th>
-            <th>Ver detalles</th>
+            <th>Ver</th>
             <th>Editar</th>
             <th>Borrar</th>
         </tr>

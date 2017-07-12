@@ -1,16 +1,15 @@
 @extends('layouts.master')
-@section('title', 'YOU ROCK! - Crear cliente')
+@section('title', 'YOU ROCK! - Añadir cliente')
 @section('content')
 <ol class="breadcrumb">
   <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
   <li><a href="{{ route('users.index') }}">Usuarios</a></li>
-  <li class="active">Crear cliente</li>
+  <li class="active">Añadir cliente</li>
 </ol>
-<h1>Crear un nuevo cliente</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Crear un nuevo cliente</div>
+                <div class="panel-heading">Añadir un nuevo cliente</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ action('UsersController@storeCustomer') }}">
                         {{ csrf_field() }}

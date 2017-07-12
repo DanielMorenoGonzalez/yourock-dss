@@ -1,16 +1,15 @@
 @extends('layouts.master')
-@section('title', 'YOU ROCK! - Crear pedido')
+@section('title', 'YOU ROCK! - Añadir pedido')
 @section('content')
 <ol class="breadcrumb">
   <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
   <li><a href="{{ route('ordersadmin') }}">Pedidos</a></li>
-  <li class="active">Crear pedido</li>
+  <li class="active">Añadir pedido</li>
 </ol>
-<h1>Crear un nuevo pedido</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Crear un nuevo pedido</div>
+                <div class="panel-heading">Añadir un nuevo pedido</div>
                 <div class="panel-body">
                     <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="">
                         {{ csrf_field() }}
@@ -24,6 +23,20 @@
                                 @if ($errors->has('payment'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('payment') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
+                            <label for="state" class="col-md-4 control-label">Estado:</label>
+
+                            <div class="col-md-6">
+                                <input id="state" type="text" class="form-control" name="state" value="{{ old('state') }}">
+
+                                @if ($errors->has('state'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('state') }}</strong>
                                     </span>
                                 @endif
                             </div>

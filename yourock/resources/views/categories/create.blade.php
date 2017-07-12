@@ -1,16 +1,15 @@
 @extends('layouts.master')
-@section('title', 'YOU ROCK! - Crear categoría')
+@section('title', 'YOU ROCK! - Añadir categoría')
 @section('content')
 <ol class="breadcrumb">
   <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
   <li><a href="{{ route('categoriesadmin') }}">Categorías</a></li>
-  <li class="active">Crear categoría</li>
+  <li class="active">Añadir categoría</li>
 </ol>
-<h1>Crear una nueva categoría</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Crear una nueva categoría</div>
+                <div class="panel-heading">Añadir una nueva categoría</div>
                 <div class="panel-body">
                     <form enctype="multipart/form-data" class="form-horizontal" role="form" method="POST" action="{{ action('CategoriesController@store') }}">
                         {{ csrf_field() }}

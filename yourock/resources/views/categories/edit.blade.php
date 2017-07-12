@@ -6,7 +6,6 @@
   <li><a href="{{ route('categoriesadmin') }}">Categorías</a></li>
   <li class="active">Editar "{{ $category->name }}"</li>
 </ol>
-<h1>Editar categoría</h1>
 <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -45,7 +44,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('instrument') ? ' has-error' : '' }}">
-                            <label for="instrument" class="col-md-4 control-label">Añadir instrumento a la categoría:</label>
+                            <label for="instrument" class="col-md-4 control-label">Asociar instrumento:</label>
 
                             <div class="col-md-6">
                                 <select id="instrument" class="form-control" name="instrument">
